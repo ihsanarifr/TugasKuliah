@@ -4,38 +4,48 @@ http://www.cplusplus.com/forum/general/97018/
 
 //#include "stdafx.h"
 #include <iostream>
-#include <array>
-#include <conio.h>
+//#include <array>
+//#include <conio.h>
 
 using namespace std;
 #define N 100
 #define M 100
 
-typedef array<array<int, N>, M> AR;
+//typedef array<array<int, N>, M> AR;
 
 class MATRIK
 {
 public:
 	//MATRIK();
-	void make(AR a, int row, int col);
+	void make(int a[M][N], int row, int col);
 	MATRIK transpose();
 	void print();
 	int getRow(){ return nRow; }
 	int getCol(){ return nCol; }
-	AR getArray(){ return data; }
-	void setArray(AR a) { data = a; }
-	
-	friend MATRIK operator+(MATRIK a,MATRIK b);
+
+	int getArray(){ return AR[M][N]; }
+	void setArray(int a[M][N], int row, int col)
+	{
+		for (int i = 0; i < row; i++)
+		{
+			for (int j = 0; j < col; j++)
+			{
+				AR[i][j] = a[i][j];
+			}
+		}
+	}
+
+	friend MATRIK operator+(MATRIK a, MATRIK b);
 	friend MATRIK operator-(MATRIK a, MATRIK b);
 	friend MATRIK operator*(MATRIK a, MATRIK b);
 private:
-	AR data;
+	int AR[M][N];
 	int nRow, nCol;
 };
 
-void MATRIK::make(AR a, int row, int col)
+void MATRIK::make(int a[M][N], int row, int col)
 {
-	AR temp;
+	int temp[M][N];
 	for (int i = 0; i < row; i++)
 	{
 		for (int j = 0; j < col; j++)
@@ -43,7 +53,7 @@ void MATRIK::make(AR a, int row, int col)
 			temp[i][j] = a[i][j];
 		}
 	}
-	setArray(temp);
+	setArray(temp, row, col);
 	nRow = row;
 	nCol = col;
 }
@@ -55,7 +65,7 @@ void MATRIK::print()
 	{
 		for (int j = 0; j < nCol; j++)
 		{
-			cout << getArray()[i][j];
+			cout << AR[i][j];
 			if (j == nCol - 1)
 				cout << endl;
 			else
@@ -66,12 +76,12 @@ void MATRIK::print()
 
 MATRIK MATRIK::transpose()
 {
-	AR temp;
+	int temp[M][N];
 	for (int i = 0; i < nRow; i++)
 	{
 		for (int j = 0; j < nCol; j++)
 		{
-			temp[j][i] = data[i][j];
+			temp[j][i] = AR[i][j];
 		}
 	}
 	MATRIK result;
@@ -81,12 +91,12 @@ MATRIK MATRIK::transpose()
 
 MATRIK operator+(MATRIK a, MATRIK b)
 {
-	AR temp;
+	int temp[M][N];
 	for (int i = 0; i < a.getRow(); i++)
 	{
 		for (int j = 0; j < a.getCol(); j++)
 		{
-			temp[i][j] = a.getArray()[i][j] + b.getArray()[i][j];
+			temp[i][j] = a.AR[i][j] + b.AR[i][j];
 		}
 	}
 	MATRIK result;
@@ -96,7 +106,7 @@ MATRIK operator+(MATRIK a, MATRIK b)
 
 MATRIK operator *(MATRIK a, MATRIK b)
 {
-	AR temp;
+	int temp[M][N];
 	if (a.getCol() == b.getRow())
 	{
 		//matrix T(a.m, b.n);
@@ -107,7 +117,7 @@ MATRIK operator *(MATRIK a, MATRIK b)
 				temp[i][k] = 0;
 				for (int j = 0; j < a.getCol(); j++)
 				{
-					temp[i][k] += a.getArray()[i][j] * b.getArray()[j][k];
+					temp[i][k] += a.AR[i][j] * b.AR[j][k];
 				}
 			}
 		}
@@ -117,10 +127,10 @@ MATRIK operator *(MATRIK a, MATRIK b)
 	return result;
 }
 int main() {
-	array<array<int, N>, M> arr = { { { 5, 8, 2 }, { 8, 3, 1 } } };
-	array<array<int, N>, M> brr = { { { 1, 2, 1 }, { 0, 1, 1 } } };
-	//int arr[M][N] = { { 5, 8, 2 }, { 8, 3, 1 } };
-	//int brr[M][N] = { { 1, 2, 1 }, { 0, 1, 1 } };
+	//array<array<int, N>, M> arr = { { { 5, 8, 2 }, { 8, 3, 1 } } };
+	//array<array<int, N>, M> brr = { { { 1, 2, 1 }, { 0, 1, 1 } } };
+	int arr[M][N] = { { 5, 8, 2 }, { 8, 3, 1 } };
+	int brr[M][N] = { { 1, 2, 1 }, { 0, 1, 1 } };
 
 	MATRIK A, B, C, D, BT;
 	A.make(arr, 2, 3);    // buat matrik A ukuran 2x3
@@ -132,6 +142,6 @@ int main() {
 	C = A + B; C.print(); // menjumlah 2 matrik
 	cout << endl;
 	D = A*BT; D.print(); // mengalikan matrik
-	_getch();
+	//_getch();
 	return 0;
 }
