@@ -1,5 +1,5 @@
 /*
-http://www.cplusplus.com/forum/general/97018/
+Reference : http://www.cplusplus.com/forum/general/97018/
 */
 
 //#include "stdafx.h"
