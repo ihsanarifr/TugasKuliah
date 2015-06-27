@@ -1,60 +1,33 @@
-//#include "stdafx.h"
 #include <iostream>
 using namespace std;
 
-class Cari
-{
-public:
-    Cari();
-	void input();
-	void mencari();
-	void print();
-private:
-	int bil[1001];
-	int n;
-	int x;
+class myData{
+    int nilai[1001];
+    public:
+        myData(){ nilai[1001]={0};}
+        void insert(int x) { nilai[x]=1; }
+        bool find (int x) { return nilai[x]==1; }
 };
-
-Cari::Cari()
-{
-    n=0; x=0; //bil[1001]={0};
-}
-void Cari::input()
-{
-	cin >> n;
-	while (n != -9)
-	{
-		if (bil[n] != 1)
-		{
-			bil[n] = 1;
-		}
-		cin >> n;
-	}
-}
-
-void Cari::mencari()
-{
-	cin >> x;
-	for (int i = 0; i < x; i++)
-	{
-		cin >> n;
-		if (bil[n] == 1)
-		{
-			cout << n << " ada" << endl;
-		}
-		else
-		{
-			cout << n << " tidak ada" << endl;
-		}
-	}
-}
-
 
 int main()
 {
-	Cari c;
-	c.input();
-	c.mencari();
-	//_getch();
-	return 0;
+    myData dt;
+    int x;
+    cin>>x;
+    while (x!= -9)
+    {
+        dt.insert(x);
+        cin>>x;
+    }
+
+    int n;
+    cin>>n;
+    while(n--)
+    {
+        cin>>x;
+        if(dt.find(x))
+            cout<<x<<" ada"<<endl;
+        else cout<<x<<" tidak ada"<<endl;
+    }
+    return 0;
 }
