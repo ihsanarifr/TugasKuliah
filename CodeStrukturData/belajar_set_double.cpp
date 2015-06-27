@@ -3,16 +3,26 @@
 
 using namespace std;
 
+class myData
+{
+private:
+    set<double> myset;
+    set<double>::iterator it;
+
+public:
+    void masuk(double x)
+    {
+        myset.insert(x);
+    }
+};
 int main()
 {
     int x,n;
-    set<int> myset;
-    set<int>::iterator it;
-
+    myData d;
     cin >> x;
     while(x!=-9)
     {
-        myset.insert(x);
+        d.find()
         cin >> x;
     }
 

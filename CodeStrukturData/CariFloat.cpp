@@ -1,35 +1,44 @@
 #include <iostream>
+#include <set>
 using namespace std;
 
 class myData{
-    double nilai[1001];
+    int x;
+    double n;
+    set<double> myset;
+    set<double>::iterator it;
+
     public:
-        myData(){ nilai[1001]={0};}
-        void insert(int i,double x) { nilai[i]=x; }
-        //bool find (int x) { return nilai[x]==1; }
+        void insert(double x) { myset.insert(x); }
+        void cek()
+        {
+            cin >> x;
+            while(x--)
+            {
+                cin >> n;
+                it=myset.find(n);
+                if(*it==n)
+                {
+                    cout << n << " ada" << endl;
+                }
+                else
+                {
+                    cout << n << " tidak ada"<< endl;
+                }
+            }
+        }
 };
 
 int main()
 {
     myData dt;
     double x;
-    int i=0;
     cin>>x;
     while (x!= -9)
     {
-        ++i;
-        dt.insert(i,x);
+        dt.insert(x);
         cin>>x;
     }
-
-    int n;
-    cin>>n;
-    while(n--)
-    {
-        cin>>x;
-        if(dt.find(x))
-            cout<<x<<" ada"<<endl;
-        else cout<<x<<" tidak ada"<<endl;
-    }
+    dt.cek();
     return 0;
 }
