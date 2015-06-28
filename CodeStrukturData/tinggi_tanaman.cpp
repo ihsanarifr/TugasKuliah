@@ -34,15 +34,50 @@ using namespace std;
 #define N 10000
 #define M 1000
 
-class myPlant
-{
-private:
-    int a[M][N];
+//class myPlant
+//{
+//private:
+//    int a[M][N];
+//
+//public:
+//    void ambil()
+//    {
+//        int n,m;
+//        cin >> m >> n;
+//        for(int i=0;i<m;i++)
+//        {
+//            for(int j=0;j<n;j++)
+//            {
+//                cin >> a[i][j];
+//            }
+//        }
+//    }
+//
+//    void print()
+//    {
+//        int n,m;
+//        for(int i=0;i<m;i++)
+//        {
+//            for(int j=0;j<n;j++)
+//            {
+//                cout << a[i][j];
+//                if (j == n - 1)
+//                    cout << endl;
+//                else
+//                    cout << " ";
+//            }
+//        }
+//    }
+//};
 
-public:
-    void ambil()
-    {
-        int n,m;
+int main()
+{
+//    myPlant p;
+//    p.ambil();
+//    //p.print();
+    int n,m;
+    int a[1000][10001]={0};
+
         cin >> m >> n;
         for(int i=0;i<m;i++)
         {
@@ -51,29 +86,5 @@ public:
                 cin >> a[i][j];
             }
         }
-    }
-
-    void print()
-    {
-        int n,m;
-        for(int i=0;i<m;i++)
-        {
-            for(int j=0;j<n;j++)
-            {
-                cout << a[i][j];
-                if (j == n - 1)
-                    cout << endl;
-                else
-                    cout << " ";
-            }
-        }
-    }
-};
-
-int main()
-{
-    myPlant p;
-    p.ambil();
-    //p.print();
     return 0;
 }
