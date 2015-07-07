@@ -5,7 +5,7 @@ using namespace std;
 
 struct node
 {
-	float info;
+	double info;
 	struct node *next;
 	struct node *prev;
 };
@@ -18,17 +18,17 @@ private:
 	Node *head, *tail;
 public:
 	void make() { head = NULL; tail = NULL; }
-	Node *make(float val);
+	Node *make(double val);
 	int isEmpty(){ return (head == NULL); }
-	void push_back(float val);
-	void push_before(float val, Node *ptr);
-	Node *find(float val);
+	void push_back(double val);
+	void push_before(double val, Node *ptr);
+	Node *find(double val);
 	void print();
-	void seleksi(float val);
-	void alternatif(float val);
+	void seleksi(double val);
+	void alternatif(double val);
 };
 
-Node* Ayam::make(float val){
+Node* Ayam::make(double val){
 	Node *ptr = new(Node);
 	ptr->info = val;
 	ptr->next = NULL;
@@ -36,7 +36,7 @@ Node* Ayam::make(float val){
 	return ptr;
 }
 
-void Ayam::push_back(float val){
+void Ayam::push_back(double val){
 	Node *ptr = make(val);
 
 	if (isEmpty())
@@ -48,7 +48,7 @@ void Ayam::push_back(float val){
 	}
 }
 
-void Ayam::push_before(float val, Node *ptr){
+void Ayam::push_before(double val, Node *ptr){
 	Node *temp = make(val);
 	//Node *pta = find_before(val);
 
@@ -68,7 +68,7 @@ void Ayam::push_before(float val, Node *ptr){
 	}
 }
 
-Node* Ayam::find(float val){
+Node* Ayam::find(double val){
 	Node *ptr = head;
 	Node *pta = head;
 	if (isEmpty())
@@ -90,7 +90,7 @@ Node* Ayam::find(float val){
 	}
 }
 
-void Ayam::seleksi(float val){
+void Ayam::seleksi(double val){
 	Node *ptr;
 	if (isEmpty()){
 		push_back(val);
@@ -106,7 +106,7 @@ void Ayam::seleksi(float val){
 	}
 }
 
-void Ayam::alternatif(float val){
+void Ayam::alternatif(double val){
 	Node *ptr = make(val);
 	Node *tunjuk;
 	Node *akhir;
@@ -133,7 +133,7 @@ void Ayam::print(){
 int main(){
     Ayam ay;
 	int n,m;
-	float data;
+	double data,add;
 
 	ay.make();
 
@@ -145,8 +145,8 @@ int main(){
 	}
 	cin >> m;
 	for (int i = 0; i < m; i++){
-		cin >> data;
-		ay.seleksi(data);
+		cin >> add;
+		ay.seleksi(add);
 		//ay.alternatif(data);
 	}
 	ay.print();

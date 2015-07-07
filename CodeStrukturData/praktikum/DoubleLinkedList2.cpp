@@ -3,7 +3,7 @@
 using namespace std;
 
 struct node{
-    float info;
+    double info;
     struct node *next;
     struct node *prev;
 };
@@ -15,15 +15,15 @@ public:
     Node *tail;
     DLL() { head=NULL;tail=NULL; }
     bool empty() { return head==NULL;}
-    Node* make(float value);
-    void push_back(float value);
-    void push_before(float value);
-    void push_front(float val);
-    Node* find(float val);
+    Node* make(double value);
+    void push_back(double value);
+    void push_before(double value);
+    void push_front(double val);
+    Node* find(double val);
     void print();
 };
 
-Node* DLL::make(float value){
+Node* DLL::make(double value){
     Node *temp=new(Node);
     temp->info=value;
     temp->next=NULL;
@@ -31,7 +31,7 @@ Node* DLL::make(float value){
     return temp;
 }
 
-void DLL::push_back(float value){
+void DLL::push_back(double value){
     Node *ptr=make(value);
     if (empty()) {
         head=ptr; tail=ptr;
@@ -49,7 +49,7 @@ void DLL::print(){
     cout << "NULL" << endl;
 }
 
-Node* DLL::find(float value){
+Node* DLL::find(double value){
     Node *ptr=head;
     if (empty())
         return NULL;
@@ -64,7 +64,7 @@ Node* DLL::find(float value){
     }
 }
 
-void DLL::push_before(float val){
+void DLL::push_before(double val){
     Node *ptr=make(val);
     Node *tunjuk;
     Node *akhir;
@@ -82,7 +82,7 @@ void DLL::push_before(float val){
 
 }
 
-void DLL::push_front(float val){
+void DLL::push_front(double val){
     Node *ptr=make(val);
     ptr->next=head;
     (head->next)->prev=ptr;
@@ -92,7 +92,7 @@ void DLL::push_front(float val){
 int main(){
     DLL list;
     int n,m;
-    float data,before;
+    double data,before;
 
     Node *contoh;
 
