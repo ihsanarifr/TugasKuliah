@@ -10,8 +10,6 @@ public:
     Oryza() { nama="";rata=0.0;}
 
     void push_tinggi(double tg){ tinggi.push_back(tg);}
-    void setrata(double rt){ rata=rt; }
-    void setnama(double nm){ nama=nm; }
     void clear(){ tinggi.clear();}
     int getSizeTinggi() { return tinggi.size();}
 
