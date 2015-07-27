@@ -1,3 +1,37 @@
+/*
+Buat ADT SLL2 yang memiliki kemampuan sama seperti SLL pada contoh di kuliah, tetapi informasi yang ditangani adalah nim dan ipk (float). Dapat dijalankan dengan driver seperti contoh berikut:
+
+int main() {
+   SLL2 list;
+   list.make();
+   list.push_back("G64204100", 3.14);
+   list.push_back("G64204050", 3.67);
+   list.push_front("G6420075", 2.05);
+   list.print();
+   list.push_after("G6420035", 2.89, "G64204100");
+   list.print(); list.del("G64204100");
+   list.print();
+   return 0;
+}
+Format Masukan
+
+Tidak ada data masukan, karena seluruh data untuk menguji ADT telah disimpan dalam driver.
+
+Format Keluaran
+
+Output sesuai dengan instruksi yang ada dalam driver.
+
+Contoh Masukan
+
+Tidak ada data masukan
+
+Contoh Keluaran
+
+(G6420075,2.05)->(G64204100,3.14)->(G64204050,3.67)->NULL
+(G6420075,2.05)->(G64204100,3.14)->(G6420035,2.89)->(G64204050,3.67)->NULL
+(G6420075,2.05)->(G6420035,2.89)->(G64204050,3.67)->NULL
+*/
+
 #include <iostream>
 
 using namespace std;
@@ -116,4 +150,3 @@ int main() {
    list.print();
    return 0;
 }
-

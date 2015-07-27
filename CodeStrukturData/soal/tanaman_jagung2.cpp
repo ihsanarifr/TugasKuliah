@@ -1,55 +1,47 @@
-//#include <algorithm>
 #include <iostream>
 #include <iomanip>
 #include <string>
 #include <list>
 using namespace std;
 
-class Oryza{
+class Zeamays{
 public:
-    Oryza() { nama="";rata=0.0;}
+    Zeamays() { nama="";rata=0.0;}
 
-    void push_tinggi(double tg){ tinggi.push_back(tg);}
+    void push_tinggi(float tg){ tinggi.push_back(tg);}
     void clear(){ tinggi.clear();}
     int getSizeTinggi() { return tinggi.size();}
 
     string nama;
-    list<double> tinggi;
-    double rata;
+    list<float> tinggi;
+    float rata;
 };
 
-bool sortNama(const Oryza& a, const Oryza& b){
+bool sortNama(const Zeamays& a, const Zeamays& b){
     return a.nama<b.nama;
 }
-bool sortRata(const Oryza& a, const Oryza& b){
+bool sortRata(const Zeamays& a, const Zeamays& b){
     return a.rata<b.rata;
 }
-/*
-inline bool operator<(const Oryza& a, const Oryza& b)
-{
-	return a.rata < b.rata;
-}
-*/
-
 
 int main()
 {
-    Oryza jg;
-	list<Oryza> jagung;
+    Zeamays jg;
+	list<Zeamays> jagung;
 	int n,m;
-    double t;
+    float t;
     string nama,urut;
 
     cin >> n;
     while(n--){
-        double r=0;
+        float r=0;
         cin >> nama >> m;
         while(m--){
             cin >> t;
             jg.push_tinggi(t);
             r+=t;
         }
-        jg.rata = double(r/jg.getSizeTinggi());
+        jg.rata = float(r/jg.getSizeTinggi());
         jg.nama = nama;
         jagung.push_back(jg);
         jg.clear();
@@ -61,10 +53,10 @@ int main()
     else
         jagung.sort(sortNama);
 
-	list<Oryza>::iterator it=jagung.begin();
+	list<Zeamays>::iterator it=jagung.begin();
 	for(;it!=jagung.end();++it){
 		cout << (*it).nama <<" : ";
-		list<double>::iterator itt=(*it).tinggi.begin();
+		list<float>::iterator itt=(*it).tinggi.begin();
         for(;itt!=(*it).tinggi.end();++itt)
             cout << *itt << "->";
         cout << "NULL" << endl;

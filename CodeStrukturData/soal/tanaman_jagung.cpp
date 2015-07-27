@@ -18,28 +18,27 @@ public:
     int isEmpty(){ pt.empty();}
     void push(plant val);
     void print();
-    friend bool operator<(const plant& a,const plant& b){ return a.nama<b.nama;};
-    void sort(string so);
-    bool cmpTinggi(plant& a,plant& b);
+    void urut(string so);
 };
+bool sortNama(const plant& a, const plant& b){
+    return a.nama<b.nama;
+}
+bool sortRata(const plant& a, const plant& b){
+    return a.rata<b.rata;
+}
 
-void Zeamays::sort(string so){
+void Zeamays::urut(string so){
     if(so == "URUTRATA"){
         //cout << "urut rata" << endl;
-        pt.sort();
+        pt.sort(sortRata);
     }else{
         //cout << "urut kode";
-        pt.sort();
+        pt.sort(sortNama);
     }
 }
 
-bool Zeamays::cmpTinggi(plant& a,plant& b){
-    return(a.nama>b.nama);
-}
-
-void Zeamays::push(plant val/*,string so*/){
+void Zeamays::push(plant val){
     pt.push_back(val);
-    //sort(string so);
 }
 
 void Zeamays::print(){
@@ -47,8 +46,7 @@ void Zeamays::print(){
 	list<plant>::iterator it = pt.begin();
 
 	for (; it != pt.end(); ++it){
-		cout << it->nama << " ";
-		//???? // maybe it->
+		cout << it->nama << " : ";
 		list<double>::iterator itt =it->tinggi.begin();
 		for (; itt != it->tinggi.end(); ++itt)
 			cout << (*itt) << "->";
@@ -65,7 +63,7 @@ int main(){
 
     cin >> n;
     while(n--){
-        double r=0;
+        double r=0.0;
         cin >> nama >> m;
         data.nama=nama;
         while(m--){
@@ -80,7 +78,7 @@ int main(){
     }
 
     cin >> urut;
-    jagung.sort(urut);
+    jagung.urut(urut);
 
     jagung.print();
     return 0;
