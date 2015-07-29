@@ -56,15 +56,27 @@ void Queue::push_priority(int nilai){
         Front=temp;
         Rear=temp;
     }else{
-        while(ptr!=NULL){
-            if(ptr->value<nilai)
-                break;
-            ptr=ptr->next;
-        }
-        if(ptr==NULL){
-            // push back
+        NODE *ptr=Front;
+        if(Front->value<nilai){
+            temp->next=Front;
+            Front->prev=temp;
+            Front=temp;
         }else{
-            // insert befor ptr
+            while(ptr!=NULL){
+                if(ptr->value<nilai)
+                    break;
+                ptr=ptr->next;
+            }
+            if(ptr==NULL){
+                // push back
+                push(nilai);
+            }else{
+                // insert befor ptr
+                (ptr->prev)->next=temp;
+                temp->prev=ptr->prev;
+                ptr->prev=temp;
+                temp->next=ptr;
+            }
         }
     }
 }
