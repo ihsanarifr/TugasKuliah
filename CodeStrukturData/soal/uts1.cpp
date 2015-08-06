@@ -1,3 +1,21 @@
+/*
+ Dengan menggunakan stack, balikkanlah urutan kemunculan kata dari sebuah kalimat yang diberikan.
+Format Masukan
+
+Masukkan terdiri atas paling banyak 1000 kata dengan panjang maksimum 20 karakter. Kata "STOP" menandakan akhir kata dan kata "STOP" tidak ikut diproses.
+Format Keluaran
+
+Kata-kata yang telah dibalik urutannya, diakhiri dengan karakter newline.
+Contoh Masukan
+
+Aku ingin begini aku ingin begitu ingin ini ingin itu STOP
+
+Contoh Keluaran
+
+itu ingin ini ingin begitu ingin aku begini ingin Aku
+
+*/
+
 #include <iostream>
 #include <vector>
 using namespace std;
