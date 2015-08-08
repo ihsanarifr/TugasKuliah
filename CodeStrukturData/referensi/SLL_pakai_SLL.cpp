@@ -5,8 +5,8 @@
 
 using namespace std;
 
-//typedef par<string, float> P;
-//typedef forward_list<P> SLLP;
+typedef par<string, float> P;
+typedef forward_list<P> SLLP;
 
 class SLL{
     SLLP dt;
