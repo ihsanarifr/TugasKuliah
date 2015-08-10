@@ -17,6 +17,7 @@ public:
     bool empty() { return head==NULL;}
     Node* make(int value);
     void push_back(int value);
+    void push_front(int value);
     void push_before(int value);
     Node* find(int val);
     void print();
@@ -40,7 +41,16 @@ void DLL::push_back(int value){
         tail=ptr;
     }
 }
-
+void DLL::push_front(int value){
+    Node *ptr=make(value);
+    if(empty()){
+        head=ptr; tail=ptr;
+    }else {
+        ptr->next=head;
+        head->prev=ptr;
+        head=ptr;
+    }
+}
 void DLL::print(){
     Node *ptr=head;
     for (; ptr!=NULL; ptr=ptr->next)
