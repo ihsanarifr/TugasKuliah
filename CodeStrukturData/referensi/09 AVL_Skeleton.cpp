@@ -1,4 +1,4 @@
-tree_node* AVL::deleteNode(tree_node* node, int key){
+//tree_node* AVL::deleteNode(tree_node* node, int key){
 #include<iostream>
 using namespace std;
 
@@ -108,10 +108,141 @@ tree_node* AVL::search(tree_node* node, int key)
 
 // Penyisipan key baru pada tree
 tree_node* AVL::insert(tree_node* node, int key){
+    if(node==NULL)
+        return(newNode(key));
+    if(key< node->key)
+        node->left = insert(node->left,key);
+    else
+        node->right = insert(node->right,key);
+
+    // update tinggi
+    node->height = max(height(node->left),height(node->right))+1;
+
+    int balance = getBalance(node);
+
+    // kasus 1: left left case
+    if(balance > 1 && key < node->left->key)
+        return rightRotate(node);
+
+    // kasus 4: right right case
+    if(balance < -1 && key > node->right->key)
+        return leftRotate(node);
+
+    // kasus 2: left right case
+    if(balance > 1 && key > node->left->key){
+        node->left = leftRotate(node->left);
+        return rightRotate(node);
+    }
+
+    // kasus 3: right left case
+    if(balance < -1 && key < node->right->key){
+        node->right = rightRotate(node->right);
+        return leftRotate(node);
+    }
+    return node;
 };
 
 // Penghapusan key pada tree
 tree_node* AVL::deleteNode(tree_node* node, int key){
+    if(node==NULL)
+        return node;
+    if(key < node->key)
+        node->left = deleteNode(node->left,key);
+    else if(key > node->right){
+        node->right = deleteNode(node->right,key);
+    }else{
+        //kondisi 1 & 2
+        if((node->left=NULL) || (node->right==NULL)){
+            tree_node *temp = node->left ? node->left : node->right;// If the tree had only one node then return
+    if (root == NULL)
+      return root;
+
+    // STEP 2: UPDATE HEIGHT OF THE CURRENT NODE
+    root->height = max(height(root->left), height(root->right)) + 1;
+
+    // STEP 3: GET THE BALANCE FACTOR OF THIS NODE (to check whether
+    //  this node became unbalanced)
+    int balance = getBalance(root);
+
+    // If this node becomes unbalanced, then there are 4 cases
+
+    // Left Left Case
+    if (balance > 1 && getBalance(root->left) >= 0)
+        return rightRotate(root);
+
+    // Left Right Case
+    if (balance > 1 && getBalance(root->left) < 0)
+    {
+        root->left =  leftRotate(root->left);
+        return rightRotate(root);
+    }
+
+    // Right Right Case
+    if (balance < -1 && getBalance(root->right) <= 0)
+        return leftRotate(root);
+
+    // Right Left Case
+    if (balance < -1 && getBalance(root->right) > 0)
+    {
+        root->right = rightRotate(root->right);
+        return leftRotate(root);
+    }
+
+    return root;
+
+            //kondisi 1
+            if(temp==NULL){
+                temp=node;
+                node=NULL;
+            }else{
+                *node = *temp;
+                temp=NULL;
+            }
+        }else{
+            // kondisi 3
+            node *temp = getPredecessorNode(node->right);
+
+            node->key=temp->key;
+            node->right = deleteNode(node->right,temp->key);
+        }
+    }
+
+    // balancing
+    // jika tree hanya satu node
+    if (node == NULL)
+      return node;
+
+    // STEP 2: update ketinggian
+    node->height = max(height(node->left), height(node->right)) + 1;
+
+    // STEP 3: dapat nilai ketinggian
+    int balance = getBalance(node);
+
+    // Jika tree tidak balance maka nanti akan dilakukan 4 kemungkinan rotasi
+
+    // kiri kiri
+    if (balance > 1 && getBalance(node->left) >= 0)
+        return rightRotate(node);
+
+    // kiri kanan
+    if (balance > 1 && getBalance(node->left) < 0)
+    {
+        node->left =  leftRotate(node->left);
+        return rightRotate(node);
+    }
+
+    // kanan kanan
+    if (balance < -1 && getBalance(node->right) <= 0)
+        return leftRotate(node);
+
+    // kanan kiri
+    if (balance < -1 && getBalance(node->right) > 0)
+    {
+        root->right = rightRotate(node->right);
+        return leftRotate(root);
+    }
+
+    return root;
 };
 
 // Yang dilakukan ketika node dikunjungi
@@ -186,6 +317,18 @@ tree_node * AVL::getPredecessorNode(tree_node* node){
 */
 tree_node* AVL::rightRotate(tree_node *y)
 {
+    tree_node *x = y->left;
+    tree_node *T2= x->right;
+
+    //rotasi
+    x->right = y;
+    y->left = T2;
+
+    // update tinggi
+    x->height = max(height(x->left),height(x->right))+1;
+    y->height = max(height(y->left),height(y->right))+1;
+
+    return x;
 }
 
 /* Left Rotation
@@ -198,6 +341,18 @@ tree_node* AVL::rightRotate(tree_node *y)
 */
 tree_node* AVL::leftRotate(tree_node *x)
 {
+    tree_node *y = x->left;
+    tree_node *T2= y->right;
+
+    //rotasi
+    y->right = x;
+    x->left = T2;
+
+    // update tinggi
+    y->height = max(height(y->left),height(y->right))+1;
+    x->height = max(height(x->left),height(x->right))+1;
+
+    return y;
 }
 
 // Mengecek keseimbangan pada node N
@@ -216,4 +371,4 @@ int AVL::height(tree_node *N)
     return N->height;
 }
 
-};
+//};

@@ -83,41 +83,6 @@ int main()
 		cout << queue.get(i) << " ";
 	}
 	cout << queue.get(n) << endl;
-    /*Queue queue;
-    Passenger p;
-    p.id = 1;
-	p.priority = ECONOMY_CLASS;
-	p.serviceTime = 1;
-
-	queue.push(p);
-
-	Passenger q;
-    q.id = 2;
-	q.priority = ECONOMY_CLASS;
-	q.serviceTime = 2;
-	queue.push(q);
-
-	Passenger x;
-    x.id = 2;
-	x.priority = BUSINESS_CLASS;
-	x.serviceTime = 3;
-	queue.push(x);
-
-	Passenger c;
-    c.id = 2;
-	c.priority = BUSINESS_CLASS;
-	c.serviceTime = 4;
-	queue.push(c);
-
-	cout << queue.front().priority << queue.front().serviceTime << endl;
-	queue.pop();
-	cout << queue.front().priority << queue.front().serviceTime << endl;
-	queue.pop();
-	cout << queue.front().priority << queue.front().serviceTime << endl;
-	queue.pop();
-
-	cout << queue.front().priority << queue.front().serviceTime << endl;
-	queue.pop();*/
 }
 
 void Queue::push(Passenger p)
@@ -144,41 +109,38 @@ void Queue::push(Passenger p)
     	else
     	{
 
-	         // cari yg kelas sama sampai akhir, insert
-	         Node * itr = Front;
+	         // insert
+	         Node * ptr = Front;
 
-	         while(itr->passenger.priority > p.priority && itr->next != NULL)
-	         	itr = itr->next;
+	         while(ptr->passenger.priority > p.priority && ptr->next != NULL)
+	         	ptr = ptr->next;
 
-	     	 while(itr->next != NULL && itr->next->passenger.priority == p.priority)
-	     		itr = itr->next;
+	     	 while(ptr->next != NULL && ptr->next->passenger.priority == p.priority)
+	     		ptr = ptr->next;
 
-	     	// jika bukan paling belakang
-	     	if(itr->next == NULL)
+	     	// jika tidak belakang
+	     	if(ptr->next == NULL)
 	     	{
 
 		     	// push back
-		     	itr->next = temp;
-		     	temp->prev = itr;
+		     	ptr->next = temp;
+		     	temp->prev = ptr;
 
-		     	// pindah rear ke akhir
-		     	while(itr->next != NULL)
-		     		itr = itr->next;
+		     	while(ptr->next != NULL)
+		     		ptr = ptr->next;
 
-		     	Rear = itr;
+		     	Rear = ptr;
 	   		}
 	   		else
 	   		{
-	   			Node * after = itr->next;
+	   			Node * after = ptr->next;
 
-	   			itr->next = temp;
-	   			temp->prev = itr;
+	   			ptr->next = temp;
+	   			temp->prev = ptr;
 	   			temp->next = after;
 	   			after->prev = temp;
 	   		}
     	}
-         // TO DO
-
     }
 }
 void Queue::pop()
