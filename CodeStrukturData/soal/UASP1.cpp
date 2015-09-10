@@ -6,23 +6,24 @@
 using namespace std;
 
 int main(){
-    int n,a,b,c,banyak=0;
+    int n,a,b,c,count=0;
     int i,j,k,l;
-    cin >> n >> a;
-    int jembatan[N][N]={0};
+    int bridge[N][N]={0};
     int total[N]={0};
+
+    cin >> n >> a;
 
     for(i=0;i<n;i++){
         cin >> b >> c;
-        jembatan[b][c]=jembatan[c][b]=1;
+        bridge[b][c]=bridge[c][b]=1;
     }
 
     for(j=1;j<=n;j++){
         for(k=1;k<=n;k++){
-            banyak=banyak+jembatan[j][k];
+            count=count+bridge[j][k];
         }
-        total[j]=banyak;
-        banyak=0;
+        total[j]=count;
+        count=0;
     }
 
     for (l=1;l<=n;l++){
