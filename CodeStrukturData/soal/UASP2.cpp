@@ -3,19 +3,19 @@
 using namespace std;
 
 int main(){
-    int temp[101]= {0};
-    int a,b,c,d,e,i,x,y,sum;
+    int backup[101]= {0};
+    int a,b,c,d,e,i,x,y,jumlah;
 
     cin >> a >> b;
     for(i=0;i<b;i++){
         cin >> c >> d >> e;
-        temp[c]++;
-        temp[d]++;
-        temp[e]++;
+        backup[c]++;
+        backup[d]++;
+        backup[e]++;
     }
     cin >> x >> y;
-    sum = temp[x]+temp[y];
-    cout << sum << endl;
+    jumlah = backup[x]+backup[y];
+    cout << jumlah << endl;
 
 
     return 0;
