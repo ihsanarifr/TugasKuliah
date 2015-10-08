@@ -1,0 +1,28 @@
+<?php
+class Comment{
+ private $name;
+ private $comment;
+ private $date;
+ 
+ public setName($name){
+  $this->name = $name;
+ }
+ public setComment($comment){
+  $this->comment = $name;
+ }
+ public setDate($date){
+  $this->date = $date;
+ }
+
+ public validation(){
+  if($this->name == "" || $this->comment == "")
+    return false;
+  else
+   return true;
+ }
+
+ public save(){
+  $db = fopen("data.txt",
+)
+ }
+}
