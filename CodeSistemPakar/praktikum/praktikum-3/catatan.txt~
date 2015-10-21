@@ -1,0 +1,3 @@
+?variabel 	-> akses value pertama
+$? 		-> tidak diakses sama sekali
+$?variabels	-> akses semua value

@@ -1,19 +1,19 @@
 package Tugas2;
 
-public class Anjing extends Hewan {
+public class Kucing extends Hewan {
     
-    public Anjing(String h) {
+    public Kucing(String h) {
         super(h);
     }
     @Override
     public void print() {
         super.print();
-        System.out.println("Ini Anjing");
+        System.out.println("Ini Kucing");
     }
 
     @Override
     public void berbunyi() {
-        System.out.println("Guk");
+        System.out.println("Meong");
     }
     
     public void berbunyi(int n){
