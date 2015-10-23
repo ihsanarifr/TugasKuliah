@@ -1,0 +1,3 @@
+group_2 = ['laki-laki';'perempuan';'laki-laki';'perempuan';'laki-laki';'perempuan']
+sample_2 = [155 50;175 63;160 55;177 68;163 52;176 78]
+sample_2 = [1]
