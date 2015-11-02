@@ -1,0 +1,130 @@
+Souce System
+Destination System
+
+Blok diagram :
+Source --> Transmitter -> Transmission -> Receiver -> Destination
+
+Digital Bit tream
+Analog Signal
+
+Evolusi Arsitektur Jaringan
+Telegraph Network -> message switching & digital transmission
+Telephone Network -> Circuit switching, analog transmission to digital, mobile communication
+Internet : packet switching & computer application
+Next-generation : multiservice packet switching network
+
+4 prase evolusi jaringan Komputer
+Phase I : telephone, telegrap, VHF/UHF relay radio, microwave 
+Phase II : Switching SPC, transmisi digital, explorer
+Phase III : packet switching, ASCII, RS-232, ARPANET, Model OSI
+Phase IV : ISDN & mobile communication
+
+Jaringan komunikasi adalah sekumpulan perangkat, mekanisme, prosedur dan fasilitas yang menyediakan sebuah layanan (service)
+
+Device : switch jaringan yang saling terhubung dengan transmisi
+
+Contoh :
+Jaringan telepon
+jaringan komputer
+jaringan seluler
+jaringan internet
+dari sudut end-system
+jaringan komunikasi adalah memberikan layanan memindahkan informasi antar pengguna yang berlokasi di berbagai tempat
+
+Membedakan dari service-service
+latency (delay)
+bandwidth
+loss rate
+jumlah end-system
+service interface
+keandalan, unicas vs multicase, realtime, etc
+Contoh lain :
+peer-to-peer : napster, gnutella, kazaa file exchange, SETI
+audio & video streaming
+network games
+on-line purchasing
+text messaging PDA, SMS
+VOIP
+Node pada jaringan : mesin atau komputer yang menyediakan koneksi bagi user dalam kasus circuit switching atau merelay data user dalam kasus komunikasi data
+Node bisa berupa : customer, switching,transmission, service
+
+Node diklasifikasikan sebagai :
+terminal : CRT, PC, Telepon (end device)
+host : komputer besar atau workstation
+multiplexor/concentrator
+switch local : fasilitas dan device terhubung untuk komunikasi secara langsung
+switch tandem : interkoneksi antar node
+gateway : peralatan interkoneksi antar jaringan
+Nama node jaringan :
+Data Circuit Terminating equipment (DTE) ITU-T
+Interface Message Processor (IPM) - ARPANET
+Switch - jaringan telepon
+PC
+Workstation
+Klasifikasi cakupan jaringan berdasarkan geografis :
+PAN (Personal)
+LAN (Local)
+MAN (Metropolitan)
+WAN (Wide) : Circuit switching, packet switching, frame relay, ATM (asynchronous Transfer Mode)
+Circuit Switching : jalur komunikasi khusus dibangun selama durasi komunikasi, contoh : jaringan telepon, ISDN (integrated service digital network)
+3 fase : establisment, data transfer, termination
+
+Packet Switching : data terkirim dalam bentuk paket, potongan kecil dalam satu waktu. Melintas antar node dan digunakan untuk komunikasi antar komputer atau terminal. contoh : TCP/IP, ATM, GPRS, GSM.
+2 tipe paket : Connectionless packet switching, dan Virtual Circuit Switching
+
+Frame Relay : menerapkan virtual circuit, mengatasi overhead sistem packet switching (packet error), menyediakan koneksi kecepatan tinggi
+
+ATM : evolusi dari frame relay, sedikit overhead untuk error control, ukuran packet tetap, kecepatan 10Mbps - Gbps, constant data rate dnegan mengunakan packet switching technique
+
+OSI LAYER
+Application
+Presentation
+Session
+Transport -> intermediate node
+Network -> Packets
+Data Link -> frames
+Physical -> bits
+
+Protokol Jaringan
+Aturan pikah yang berkomunikasi dan berinteraksi agar memberikan berbagai jenis layanan.
+
+Fungsi jaringan :
+switching : interkoneksi kanal
+routing : memilih lintasan dengan syarat tertentu
+flow control : memperlambat traffic
+security : mencegah akses
+backup : bereaksi terhadap kegagalan
+monitoring : traffic akuntabilitas
+internetworking : menyediakan komunikasi dengan jaringan lain
+manajemen jaringan : pengelolaan resource jaringan
+
+Kinerja Jaringan
+Delay/latency : processing delay, queuing delay, transmission delay
+Througput
+Packet loss
+Based on service requirement
+QoS pada jaringan multimedia : delay sensitif (audio 150 ms), loss tolerant
+Application layer -> RTSP
+Transport Layer -> RTP
+
+Next generation Network -> heterogeneous network
+jumlah dan jenis perangkat komputasi
+semua perangkat network capable
+kemampuan komunikasi antar perangkat (M2M comm)
+Perangkat Komputer saling berkomunikasi seperti
+Sensor -> Processor -> Actuator
+Untuk komunikasinya menggunakan seperti Zigbee, bluetooth, Wifi, Wimax
+
+Interface 
+Aktive : user control dan perangkat
+Passive : PC control di balik layar (background)
+Coercive : keduanya aktive dan passive
+
+Peranan Teknologi : end system, akses internet
+Peranan Regulasi : kebutuhan vital -> ketersediaan, jenis informasi -> sensor, privacy -> penyadapan
+Peranan pasar : jenis layanan, fleksibilitas dan skalabilitas layanan
+Peranan Standarisasi : IETF->RFC, ISO -> OSI, ITU-T
+
+
+
+
