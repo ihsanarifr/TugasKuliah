@@ -1,0 +1,14 @@
+untuk meremote public
+
+ssh komdat@172.18.88.20
+password : jarkom
+
+to : auriza.akbar@gmail.com
+subject : komdat06_G64144025
+
+Link Blog
+1 w3m
+2 wget
+3 ssh
+4 scp
+5 rsync
