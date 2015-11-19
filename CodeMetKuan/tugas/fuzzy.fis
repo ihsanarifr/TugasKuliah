@@ -1,0 +1,38 @@
+[System]
+Name='fuzzy'
+Type='mamdani'
+Version=2.0
+NumInputs=2
+NumOutputs=1
+NumRules=0
+AndMethod='min'
+OrMethod='max'
+ImpMethod='min'
+AggMethod='max'
+DefuzzMethod='centroid'
+
+[Input1]
+Name='harga'
+Range=[0 2000]
+NumMFs=3
+MF1='murah':'trapmf',[0 0 500 800]
+MF2='sedang':'trimf',[600 1000 1500]
+MF3='mahal':'trapmf',[1200 1500 2000 2000]
+
+[Input2]
+Name='rasa'
+Range=[0 25]
+NumMFs=3
+MF1='tidak_enak':'trapmf',[0 0 7 12]
+MF2='kurang_enak':'trapmf',[5 8 12 15]
+MF3='enak':'trapmf',[10 15 25 25]
+
+[Output1]
+Name='porsi'
+Range=[0 100]
+NumMFs=3
+MF1='kecil':'trapmf',[0 10 15 25]
+MF2='sedang':'trapmf',[20 25 50 75]
+MF3='besar':'trapmf',[60 75 100 100]
+
+[Rules]

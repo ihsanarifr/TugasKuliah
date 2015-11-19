@@ -1,0 +1,9 @@
+%membuat FIS baru dengan nama FIS = perusahaan
+a=newfis('perusahaan');
+
+%menambahkan variabel input permintaan dan persediaan
+a=addvar(a,'input','permintaan',[8 24]);
+a=addvar(a,'input','persediaan',[30 60]);
+
+%menambahkan variabel output jml_produksi
+a=addvar(a,'output','jml_produksi',[10 25]);
