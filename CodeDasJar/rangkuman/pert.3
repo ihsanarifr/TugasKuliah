@@ -1,0 +1,131 @@
+Transmisi digital mempunyai banyak tipe service
+
+Text -> input data (digital bit) -> transmitted signal (analog signal) -> receive(analog signal) -> output data (digital bit) -> text
+
+Analog - Analog => Modulasi : FM,AM
+Analog - Digital => Sampling
+Digital - Analog =>Modulasi ASK,FSK, PSK
+Digital - Digital => Coding : NRZ, Manchester
+
+Bit  angka dengan nilai 0 atau 1
+n bit memberikan 2^n
+Byte atau oktet, n = 8
+Computer word, n = 16, 32, 64
+
+Block : informasi dimuadt dalam block (text,data file,image,video)
+Size : bits /block atau bytes/block
+1 kbyte = 2^10 bytes
+1 Mbyte = 2^20 bytes
+
+Stream : informasi dihasilkan dan ditransmisikan secara kontinyu. real-time voice, streaming video.
+Bit rate = bits / second
+1 kbps = 10^3 bps
+1 Mbps = 10^6 bps
+
+Perhitungan Color Image
+COlor = RGB
+Total bit = 3xHxWxBit/pixel = 3HWB bits
+Contoh :
+8x10 inch picture at 400x400 pixel per inche2
+Maka :
+400x400x8x10 = 12.8 juta pixels
+12.8 megapixels x 3 bytes/pixel = 38.4 megabytes
+
+
+Kompresi : untuk efisiensi representasi, untuk menghasilkan informasi dengan jumlah bit lebih sedikit.
+Lossless : informasi aslinya diubah. ex : zip, GIF, PNG
+Lossy : mengubah informasi disekitar. ex : JPEG
+
+Rasio Kompresi : #bit file asli / bit file terkompresi
+
+Informasi Streaming : real-time voice sinyal harus digital dan mentransmitkan itu agar diproduksi
+Analog signal memiliki kontinyu per waktu.
+
+Analog - Digital
+Sampling : untuk mendapatkan sejumlah sampel dari sinyal analog x(t) pada interval waktu yang seragam
+Quantization : untuk memetakan setiap sampel ke nilai aproksimasi pada nilai presisi tertentu.
+Compression : untuk mendapatkan bit rate yang lebih rendah
+
+Rs = Bit rate =  bit/sample x sample/seconds
+
+Spektrum : rentang frekuensi sebuah sinyal
+Bandwidth Ws Hertz : lebar spektrum, menunjukkan seberapa cepat perubahan level sinyal.
+Minimum sampling rate = 2xWs
+Representasi akurasi : rentang aproksimasi kesalahan
+
+Telephone voice :
+Ws - 4khz -> 8000 sample/sec
+8 bit/sample
+Rs = 8x8000 = 64 kbps
+Hasil kompresi telepon seluler : 8-12 kbps
+
+CD Audio:
+Ws = 22 khz -> 44000 sample/sec
+16 bit/sample
+Rs=16x44000=704 kbps
+
+Latihan :
+Ws = 22 khz -> 44000 sample/sec
+16 bit/sample
+Rs=16x44000=704 kbps
+Stereo :2 channel x 704  = 1408 kbps : 1,4 Mbps
+5 Minutes : 5x60x1,4=420 Mbps
+
+Video Signal
+Sequence of picture frames : setiap picture didigitisasi dan dikompresi
+Frame Repetition rate : frame/second
+Frame resolution : Videoconference : small, TV ->standard, HDTV frames
+
+Rate = M bits/pixel x (WxH) pixel/frame x F frame/sec
+
+Vide conference : 176x144 at 30 frame/sec = 760000 pix/sec
+Broadcast TV : 720x480 at 30 frame/sec= 10.4 x 10^6 pixels/sec
+HDTV : 1920x1080 at 30 frame/sec = 67x10^5 pixel/sec
+
+Constant bit-rate : sinyal telepon digital menghasilkan steady stream misal 64 kbps
+Variable bit-rate : sinyal video digital mengasilkan aliran data dengan bit rate bervariasi.
+
+QoS : Delay, jitter, loss
+
+Transmitter : mengubah informasi ke dalam sinyal yang sesuai dengan media transmisi
+Receiver : menerima level energi teretntu dari media komunikasi
+
+Transmisi analog : semua detail harus direproduksi secara akurat.
+Transmisi digital : hanya level diskret yang harus direproduksi.
+
+
+Analog repeater : setiap repeter harus menyimpan sinyal analog sesuai bentuk aslinya.
+Digital repeater : dapat dirancang sehingga kemungkinan eror sangat kecil
+
+
+Sinyal Periodik :
+T = 1/f
+A = amplitudo (volt) = kekuatan sinyal setiap waktu
+f = frekuensi = kecepatan perulangan sinyal
+T - periode = waktu yang diperlukan untuk melakukan satu pengulangan
+
+Grafik Time domain menunjukkan perubahan sinyal dari waktu ke waktu
+Grafik frekuensi domain menunjukkan kommponen frekuensi berbeda
+Time domain s(t) : amplitudo pada setiap waktu tertentu ->osciloscope
+Frequency domain s(f) : jumlah energi (amplitudo puncak) pada frekuensi sinyal yang konsisten -> spectrum analyzer
+
+Channel bandwidth : rentang frekuensi dapat dilewatkan oleh channel
+Transmission rate : proposional terhadap bandwidth
+Nyquist rate (rmax) : transmission rate maksimal
+rmax = 2xWc pulse/sec
+
+semua sistem memiliki noise -> pergerakan elektron
+Kehadiran nois mempengaruhi akurasi pengukuran
+Bit Error Rate meningkat seiring dengan menurunnya signal-to-noise Ratio
+
+(SNR) Signal to noise ratio
+S/N : ratio antara kekuatan sinyal terhadap kekuatan noise pada sebuah transmisi.
+
+(SNR)db = 10 log10 S/N
+
+dimana S :signal power dan N: noise power
+Shannon Channel Capacity : memaksimum transmission rate yang dapat diterima pada kanal dengan bandwidth W Hz dan SNR S/N
+
+C = W log2 (1+S/N) bits per second
+
+
