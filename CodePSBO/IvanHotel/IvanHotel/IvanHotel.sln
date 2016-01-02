@@ -1,0 +1,27 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.21005.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IvanHotel", "MvcMovie\IvanHotel.csproj", "{1E33C0EF-3C99-46E2-9C48-A65548B6A75D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{20158857-3B0D-492C-A798-1E1427ED497B}"
+	ProjectSection(SolutionItems) = preProject
+		C:\USERS\IHSANARIFR\APPDATA\LOCAL\MICROSOFT\VISUALSTUDIO\12.0\EXTENSIONS\FJAWAEHO.LBW\description.html = C:\USERS\IHSANARIFR\APPDATA\LOCAL\MICROSOFT\VISUALSTUDIO\12.0\EXTENSIONS\FJAWAEHO.LBW\description.html
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1E33C0EF-3C99-46E2-9C48-A65548B6A75D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1E33C0EF-3C99-46E2-9C48-A65548B6A75D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1E33C0EF-3C99-46E2-9C48-A65548B6A75D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1E33C0EF-3C99-46E2-9C48-A65548B6A75D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

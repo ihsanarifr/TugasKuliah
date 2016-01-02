@@ -1,0 +1,454 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="DBReservasiHotelModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
+  <EntityType Name="TransaksiLayanan">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="LayananID" Type="int" />
+    <Property Name="TransaksiTamuID" Type="int" />
+  </EntityType>
+  <EntityType Name="Alamat">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Alamat" Type="varchar" MaxLength="255" />
+    <Property Name="RT" Type="int" />
+    <Property Name="RW" Type="int" />
+    <Property Name="KodePos" Type="int" />
+    <Property Name="KecamatanID" Type="int" />
+    <Property Name="KelurahanID" Type="int" />
+    <Property Name="KabupatenKotaID" Type="int" />
+    <Property Name="TamuID" Type="int" />
+  </EntityType>
+  <EntityType Name="FasilitasKamar">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="KamarID" Type="int" />
+    <Property Name="FasilitasID" Type="int" />
+    <Property Name="HargaWeekDay" Type="int" />
+    <Property Name="HargaWeekEnd" Type="int" />
+  </EntityType>
+  <EntityType Name="Kamar">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NomorKamar" Type="int" />
+    <Property Name="Kapasitas" Type="int" />
+    <Property Name="Status" Type="bit" />
+    <Property Name="TipeKamarID" Type="int" />
+  </EntityType>
+  <EntityType Name="Laundry">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Layanan">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Pegawai">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NIP" Type="varchar" MaxLength="255" />
+    <Property Name="Nama" Type="int" />
+    <Property Name="Alamat" Type="int" />
+  </EntityType>
+  <EntityType Name="Restaurant">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Tamu">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nama" Type="varchar" MaxLength="255" />
+    <Property Name="NomorIdentitas" Type="int" />
+    <Property Name="TipeIdentitasID" Type="int" />
+    <Property Name="JenisKelaminID" Type="int" />
+  </EntityType>
+  <EntityType Name="Fasilitas">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nama" Type="varchar" MaxLength="5255" />
+  </EntityType>
+  <EntityType Name="JenisKelamin">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nama" Type="varchar" MaxLength="255" />
+  </EntityType>
+  <EntityType Name="KabupatenKota">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nama" Type="varchar" MaxLength="255" />
+  </EntityType>
+  <EntityType Name="Kecamatan">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nama" Type="varchar" MaxLength="255" />
+  </EntityType>
+  <EntityType Name="Kontak">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Kontak" Type="int" />
+    <Property Name="TipeKontakID" Type="int" />
+    <Property Name="TamuID" Type="int" />
+  </EntityType>
+  <EntityType Name="TipeIdentitas">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nama" Type="varchar" MaxLength="255" />
+  </EntityType>
+  <EntityType Name="TipeKamar">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nama" Type="varchar" MaxLength="255" />
+  </EntityType>
+  <EntityType Name="TipeKontak">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nama" Type="varchar" MaxLength="255" />
+  </EntityType>
+  <EntityType Name="TransaksiTamu">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CheckIn" Type="datetime" />
+    <Property Name="CheckOut" Type="datetime" />
+    <Property Name="TamuID" Type="int" />
+    <Property Name="PegawaiID" Type="int" />
+    <Property Name="KamarID" Type="int" />
+  </EntityType>
+  <Association Name="FK_Alamat_KabupatenKota">
+    <End Role="KabupatenKota" Type="Self.KabupatenKota" Multiplicity="0..1" />
+    <End Role="Alamat" Type="Self.Alamat" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="KabupatenKota">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Alamat">
+        <PropertyRef Name="KabupatenKotaID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Alamat_Kecamatan">
+    <End Role="Kecamatan" Type="Self.Kecamatan" Multiplicity="0..1" />
+    <End Role="Alamat" Type="Self.Alamat" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Kecamatan">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Alamat">
+        <PropertyRef Name="KecamatanID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Alamat_Tamu">
+    <End Role="Tamu" Type="Self.Tamu" Multiplicity="0..1" />
+    <End Role="Alamat" Type="Self.Alamat" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Tamu">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Alamat">
+        <PropertyRef Name="TamuID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_FasilitasKamar_Fasilitas">
+    <End Role="Fasilitas" Type="Self.Fasilitas" Multiplicity="0..1" />
+    <End Role="FasilitasKamar" Type="Self.FasilitasKamar" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Fasilitas">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="FasilitasKamar">
+        <PropertyRef Name="FasilitasID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_FasilitasKamar_Kamar">
+    <End Role="Kamar" Type="Self.Kamar" Multiplicity="0..1" />
+    <End Role="FasilitasKamar" Type="Self.FasilitasKamar" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Kamar">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="FasilitasKamar">
+        <PropertyRef Name="KamarID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Kamar_TipeKamar">
+    <End Role="TipeKamar" Type="Self.TipeKamar" Multiplicity="0..1" />
+    <End Role="Kamar" Type="Self.Kamar" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TipeKamar">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Kamar">
+        <PropertyRef Name="TipeKamarID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Kontak_Tamu">
+    <End Role="Tamu" Type="Self.Tamu" Multiplicity="0..1" />
+    <End Role="Kontak" Type="Self.Kontak" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Tamu">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Kontak">
+        <PropertyRef Name="TamuID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Kontak_TipeKontak">
+    <End Role="TipeKontak" Type="Self.TipeKontak" Multiplicity="0..1" />
+    <End Role="Kontak" Type="Self.Kontak" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TipeKontak">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Kontak">
+        <PropertyRef Name="TipeKontakID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Layanan_Laundry">
+    <End Role="Laundry" Type="Self.Laundry" Multiplicity="1" />
+    <End Role="Layanan" Type="Self.Layanan" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Laundry">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Layanan">
+        <PropertyRef Name="ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Layanan_Restaurant">
+    <End Role="Restaurant" Type="Self.Restaurant" Multiplicity="1" />
+    <End Role="Layanan" Type="Self.Layanan" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Restaurant">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Layanan">
+        <PropertyRef Name="ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Tamu_JenisKelamin">
+    <End Role="JenisKelamin" Type="Self.JenisKelamin" Multiplicity="0..1" />
+    <End Role="Tamu" Type="Self.Tamu" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="JenisKelamin">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Tamu">
+        <PropertyRef Name="JenisKelaminID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Tamu_TipeIdentitas">
+    <End Role="TipeIdentitas" Type="Self.TipeIdentitas" Multiplicity="0..1" />
+    <End Role="Tamu" Type="Self.Tamu" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TipeIdentitas">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Tamu">
+        <PropertyRef Name="TipeIdentitasID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TransaksiLayanan_Layanan">
+    <End Role="Layanan" Type="Self.Layanan" Multiplicity="0..1" />
+    <End Role="TransaksiLayanan" Type="Self.TransaksiLayanan" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Layanan">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="TransaksiLayanan">
+        <PropertyRef Name="LayananID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TransaksiLayanan_TransaksiTamu">
+    <End Role="TransaksiTamu" Type="Self.TransaksiTamu" Multiplicity="0..1" />
+    <End Role="TransaksiLayanan" Type="Self.TransaksiLayanan" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TransaksiTamu">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="TransaksiLayanan">
+        <PropertyRef Name="TransaksiTamuID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TransaksiTamu_Kamar">
+    <End Role="Kamar" Type="Self.Kamar" Multiplicity="0..1" />
+    <End Role="TransaksiTamu" Type="Self.TransaksiTamu" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Kamar">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="TransaksiTamu">
+        <PropertyRef Name="KamarID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TransaksiTamu_Pegawai">
+    <End Role="Pegawai" Type="Self.Pegawai" Multiplicity="0..1" />
+    <End Role="TransaksiTamu" Type="Self.TransaksiTamu" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Pegawai">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="TransaksiTamu">
+        <PropertyRef Name="PegawaiID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TransaksiTamu_Tamu">
+    <End Role="Tamu" Type="Self.Tamu" Multiplicity="0..1" />
+    <End Role="TransaksiTamu" Type="Self.TransaksiTamu" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Tamu">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="TransaksiTamu">
+        <PropertyRef Name="TamuID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="DBReservasiHotelModelStoreContainer">
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TransaksiLayanan" EntityType="Self.TransaksiLayanan" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Alamat" EntityType="Self.Alamat" Schema="Mst" store:Type="Tables" />
+    <EntitySet Name="FasilitasKamar" EntityType="Self.FasilitasKamar" Schema="Mst" store:Type="Tables" />
+    <EntitySet Name="Kamar" EntityType="Self.Kamar" Schema="Mst" store:Type="Tables" />
+    <EntitySet Name="Laundry" EntityType="Self.Laundry" Schema="Mst" store:Type="Tables" />
+    <EntitySet Name="Layanan" EntityType="Self.Layanan" Schema="Mst" store:Type="Tables" />
+    <EntitySet Name="Pegawai" EntityType="Self.Pegawai" Schema="Mst" store:Type="Tables" />
+    <EntitySet Name="Restaurant" EntityType="Self.Restaurant" Schema="Mst" store:Type="Tables" />
+    <EntitySet Name="Tamu" EntityType="Self.Tamu" Schema="Mst" store:Type="Tables" />
+    <EntitySet Name="Fasilitas" EntityType="Self.Fasilitas" Schema="Ref" store:Type="Tables" />
+    <EntitySet Name="JenisKelamin" EntityType="Self.JenisKelamin" Schema="Ref" store:Type="Tables" />
+    <EntitySet Name="KabupatenKota" EntityType="Self.KabupatenKota" Schema="Ref" store:Type="Tables" />
+    <EntitySet Name="Kecamatan" EntityType="Self.Kecamatan" Schema="Ref" store:Type="Tables" />
+    <EntitySet Name="Kontak" EntityType="Self.Kontak" Schema="Ref" store:Type="Tables" />
+    <EntitySet Name="TipeIdentitas" EntityType="Self.TipeIdentitas" Schema="Ref" store:Type="Tables" />
+    <EntitySet Name="TipeKamar" EntityType="Self.TipeKamar" Schema="Ref" store:Type="Tables" />
+    <EntitySet Name="TipeKontak" EntityType="Self.TipeKontak" Schema="Ref" store:Type="Tables" />
+    <EntitySet Name="TransaksiTamu" EntityType="Self.TransaksiTamu" Schema="Trx" store:Type="Tables" />
+    <AssociationSet Name="FK_Alamat_KabupatenKota" Association="Self.FK_Alamat_KabupatenKota">
+      <End Role="KabupatenKota" EntitySet="KabupatenKota" />
+      <End Role="Alamat" EntitySet="Alamat" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Alamat_Kecamatan" Association="Self.FK_Alamat_Kecamatan">
+      <End Role="Kecamatan" EntitySet="Kecamatan" />
+      <End Role="Alamat" EntitySet="Alamat" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Alamat_Tamu" Association="Self.FK_Alamat_Tamu">
+      <End Role="Tamu" EntitySet="Tamu" />
+      <End Role="Alamat" EntitySet="Alamat" />
+    </AssociationSet>
+    <AssociationSet Name="FK_FasilitasKamar_Fasilitas" Association="Self.FK_FasilitasKamar_Fasilitas">
+      <End Role="Fasilitas" EntitySet="Fasilitas" />
+      <End Role="FasilitasKamar" EntitySet="FasilitasKamar" />
+    </AssociationSet>
+    <AssociationSet Name="FK_FasilitasKamar_Kamar" Association="Self.FK_FasilitasKamar_Kamar">
+      <End Role="Kamar" EntitySet="Kamar" />
+      <End Role="FasilitasKamar" EntitySet="FasilitasKamar" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Kamar_TipeKamar" Association="Self.FK_Kamar_TipeKamar">
+      <End Role="TipeKamar" EntitySet="TipeKamar" />
+      <End Role="Kamar" EntitySet="Kamar" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Kontak_Tamu" Association="Self.FK_Kontak_Tamu">
+      <End Role="Tamu" EntitySet="Tamu" />
+      <End Role="Kontak" EntitySet="Kontak" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Kontak_TipeKontak" Association="Self.FK_Kontak_TipeKontak">
+      <End Role="TipeKontak" EntitySet="TipeKontak" />
+      <End Role="Kontak" EntitySet="Kontak" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Layanan_Laundry" Association="Self.FK_Layanan_Laundry">
+      <End Role="Laundry" EntitySet="Laundry" />
+      <End Role="Layanan" EntitySet="Layanan" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Layanan_Restaurant" Association="Self.FK_Layanan_Restaurant">
+      <End Role="Restaurant" EntitySet="Restaurant" />
+      <End Role="Layanan" EntitySet="Layanan" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Tamu_JenisKelamin" Association="Self.FK_Tamu_JenisKelamin">
+      <End Role="JenisKelamin" EntitySet="JenisKelamin" />
+      <End Role="Tamu" EntitySet="Tamu" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Tamu_TipeIdentitas" Association="Self.FK_Tamu_TipeIdentitas">
+      <End Role="TipeIdentitas" EntitySet="TipeIdentitas" />
+      <End Role="Tamu" EntitySet="Tamu" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TransaksiLayanan_Layanan" Association="Self.FK_TransaksiLayanan_Layanan">
+      <End Role="Layanan" EntitySet="Layanan" />
+      <End Role="TransaksiLayanan" EntitySet="TransaksiLayanan" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TransaksiLayanan_TransaksiTamu" Association="Self.FK_TransaksiLayanan_TransaksiTamu">
+      <End Role="TransaksiTamu" EntitySet="TransaksiTamu" />
+      <End Role="TransaksiLayanan" EntitySet="TransaksiLayanan" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TransaksiTamu_Kamar" Association="Self.FK_TransaksiTamu_Kamar">
+      <End Role="Kamar" EntitySet="Kamar" />
+      <End Role="TransaksiTamu" EntitySet="TransaksiTamu" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TransaksiTamu_Pegawai" Association="Self.FK_TransaksiTamu_Pegawai">
+      <End Role="Pegawai" EntitySet="Pegawai" />
+      <End Role="TransaksiTamu" EntitySet="TransaksiTamu" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TransaksiTamu_Tamu" Association="Self.FK_TransaksiTamu_Tamu">
+      <End Role="Tamu" EntitySet="Tamu" />
+      <End Role="TransaksiTamu" EntitySet="TransaksiTamu" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

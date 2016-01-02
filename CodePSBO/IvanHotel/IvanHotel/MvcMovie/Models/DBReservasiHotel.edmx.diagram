@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="fb813b79865945888a00d16e690e6fcb" Name="Diagram1">
+        <EntityTypeShape EntityType="DBReservasiHotelModel.sysdiagrams" Width="1.5" PointX="9.75" PointY="1.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBReservasiHotelModel.TransaksiLayanan" Width="1.5" PointX="7.5" PointY="2.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBReservasiHotelModel.Alamat" Width="1.5" PointX="5.25" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBReservasiHotelModel.FasilitasKamar" Width="1.5" PointX="8.25" PointY="9.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBReservasiHotelModel.Kamar" Width="1.5" PointX="3" PointY="9.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBReservasiHotelModel.Laundry" Width="1.5" PointX="3" PointY="15.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBReservasiHotelModel.Layanan" Width="1.5" PointX="5.25" PointY="16.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBReservasiHotelModel.Pegawai" Width="1.5" PointX="3" PointY="13" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBReservasiHotelModel.Restaurant" Width="1.5" PointX="3" PointY="18.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBReservasiHotelModel.Tamu" Width="1.5" PointX="3" PointY="5.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBReservasiHotelModel.Fasilitas" Width="1.5" PointX="6" PointY="13.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBReservasiHotelModel.JenisKelamin" Width="1.5" PointX="0.75" PointY="6.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBReservasiHotelModel.KabupatenKota" Width="1.5" PointX="3" PointY="3.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBReservasiHotelModel.Kecamatan" Width="1.5" PointX="3" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBReservasiHotelModel.Kontak" Width="1.5" PointX="8.25" PointY="6.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBReservasiHotelModel.TipeIdentitas" Width="1.5" PointX="0.75" PointY="3.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBReservasiHotelModel.TipeKamar" Width="1.5" PointX="0.75" PointY="10.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBReservasiHotelModel.TipeKontak" Width="1.5" PointX="6" PointY="10.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBReservasiHotelModel.TransaksiTamu" Width="1.5" PointX="5.25" PointY="1.875" IsExpanded="true" />
+        <AssociationConnector Association="DBReservasiHotelModel.FK_TransaksiLayanan_Layanan" ManuallyRouted="false" />
+        <AssociationConnector Association="DBReservasiHotelModel.FK_TransaksiLayanan_TransaksiTamu" ManuallyRouted="false" />
+        <AssociationConnector Association="DBReservasiHotelModel.FK_Alamat_KabupatenKota" ManuallyRouted="false" />
+        <AssociationConnector Association="DBReservasiHotelModel.FK_Alamat_Kecamatan" ManuallyRouted="false" />
+        <AssociationConnector Association="DBReservasiHotelModel.FK_Alamat_Tamu" ManuallyRouted="false" />
+        <AssociationConnector Association="DBReservasiHotelModel.FK_FasilitasKamar_Fasilitas" ManuallyRouted="false" />
+        <AssociationConnector Association="DBReservasiHotelModel.FK_FasilitasKamar_Kamar" ManuallyRouted="false" />
+        <AssociationConnector Association="DBReservasiHotelModel.FK_Kamar_TipeKamar" ManuallyRouted="false" />
+        <AssociationConnector Association="DBReservasiHotelModel.FK_TransaksiTamu_Kamar" ManuallyRouted="false" />
+        <AssociationConnector Association="DBReservasiHotelModel.FK_Layanan_Laundry" ManuallyRouted="false" />
+        <AssociationConnector Association="DBReservasiHotelModel.FK_Layanan_Restaurant" ManuallyRouted="false" />
+        <AssociationConnector Association="DBReservasiHotelModel.FK_TransaksiTamu_Pegawai" ManuallyRouted="false" />
+        <AssociationConnector Association="DBReservasiHotelModel.FK_Kontak_Tamu" ManuallyRouted="false" />
+        <AssociationConnector Association="DBReservasiHotelModel.FK_Tamu_JenisKelamin" ManuallyRouted="false" />
+        <AssociationConnector Association="DBReservasiHotelModel.FK_Tamu_TipeIdentitas" ManuallyRouted="false" />
+        <AssociationConnector Association="DBReservasiHotelModel.FK_TransaksiTamu_Tamu" ManuallyRouted="false" />
+        <AssociationConnector Association="DBReservasiHotelModel.FK_Kontak_TipeKontak" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

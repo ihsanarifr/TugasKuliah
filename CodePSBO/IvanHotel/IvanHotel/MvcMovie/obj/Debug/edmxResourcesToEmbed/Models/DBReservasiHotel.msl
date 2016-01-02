@@ -1,0 +1,182 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="DBReservasiHotelModelStoreContainer" CdmEntityContainer="DBReservasiHotelEntities">
+    <EntitySetMapping Name="sysdiagrams">
+      <EntityTypeMapping TypeName="DBReservasiHotelModel.sysdiagrams">
+        <MappingFragment StoreEntitySet="sysdiagrams">
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+          <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="definition" ColumnName="definition" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TransaksiLayanan">
+      <EntityTypeMapping TypeName="DBReservasiHotelModel.TransaksiLayanan">
+        <MappingFragment StoreEntitySet="TransaksiLayanan">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="LayananID" ColumnName="LayananID" />
+          <ScalarProperty Name="TransaksiTamuID" ColumnName="TransaksiTamuID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Alamat">
+      <EntityTypeMapping TypeName="DBReservasiHotelModel.Alamat">
+        <MappingFragment StoreEntitySet="Alamat">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Alamat1" ColumnName="Alamat" />
+          <ScalarProperty Name="RT" ColumnName="RT" />
+          <ScalarProperty Name="RW" ColumnName="RW" />
+          <ScalarProperty Name="KodePos" ColumnName="KodePos" />
+          <ScalarProperty Name="KecamatanID" ColumnName="KecamatanID" />
+          <ScalarProperty Name="KelurahanID" ColumnName="KelurahanID" />
+          <ScalarProperty Name="KabupatenKotaID" ColumnName="KabupatenKotaID" />
+          <ScalarProperty Name="TamuID" ColumnName="TamuID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="FasilitasKamar">
+      <EntityTypeMapping TypeName="DBReservasiHotelModel.FasilitasKamar">
+        <MappingFragment StoreEntitySet="FasilitasKamar">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="KamarID" ColumnName="KamarID" />
+          <ScalarProperty Name="FasilitasID" ColumnName="FasilitasID" />
+          <ScalarProperty Name="HargaWeekDay" ColumnName="HargaWeekDay" />
+          <ScalarProperty Name="HargaWeekEnd" ColumnName="HargaWeekEnd" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Kamar">
+      <EntityTypeMapping TypeName="DBReservasiHotelModel.Kamar">
+        <MappingFragment StoreEntitySet="Kamar">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="NomorKamar" ColumnName="NomorKamar" />
+          <ScalarProperty Name="Kapasitas" ColumnName="Kapasitas" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="TipeKamarID" ColumnName="TipeKamarID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Laundry">
+      <EntityTypeMapping TypeName="DBReservasiHotelModel.Laundry">
+        <MappingFragment StoreEntitySet="Laundry">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Layanan">
+      <EntityTypeMapping TypeName="DBReservasiHotelModel.Layanan">
+        <MappingFragment StoreEntitySet="Layanan">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Pegawai">
+      <EntityTypeMapping TypeName="DBReservasiHotelModel.Pegawai">
+        <MappingFragment StoreEntitySet="Pegawai">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="NIP" ColumnName="NIP" />
+          <ScalarProperty Name="Nama" ColumnName="Nama" />
+          <ScalarProperty Name="Alamat" ColumnName="Alamat" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Restaurant">
+      <EntityTypeMapping TypeName="DBReservasiHotelModel.Restaurant">
+        <MappingFragment StoreEntitySet="Restaurant">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Tamu">
+      <EntityTypeMapping TypeName="DBReservasiHotelModel.Tamu">
+        <MappingFragment StoreEntitySet="Tamu">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Nama" ColumnName="Nama" />
+          <ScalarProperty Name="NomorIdentitas" ColumnName="NomorIdentitas" />
+          <ScalarProperty Name="TipeIdentitasID" ColumnName="TipeIdentitasID" />
+          <ScalarProperty Name="JenisKelaminID" ColumnName="JenisKelaminID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Fasilitas">
+      <EntityTypeMapping TypeName="DBReservasiHotelModel.Fasilitas">
+        <MappingFragment StoreEntitySet="Fasilitas">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Nama" ColumnName="Nama" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="JenisKelamin">
+      <EntityTypeMapping TypeName="DBReservasiHotelModel.JenisKelamin">
+        <MappingFragment StoreEntitySet="JenisKelamin">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Nama" ColumnName="Nama" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="KabupatenKota">
+      <EntityTypeMapping TypeName="DBReservasiHotelModel.KabupatenKota">
+        <MappingFragment StoreEntitySet="KabupatenKota">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Nama" ColumnName="Nama" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Kecamatan">
+      <EntityTypeMapping TypeName="DBReservasiHotelModel.Kecamatan">
+        <MappingFragment StoreEntitySet="Kecamatan">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Nama" ColumnName="Nama" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Kontak">
+      <EntityTypeMapping TypeName="DBReservasiHotelModel.Kontak">
+        <MappingFragment StoreEntitySet="Kontak">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Kontak1" ColumnName="Kontak" />
+          <ScalarProperty Name="TipeKontakID" ColumnName="TipeKontakID" />
+          <ScalarProperty Name="TamuID" ColumnName="TamuID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TipeIdentitas">
+      <EntityTypeMapping TypeName="DBReservasiHotelModel.TipeIdentitas">
+        <MappingFragment StoreEntitySet="TipeIdentitas">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Nama" ColumnName="Nama" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TipeKamar">
+      <EntityTypeMapping TypeName="DBReservasiHotelModel.TipeKamar">
+        <MappingFragment StoreEntitySet="TipeKamar">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Nama" ColumnName="Nama" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TipeKontak">
+      <EntityTypeMapping TypeName="DBReservasiHotelModel.TipeKontak">
+        <MappingFragment StoreEntitySet="TipeKontak">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Nama" ColumnName="Nama" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TransaksiTamu">
+      <EntityTypeMapping TypeName="DBReservasiHotelModel.TransaksiTamu">
+        <MappingFragment StoreEntitySet="TransaksiTamu">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="CheckIn" ColumnName="CheckIn" />
+          <ScalarProperty Name="CheckOut" ColumnName="CheckOut" />
+          <ScalarProperty Name="TamuID" ColumnName="TamuID" />
+          <ScalarProperty Name="PegawaiID" ColumnName="PegawaiID" />
+          <ScalarProperty Name="KamarID" ColumnName="KamarID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
