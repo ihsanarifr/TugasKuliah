@@ -1,0 +1,73 @@
+﻿@model IEnumerable<IvanHotel.Models.Kamar>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/Back/_Layout.cshtml";
+}
+<div class="box box-success">
+    <div class="box-header with-border">
+        <h3 class="box-title">Editor Kamar</h3>
+        <div class="box-tools pull-right">
+            <a href="@Url.Action("Create","Kamar")" class="btn btn-info btn-flat">Tambah</a>
+        </div>
+    </div>
+    <div class="box-body">
+        <table class="table table-responsive table-striped" id="table">
+            <thead>
+                <tr>
+                    <th>
+                        @Html.DisplayNameFor(model => model.NomorKamar)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Kapasitas)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Status)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Lantai)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.TipeKamar.Nama)
+                    </th>
+                    <th></th>
+                </tr>
+
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.NomorKamar)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Kapasitas)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Status)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Lantai)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.TipeKamar.Nama)
+                        </td>
+                        <td width="200">
+                            <div class="btn-group">
+                                @Html.ActionLink("Edit", "Edit", new { id = item.ID }, new { @class = "btn btn-warning btn-sm btn-flat" })
+                                @Html.ActionLink("Details", "Details", new { id = item.ID }, new { @class = "btn btn-primary btn-sm btn-flat" })
+                                @Html.ActionLink("Delete", "Delete", new { id = item.ID }, new { @class = "btn btn-danger btn-sm btn-flat" })
+                            </div>
+                        </td>
+                    </tr>
+                }
+            </thead>
+        </table>
+    </div>
+</div>
+@section Scripts{
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('#table').DataTable();
+        });
+    </script>
+}

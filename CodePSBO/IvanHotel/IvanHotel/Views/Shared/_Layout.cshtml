@@ -1,0 +1,46 @@
+﻿<!--
+Author: W3layouts
+Author URL: http://w3layouts.com
+License: Creative Commons Attribution 3.0 Unported
+License URL: http://creativecommons.org/licenses/by/3.0/
+-->
+<!DOCTYPE html>
+<html>
+@Html.Partial("_Header")
+<body>
+    <!--header starts-->
+    @*@Html.Partial("_Menu")*@
+    <div class="header">
+        <div class="top-header">
+            <div class="container">
+                <div class="logo">
+                    @*<a href="index.html"><img src="images/logo.png" /></a>*@
+                </div>
+                <span class="menu"> </span>
+                <div class="m-clear"></div>
+                <div class="top-menu">
+                    <ul>
+                        <li class="active"><a href="index.html">HOME</a></li>
+                        <li><a class="scroll" href="facilities.html">FASILITAS</a></li>
+                        <li><a class="scroll" href="restaurant.html">RESTORAN</a></li>
+                        <li><a class="scroll" href="conference.html">ROOM</a></li>
+                        <li><a class="scroll" href="booking.html">BOOKING</a></li>
+                        <li><a class="scroll" href="contact.html">KONTAK</a></li>
+                    </ul>
+                    <script>
+                        $("span.menu").click(function () {
+                            $(".top-menu ul").slideToggle(200);
+                        });
+                    </script>
+                </div>
+                <div class="clearfix"></div>
+            </div>
+        </div>
+            @RenderSection("Banner", required: false)
+    </div>
+    @RenderBody()
+    @Html.Partial("_Footer")
+    <!---->
+</body>
+    @RenderSection("Scripts",required:false)
+</html>

@@ -1,0 +1,108 @@
+﻿@model IEnumerable<IvanHotel.Models.Tamu>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="contact-bg2">
+    <div class="container">
+        @if (@TempData["status"] == "true")
+        {
+            <div class="alert alert-danger alert-error">
+                <a href="#" class="close" data-dismiss="alert">&times;</a>
+                <strong>Gagal!</strong>&nbsp; @TempData["pesan"].
+            </div>
+        }
+        else
+        {
+            <div class="booking">
+                <h3>Booking</h3>
+                <div class="col-md-12 booking-form">
+                    @using (Html.BeginForm())
+                    {
+                        @Html.AntiForgeryToken()
+                        <h5>NAMA</h5>
+                        <input type="text" name="Nama" value="">
+                        <h5>NOMOR IDENTITAS</h5>
+                        <div class="col-md-3"><div class="row">@Html.DropDownList("TipeIdentitasID", null, String.Empty, new { @class = "arrival2" })</div></div>
+                        <div class="col-md-9"><input type="text" class="time" name="NomorIdentitas"></div>
+                        <h5>JENIS KELAMIMN</h5>
+                        @Html.DropDownList("JenisKelaminID", null, String.Empty, new { @class = "arrival" })
+                        <h5>PHONE</h5>
+                        <input type="text" name="phone">
+                        @*<h5>KECAMATAN</h5>
+                            @Html.DropDownList("Kecamatan", null, String.Empty, new { @class="arrival"})
+                            <h5>Kabupaten/Kota</h5>
+                            @Html.DropDownList("KabupatenKota", null, String.Empty, new { @class="arrival"})*@
+                        @*<h5>Kode Pos</h5>
+                            <input type="text" value="">*@
+                        <h5>ALAMAT</h5>
+                        <textarea name="alamat"></textarea>
+                        <br />
+                        <div class="input_fields_wrap">
+                            <button class="add_field_button">Tambah Kamar</button>
+                            <div>
+                                <div class="row">
+                                    <div class="col-md-3">
+                                        <h5>Tipe Kamar</h5>
+                                        @Html.DropDownList("TipeKamar", null, String.Empty, new { @class = "arrival2" })
+                                    </div>
+                                    <div class="col-md-3">
+                                        <h5>CHECK IN</h5><input type="date" value="Select date" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Select date';}" name="checkin" />
+                                    </div>
+                                    <div class="col-md-4">
+                                        <h5>CHECK OUT</h5><input type="date" value="Select date" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Select date';}" name="checkout">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <h5 class="mem">MEMBERS</h5>
+                        <input min="1" type="number" id="quantity" name="quantity" value="1" class="form-control input-small">
+                        <input type="submit" value="Submit">
+                        <input type="reset" value="Reset">
+                    }
+                </div>
+                <div class="clearfix"> </div>
+            </div>
+        }
+    </div>
+</div>
+@section Scripts {
+    @Scripts.Render("~/bundles/jquery")
+    <script>
+    $(document).ready(function () {
+        var max_fields = 10; //maximum input boxes allowed
+        var wrapper = $(".input_fields_wrap"); //Fields wrapper
+        var add_button = $(".add_field_button"); //Add button ID
+
+        var x = 1; //initlal text box count
+        $(add_button).click(function (e) { //on add input button click
+            e.preventDefault();
+            if (x < max_fields) { //max input box allowed
+                x++; //text box increment
+                $(wrapper).append('<div class="row">'
+                                    +'<div class="col-md-3">'+
+                                        '<h5>Tipe Kamar</h5>'+
+                                        '<select class="arrival2" id="TipeKamar" name="TipeKamar">'+
+                                            '<option value="1">Standard Single Room</option>'+
+                                            '<option value="2">Suite Room</option>'+
+                                            '<option value="3">Single Room</option>'+
+                                            '<option value="4">Double Room</option></select>'+
+                                     '</div>'+
+                                   '<div class="col-md-3">'+
+                                   '<h5>CHECK IN</h5>'+
+                                        '<input type="date" value="Select date" name="checkin" />'+
+                                        '</div><div class="col-md-4">'+
+                                        '<h5>CHECK OUT</h5><input type="date" value="Select date" name="checkout">'+
+                '</div><div class="col-md-2"><h5>&nbsp;</h5></div><a href="#" class="remove_field">Remove</a></div>'); //add input box
+            }
+        });
+
+        $(wrapper).on("click", ".remove_field", function (e) { //user click on remove text
+            e.preventDefault();
+            $(this).parent('div').remove();
+            x--;
+        })
+    });
+    </script>
+}

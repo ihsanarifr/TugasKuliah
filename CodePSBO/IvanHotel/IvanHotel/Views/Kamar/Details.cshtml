@@ -1,0 +1,62 @@
+﻿@model IvanHotel.Models.Kamar
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/Back/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Kamar</h4>
+	<hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.NomorKamar)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NomorKamar)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Kapasitas)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Kapasitas)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Status)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Status)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Lantai)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Lantai)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TipeKamar.Nama)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TipeKamar.Nama)
+        </dd>
+        @foreach (IvanHotel.Models.FasilitasKamar item in ViewBag.ListFasilitas)
+        {
+                
+        }
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

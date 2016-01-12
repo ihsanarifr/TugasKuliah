@@ -1,0 +1,51 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    @Html.Partial("~/Views/Shared/back/_Header.cshtml")
+    @RenderSection("styles", required: false)
+</head>
+<body class="hold-transition skin-green sidebar-mini">
+    <div class="wrapper">
+        <header class="main-header">
+            @Html.Partial("~/Views/Shared/Back/_Menu.cshtml")
+        </header>
+        <!-- Left side column. contains the logo and sidebar -->
+        <aside class="main-sidebar">
+            @Html.Partial("~/Views/Shared/Back/_Sidebar.cshtml")
+        </aside>
+
+        <!-- Content Wrapper. Contains page content -->
+        <div class="content-wrapper">
+            <section class="content-header">
+                <h1>
+                    @ViewBag.Title
+                </h1>
+                <ol class="breadcrumb">
+                    <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
+                    <li class="active">@ViewBag.Title</li>
+                </ol>
+            </section>
+            <section class="content">
+                <div class="row">
+                    <div class="col-xs-12">
+                        <!-- Content Header (Page header) -->
+                        @RenderBody()
+                    </div>
+                </div>
+                </section>
+            </div><!-- /.content-wrapper -->
+
+            <footer class="main-footer">
+                @Html.Partial("~/Views/Shared/Back/_Footer.cshtml")
+            </footer>
+                </div><!-- ./wrapper -->
+                <!-- jQuery UI 1.11.4 -->
+                <script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
+                <!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
+                <script>
+                    $.widget.bridge('uibutton', $.ui.button);
+                </script>
+                @Scripts.Render("~/bundles/back")
+                @RenderSection("scripts", required: false)
+</body>
+</html>
