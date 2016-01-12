@@ -1,0 +1,36 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    @Html.Partial("~/Views/Shared/back/_Header.cshtml")
+    @RenderSection("styles", required: false)
+</head>
+<body class="hold-transition skin-green sidebar-mini">
+    <div class="wrapper">
+        <header class="main-header">
+            @Html.Partial("~/Views/Shared/Back/_Menu.cshtml")
+        </header>
+        <!-- Left side column. contains the logo and sidebar -->
+        <aside class="main-sidebar">
+            @Html.Partial("~/Views/Shared/Back/_Sidebar.cshtml")
+        </aside>
+
+        <!-- Content Wrapper. Contains page content -->
+        <div class="content-wrapper">
+            <!-- Content Header (Page header) -->
+            @RenderBody()
+        </div><!-- /.content-wrapper -->
+
+        <footer class="main-footer">
+            @Html.Partial("~/Views/Shared/Back/_Footer.cshtml")
+        </footer>
+    </div><!-- ./wrapper -->
+    <!-- jQuery UI 1.11.4 -->
+    <script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
+    <!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
+    <script>
+        $.widget.bridge('uibutton', $.ui.button);
+    </script>
+    @Scripts.Render("~/bundles/back")
+    @RenderSection("scripts",required:false)
+</body>
+</html>

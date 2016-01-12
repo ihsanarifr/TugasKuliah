@@ -1,6 +1,3 @@
-D:\Belajar\TugasKuliah\CodePSBO\IvanHotel\IvanHotel\MvcMovie\bin\MvcMovie.dll.config
-D:\Belajar\TugasKuliah\CodePSBO\IvanHotel\IvanHotel\MvcMovie\bin\MvcMovie.dll
-D:\Belajar\TugasKuliah\CodePSBO\IvanHotel\IvanHotel\MvcMovie\bin\MvcMovie.pdb
 D:\Belajar\TugasKuliah\CodePSBO\IvanHotel\IvanHotel\MvcMovie\bin\Antlr3.Runtime.dll
 D:\Belajar\TugasKuliah\CodePSBO\IvanHotel\IvanHotel\MvcMovie\bin\EntityFramework.dll
 D:\Belajar\TugasKuliah\CodePSBO\IvanHotel\IvanHotel\MvcMovie\bin\EntityFramework.SqlServer.dll
@@ -50,10 +47,12 @@ D:\Belajar\TugasKuliah\CodePSBO\IvanHotel\IvanHotel\MvcMovie\bin\System.Web.Razo
 D:\Belajar\TugasKuliah\CodePSBO\IvanHotel\IvanHotel\MvcMovie\bin\System.Web.WebPages.xml
 D:\Belajar\TugasKuliah\CodePSBO\IvanHotel\IvanHotel\MvcMovie\bin\System.Web.WebPages.Deployment.xml
 D:\Belajar\TugasKuliah\CodePSBO\IvanHotel\IvanHotel\MvcMovie\bin\System.Web.WebPages.Razor.xml
-D:\Belajar\TugasKuliah\CodePSBO\IvanHotel\IvanHotel\MvcMovie\obj\Debug\IvanHotel.csprojResolveAssemblyReference.cache
+D:\Belajar\TugasKuliah\CodePSBO\IvanHotel\IvanHotel\MvcMovie\obj\Debug\IvanHotel.csproj.GenerateResource.Cache
+D:\Belajar\TugasKuliah\CodePSBO\IvanHotel\IvanHotel\MvcMovie\bin\MvcMovie.dll.config
+D:\Belajar\TugasKuliah\CodePSBO\IvanHotel\IvanHotel\MvcMovie\bin\MvcMovie.dll
+D:\Belajar\TugasKuliah\CodePSBO\IvanHotel\IvanHotel\MvcMovie\bin\MvcMovie.pdb
 D:\Belajar\TugasKuliah\CodePSBO\IvanHotel\IvanHotel\MvcMovie\obj\Debug\MvcMovie.Migrations.Initial.resources
 D:\Belajar\TugasKuliah\CodePSBO\IvanHotel\IvanHotel\MvcMovie\obj\Debug\MvcMovie.Migrations.Rating.resources
 D:\Belajar\TugasKuliah\CodePSBO\IvanHotel\IvanHotel\MvcMovie\obj\Debug\MvcMovie.Migrations.DataAnnotations.resources
-D:\Belajar\TugasKuliah\CodePSBO\IvanHotel\IvanHotel\MvcMovie\obj\Debug\IvanHotel.csproj.GenerateResource.Cache
 D:\Belajar\TugasKuliah\CodePSBO\IvanHotel\IvanHotel\MvcMovie\obj\Debug\MvcMovie.dll
 D:\Belajar\TugasKuliah\CodePSBO\IvanHotel\IvanHotel\MvcMovie\obj\Debug\MvcMovie.pdb

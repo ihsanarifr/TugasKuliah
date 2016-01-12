@@ -3,13 +3,17 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using MvcMovie.Models;
 
 namespace MvcMovie.Controllers
 {
+
     public class HomeController : Controller
     {
+        private DBReservasiHotelEntities db = new DBReservasiHotelEntities();
         public ActionResult Index()
         {
+            ViewBag.TipeKamar = db.TipeKamar.ToList(); 
             return View();
         }
 

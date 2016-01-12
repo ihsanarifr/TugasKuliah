@@ -38,6 +38,26 @@ namespace MvcMovie
                 "~/Scripts/Front/owl.carousel.js",
                 "~/Scripts/Front/responsiveslides.min.js"
                 ));
+            bundles.Add(new StyleBundle("~/Content/back").Include(
+                "~/Content/Back/bootstrap.css",
+                "~/Content/Back/AdminLTE.css",
+                "~/Content/Back/skins/skin-green.css",
+                "~/plugins/iCheck/flat/green.css",
+                "~/plugins/datepicker/datepicker3.css",
+                "~/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css",
+                "~/plugins/datatables/dataTables.bootstrap.css"
+                ));
+            bundles.Add(new ScriptBundle("~/bundles/back").Include(
+                "~/plugins/jQuery/jQuery-2.1.3.min.js",
+                "~/Scripts/bootstrap.min.js",
+                "~/plugins/datepicker/bootstrap-datepicker.js",
+                "~/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js",
+                "~/Scripts/Back/app.min.js",
+                "~/Scripts/Back/highcharts.js",
+                "~/Scripts/Back/exporting.js",
+                "~/plugins/datatables/jquery.dataTables.min.js",
+                "~/plugins/datatables/dataTables.bootstrap.min.js"
+                ));
         }
     }
 }

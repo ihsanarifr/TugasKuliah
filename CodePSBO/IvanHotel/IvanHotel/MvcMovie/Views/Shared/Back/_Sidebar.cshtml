@@ -1,0 +1,61 @@
+﻿<!-- sidebar: style can be found in sidebar.less -->
+<section class="sidebar">
+    <!-- Sidebar user panel -->
+    <div class="user-panel">
+        <div class="pull-left image">
+            <img src="{base_url()}assets/img/avatar5.png" class="img-circle" alt="User Image">
+        </div>
+        <div class="pull-left info">
+            <p>{$user->username}</p>
+            <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
+        </div>
+    </div>
+    <!-- search form -->
+    <form action="#" method="get" class="sidebar-form">
+        <div class="input-group">
+            <input type="text" name="q" class="form-control" placeholder="Search...">
+            <span class="input-group-btn">
+                <button type="submit" name="search" id="search-btn" class="btn btn-flat"><i class="fa fa-search"></i></button>
+            </span>
+        </div>
+    </form>
+    <!-- /.search form -->
+    <!-- sidebar menu: : style can be found in sidebar.less -->
+    <ul class="sidebar-menu">
+        <li class="header">MAIN NAVIGATION</li>
+        <li {if $data.menu eq 'dashboard' } class="active" { />if}>
+        <a href="{site_url('dashboard')}">
+            <i class="fa fa-dashboard"></i> <span>Dashboard</span>
+        </a>
+        </li>
+        <li {if $data.menu eq 'kedelai' or $data.menu eq 'bawang' or $data.menu eq 'cabai' }class="treeview active" { />if}>
+        <a href="#">
+            <i class="fa fa-pie-chart"></i>
+            <span>Komoditas</span>
+            <i class="fa fa-angle-left pull-right"></i>
+        </a>
+        <ul class="treeview-menu">
+            <li {if $data.menu eq 'kedelai' } class="active" { />if}>
+            <a href="{site_url('dashboard/kedelai')}"><i class="fa fa-circle-o"></i> Kedelai</a></li>
+            <li {if $data.menu eq 'bawang' } class="active" { />if}>
+            <a href="{site_url('dashboard/bawang_merah')}"><i class="fa fa-circle-o"></i> Bawang Merah</a></li>
+            <li {if $data.menu eq 'cabai' } class="active" { />if}>
+            <a href="{site_url('dashboard/cabai_merah')}"><i class="fa fa-circle-o"></i> Cabai Merah</a></li>
+        </ul>
+        </li>
+        <li {if $data.menu eq 'pengguna' or $data.menu eq 'group' }class="treeview active" { />if}>
+        <a href="#">
+            <i class="fa fa-pie-chart"></i>
+            <span>Komoditas</span>
+            <i class="fa fa-angle-left pull-right"></i>
+        </a>
+        <ul class="treeview-menu">
+            <li {if $data.menu eq 'pengguna' } class="active" { />if}>
+            <a href="{site_url('dashboard/kedelai')}"><i class="fa fa-circle-o"></i> Pengguna</a></li>
+            <li {if $data.menu eq 'group' } class="active" { />if}>
+            <a href="{site_url('dashboard/bawang_merah')}"><i class="fa fa-circle-o"></i> Group</a></li>
+        </ul>
+        </li>
+    </ul>
+</section>
+<!-- /.sidebar -->
