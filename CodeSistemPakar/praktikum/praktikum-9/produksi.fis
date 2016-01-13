@@ -1,0 +1,43 @@
+[System]
+Name='produksi'
+Type='mamdani'
+Version=2.0
+NumInputs=2
+NumOutputs=1
+NumRules=6
+AndMethod='min'
+OrMethod='max'
+ImpMethod='min'
+AggMethod='max'
+DefuzzMethod='centroid'
+
+[Input1]
+Name='permintaan'
+Range=[8 24]
+NumMFs=3
+MF1='Sedikit':'trimf',[8 11 14]
+MF2='Sedang':'trimf',[13 16 19]
+MF3='Banyak':'trimf',[18 21 24]
+
+[Input2]
+Name='persediaan'
+Range=[30 60]
+NumMFs=3
+MF1='Sedikit':'trimf',[30 36 42]
+MF2='Sedang':'trimf',[38 45 50]
+MF3='Banyak':'trimf',[47 55 60]
+
+[Output1]
+Name='Jumlah_Produksi'
+Range=[10 25]
+NumMFs=2
+MF1='Sedikit':'trapmf',[10 10 14 20]
+MF2='Banyak':'trapmf',[17 21 25 25]
+
+[Rules]
+1 1, 1 (1) : 1
+2 1, 1 (1) : 1
+2 3, 2 (1) : 1
+3 1, 1 (1) : 1
+3 2, 2 (1) : 1
+3 3, 2 (1) : 1
