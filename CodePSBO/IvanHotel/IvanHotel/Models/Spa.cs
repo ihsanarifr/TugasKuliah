@@ -15,8 +15,8 @@ namespace IvanHotel.Models
     public partial class Spa
     {
         public int ID { get; set; }
-        public Nullable<int> Harga { get; set; }
         public Nullable<System.TimeSpan> Durasi { get; set; }
+        public string Alat { get; set; }
     
         public virtual Layanan Layanan { get; set; }
     }

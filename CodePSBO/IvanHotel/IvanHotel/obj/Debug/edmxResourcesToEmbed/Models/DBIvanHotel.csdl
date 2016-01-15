@@ -55,13 +55,13 @@
       <End Role="Layanan" EntitySet="Layanan" />
       <End Role="Laundry" EntitySet="Laundry" />
     </AssociationSet>
-    <AssociationSet Name="FK_Layanan_Restaurant" Association="DBReservasiHotelModel.FK_Layanan_Restaurant">
-      <End Role="Spa" EntitySet="Spa" />
-      <End Role="Layanan" EntitySet="Layanan" />
-    </AssociationSet>
     <AssociationSet Name="FK_Layanan_TipeLayanan" Association="DBReservasiHotelModel.FK_Layanan_TipeLayanan">
       <End Role="TipeLayanan" EntitySet="TipeLayanan" />
       <End Role="Layanan" EntitySet="Layanan" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Spa_Layanan" Association="DBReservasiHotelModel.FK_Spa_Layanan">
+      <End Role="Layanan" EntitySet="Layanan" />
+      <End Role="Spa" EntitySet="Spa" />
     </AssociationSet>
     <AssociationSet Name="FK_TransaksiLayanan_Layanan" Association="DBReservasiHotelModel.FK_TransaksiLayanan_Layanan">
       <End Role="Layanan" EntitySet="Layanan" />
@@ -163,19 +163,21 @@
     </Key>
     <Property Name="ID" Type="Int32" Nullable="false" />
     <Property Name="Satuan" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
-    <Property Name="Harga" Type="Int32" />
+    <Property Name="Kualitas" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
     <NavigationProperty Name="Layanan" Relationship="DBReservasiHotelModel.FK_Laundry_Layanan" FromRole="Laundry" ToRole="Layanan" />
   </EntityType>
   <EntityType Name="Layanan">
     <Key>
       <PropertyRef Name="ID" />
     </Key>
-    <Property Name="ID" Type="Int32" Nullable="false" />
-    <Property Name="TipeLayananID" Type="Int32" />
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="Nama" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="TipeLayananID" Type="Int32" />
+    <Property Name="Harga" Type="Int32" />
+    <Property Name="Deskripsi" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
     <NavigationProperty Name="Laundry" Relationship="DBReservasiHotelModel.FK_Laundry_Layanan" FromRole="Layanan" ToRole="Laundry" />
-    <NavigationProperty Name="Spa" Relationship="DBReservasiHotelModel.FK_Layanan_Restaurant" FromRole="Layanan" ToRole="Spa" />
     <NavigationProperty Name="TipeLayanan" Relationship="DBReservasiHotelModel.FK_Layanan_TipeLayanan" FromRole="Layanan" ToRole="TipeLayanan" />
+    <NavigationProperty Name="Spa" Relationship="DBReservasiHotelModel.FK_Spa_Layanan" FromRole="Layanan" ToRole="Spa" />
     <NavigationProperty Name="TransaksiLayanan" Relationship="DBReservasiHotelModel.FK_TransaksiLayanan_Layanan" FromRole="Layanan" ToRole="TransaksiLayanan" />
   </EntityType>
   <EntityType Name="Pegawai">
@@ -193,9 +195,9 @@
       <PropertyRef Name="ID" />
     </Key>
     <Property Name="ID" Type="Int32" Nullable="false" />
-    <Property Name="Harga" Type="Int32" />
     <Property Name="Durasi" Type="Time" Precision="7" />
-    <NavigationProperty Name="Layanan" Relationship="DBReservasiHotelModel.FK_Layanan_Restaurant" FromRole="Spa" ToRole="Layanan" />
+    <Property Name="Alat" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Layanan" Relationship="DBReservasiHotelModel.FK_Spa_Layanan" FromRole="Spa" ToRole="Layanan" />
   </EntityType>
   <EntityType Name="Tamu">
     <Key>
@@ -429,18 +431,6 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK_Layanan_Restaurant">
-    <End Type="DBReservasiHotelModel.Spa" Role="Spa" Multiplicity="1" />
-    <End Type="DBReservasiHotelModel.Layanan" Role="Layanan" Multiplicity="0..1" />
-    <ReferentialConstraint>
-      <Principal Role="Spa">
-        <PropertyRef Name="ID" />
-      </Principal>
-      <Dependent Role="Layanan">
-        <PropertyRef Name="ID" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
   <Association Name="FK_Layanan_TipeLayanan">
     <End Type="DBReservasiHotelModel.TipeLayanan" Role="TipeLayanan" Multiplicity="0..1" />
     <End Type="DBReservasiHotelModel.Layanan" Role="Layanan" Multiplicity="*" />
@@ -450,6 +440,18 @@
       </Principal>
       <Dependent Role="Layanan">
         <PropertyRef Name="TipeLayananID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Spa_Layanan">
+    <End Type="DBReservasiHotelModel.Layanan" Role="Layanan" Multiplicity="1" />
+    <End Type="DBReservasiHotelModel.Spa" Role="Spa" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Layanan">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Spa">
+        <PropertyRef Name="ID" />
       </Dependent>
     </ReferentialConstraint>
   </Association>

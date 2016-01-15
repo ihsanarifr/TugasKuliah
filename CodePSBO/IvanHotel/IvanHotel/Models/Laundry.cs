@@ -16,7 +16,7 @@ namespace IvanHotel.Models
     {
         public int ID { get; set; }
         public string Satuan { get; set; }
-        public Nullable<int> Harga { get; set; }
+        public string Kualitas { get; set; }
     
         public virtual Layanan Layanan { get; set; }
     }

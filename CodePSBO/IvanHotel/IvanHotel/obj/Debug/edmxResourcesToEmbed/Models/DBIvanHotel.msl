@@ -53,7 +53,7 @@
     <EntitySetMapping Name="Laundry">
       <EntityTypeMapping TypeName="DBReservasiHotelModel.Laundry">
         <MappingFragment StoreEntitySet="Laundry">
-          <ScalarProperty Name="Harga" ColumnName="Harga" />
+          <ScalarProperty Name="Kualitas" ColumnName="Kualitas" />
           <ScalarProperty Name="Satuan" ColumnName="Satuan" />
           <ScalarProperty Name="ID" ColumnName="ID" />
         </MappingFragment>
@@ -62,8 +62,10 @@
     <EntitySetMapping Name="Layanan">
       <EntityTypeMapping TypeName="DBReservasiHotelModel.Layanan">
         <MappingFragment StoreEntitySet="Layanan">
-          <ScalarProperty Name="Nama" ColumnName="Nama" />
+          <ScalarProperty Name="Deskripsi" ColumnName="Deskripsi" />
+          <ScalarProperty Name="Harga" ColumnName="Harga" />
           <ScalarProperty Name="TipeLayananID" ColumnName="TipeLayananID" />
+          <ScalarProperty Name="Nama" ColumnName="Nama" />
           <ScalarProperty Name="ID" ColumnName="ID" />
         </MappingFragment>
       </EntityTypeMapping>
@@ -81,8 +83,8 @@
     <EntitySetMapping Name="Spa">
       <EntityTypeMapping TypeName="DBReservasiHotelModel.Spa">
         <MappingFragment StoreEntitySet="Spa">
+          <ScalarProperty Name="Alat" ColumnName="Alat" />
           <ScalarProperty Name="Durasi" ColumnName="Durasi" />
-          <ScalarProperty Name="Harga" ColumnName="Harga" />
           <ScalarProperty Name="ID" ColumnName="ID" />
         </MappingFragment>
       </EntityTypeMapping>

@@ -51,15 +51,17 @@
     </Key>
     <Property Name="ID" Type="int" Nullable="false" />
     <Property Name="Satuan" Type="varchar" MaxLength="100" />
-    <Property Name="Harga" Type="int" />
+    <Property Name="Kualitas" Type="varchar" MaxLength="50" />
   </EntityType>
   <EntityType Name="Layanan">
     <Key>
       <PropertyRef Name="ID" />
     </Key>
-    <Property Name="ID" Type="int" Nullable="false" />
-    <Property Name="TipeLayananID" Type="int" />
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="Nama" Type="varchar" MaxLength="100" />
+    <Property Name="TipeLayananID" Type="int" />
+    <Property Name="Harga" Type="int" />
+    <Property Name="Deskripsi" Type="varchar" MaxLength="255" />
   </EntityType>
   <EntityType Name="Pegawai">
     <Key>
@@ -75,8 +77,8 @@
       <PropertyRef Name="ID" />
     </Key>
     <Property Name="ID" Type="int" Nullable="false" />
-    <Property Name="Harga" Type="int" />
     <Property Name="Durasi" Type="time" Precision="7" />
+    <Property Name="Alat" Type="varchar" MaxLength="100" />
   </EntityType>
   <EntityType Name="Tamu">
     <Key>
@@ -309,18 +311,6 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK_Layanan_Restaurant">
-    <End Role="Spa" Type="Self.Spa" Multiplicity="1" />
-    <End Role="Layanan" Type="Self.Layanan" Multiplicity="0..1" />
-    <ReferentialConstraint>
-      <Principal Role="Spa">
-        <PropertyRef Name="ID" />
-      </Principal>
-      <Dependent Role="Layanan">
-        <PropertyRef Name="ID" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
   <Association Name="FK_Layanan_TipeLayanan">
     <End Role="TipeLayanan" Type="Self.TipeLayanan" Multiplicity="0..1" />
     <End Role="Layanan" Type="Self.Layanan" Multiplicity="*" />
@@ -330,6 +320,18 @@
       </Principal>
       <Dependent Role="Layanan">
         <PropertyRef Name="TipeLayananID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Spa_Layanan">
+    <End Role="Layanan" Type="Self.Layanan" Multiplicity="1" />
+    <End Role="Spa" Type="Self.Spa" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Layanan">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Spa">
+        <PropertyRef Name="ID" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -492,13 +494,13 @@
       <End Role="Layanan" EntitySet="Layanan" />
       <End Role="Laundry" EntitySet="Laundry" />
     </AssociationSet>
-    <AssociationSet Name="FK_Layanan_Restaurant" Association="Self.FK_Layanan_Restaurant">
-      <End Role="Spa" EntitySet="Spa" />
-      <End Role="Layanan" EntitySet="Layanan" />
-    </AssociationSet>
     <AssociationSet Name="FK_Layanan_TipeLayanan" Association="Self.FK_Layanan_TipeLayanan">
       <End Role="TipeLayanan" EntitySet="TipeLayanan" />
       <End Role="Layanan" EntitySet="Layanan" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Spa_Layanan" Association="Self.FK_Spa_Layanan">
+      <End Role="Layanan" EntitySet="Layanan" />
+      <End Role="Spa" EntitySet="Spa" />
     </AssociationSet>
     <AssociationSet Name="FK_Tamu_JenisKelamin" Association="Self.FK_Tamu_JenisKelamin">
       <End Role="JenisKelamin" EntitySet="JenisKelamin" />

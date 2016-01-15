@@ -188,6 +188,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="BussinessModels\BookingBM.cs" />
+    <Compile Include="BussinessModels\LayananBM.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\BookingController.cs" />
     <Compile Include="Controllers\FasilitasController.cs" />
@@ -195,6 +196,7 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\KabupatenKotaController.cs" />
     <Compile Include="Controllers\KamarController.cs" />
+    <Compile Include="Controllers\LayananController.cs" />
     <Compile Include="Controllers\ProvinsiController.cs" />
     <Compile Include="Controllers\TipeIdentitasController.cs" />
     <Compile Include="Controllers\TipeKamarController.cs" />
@@ -288,6 +290,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ViewModels\BookingVM.cs" />
     <Compile Include="ViewModels\KamarViewModel.cs" />
+    <Compile Include="ViewModels\LayananVM.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\Back\AdminLTE.css" />
@@ -2448,6 +2451,11 @@
     <Content Include="Views\Booking\Details.cshtml" />
     <Content Include="Views\Booking\Edit.cshtml" />
     <Content Include="Views\Booking\Index.cshtml" />
+    <Content Include="Views\Layanan\CreateSpa.cshtml" />
+    <Content Include="Views\Layanan\Delete.cshtml" />
+    <Content Include="Views\Layanan\Details.cshtml" />
+    <Content Include="Views\Layanan\Edit.cshtml" />
+    <Content Include="Views\Layanan\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

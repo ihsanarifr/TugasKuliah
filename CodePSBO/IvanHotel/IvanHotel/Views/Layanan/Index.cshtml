@@ -1,0 +1,92 @@
+﻿@model IEnumerable<IvanHotel.ViewModels.LayananVM>
+
+@{
+    ViewBag.Title = "Layanan";
+    Layout = "~/Views/Shared/Back/_Layout.cshtml";
+}
+<div class="box box-success">
+    <div class="box-header">
+        <h3 class="box-title">Editor Layanan</h3>
+        <div class="box-tools pull-right">
+            <a href="@Url.Action("CreateSpa","Layanan")" class="btn btn-info btn-flat">Tambah Spa</a>
+            <a href="@Url.Action("CreateLaundry","Layanan")" class="btn btn-info btn-flat">Tambah Laundry</a>
+        </div>
+        <hr />
+    </div>
+    <div class="box-body">
+        <table class="table table-responsive table-striped" id="table">
+            <thead>
+                <tr>
+                    <th>
+                        Nama
+                    </th>
+                    <th>
+                        Jenis Layanan
+                    </th>
+                    <th>
+                        Harga
+                    </th>
+                    <th>
+                        Satuan
+                    </th>
+                    <th>
+                        Durasi
+                    </th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (IvanHotel.ViewModels.LayananVM item in ViewBag.ListLayanan)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Nama)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.NamaTipeLayanan)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Harga)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Satuan)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Durasi)
+                        </td>
+                        <td width="200">
+                            <div class="btn-group">
+                                @{string edit = "";
+                                  string detail = "";
+                                  string delete = "";
+                                  if (item.TipeLayananID == 2)
+                                  {
+                                      edit = "EditSpa";
+                                      detail = "DetailSpa";
+                                      delete = "DeleteSpa";
+                                  }
+                                  else
+                                  {
+                                      edit = "EditLaundry";
+                                      detail = "DetailLaundry";
+                                      delete = "DeleteLaundry";
+                                  }
+                                }
+                                @Html.ActionLink("Edit", edit, new { id = item.ID }, new { @class = "btn btn-warning btn-sm btn-flat" })
+                                @Html.ActionLink("Details", detail, new { id = item.ID }, new { @class = "btn btn-primary btn-sm btn-flat" })
+                                @Html.ActionLink("Delete", delete, new { id = item.ID }, new { @class = "btn btn-danger btn-sm btn-flat" })
+                            </div>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
+@section scripts{
+    <script>
+        $(document).ready(function () {
+            $('#table').DataTable();
+        });
+    </script>
+}

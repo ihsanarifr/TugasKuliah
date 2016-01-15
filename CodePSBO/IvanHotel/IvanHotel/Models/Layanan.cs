@@ -20,12 +20,14 @@ namespace IvanHotel.Models
         }
     
         public int ID { get; set; }
-        public Nullable<int> TipeLayananID { get; set; }
         public string Nama { get; set; }
+        public Nullable<int> TipeLayananID { get; set; }
+        public Nullable<int> Harga { get; set; }
+        public string Deskripsi { get; set; }
     
         public virtual Laundry Laundry { get; set; }
-        public virtual Spa Spa { get; set; }
         public virtual TipeLayanan TipeLayanan { get; set; }
+        public virtual Spa Spa { get; set; }
         public virtual ICollection<TransaksiLayanan> TransaksiLayanan { get; set; }
     }
 }
