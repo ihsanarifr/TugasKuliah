@@ -11,6 +11,6 @@ package testservice;
  */
 public class TestJUnitService {
     public int hitungTambah(int a,int b){
-        retur a+b;
+        return a+b;
     }
 }

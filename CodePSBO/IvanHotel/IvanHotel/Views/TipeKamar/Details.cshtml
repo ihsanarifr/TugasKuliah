@@ -4,24 +4,21 @@
     ViewBag.Title = "Details";
     Layout = "~/Views/Shared/Back/_Layout.cshtml";
 }
+<div class="box box-success">
+    <div class="box-header"><h5>Detial Tipe kamar</h5><hr /></div>
+    <div class="box-body">
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.Nama)
+            </dt>
 
-<h2>Details</h2>
-
-<div>
-    <h4>TipeKamar</h4>
-	<hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.Nama)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Nama)
-        </dd>
-
-    </dl>
+            <dd>
+                @Html.DisplayFor(model => model.Nama)
+            </dd>
+        </dl>
+        <p>
+            @Html.ActionLink("Edit", "Edit", new { id = Model.ID }, new { @class = "btn btn-warning btn-flat" })
+            @Html.ActionLink("Back to List", "Index", "", new { @class = "btn btn-default btn-flat" })
+        </p>
+    </div>
 </div>
-<p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.ID }) |
-    @Html.ActionLink("Back to List", "Index")
-</p>
