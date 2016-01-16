@@ -2456,6 +2456,9 @@
     <Content Include="Views\Layanan\Details.cshtml" />
     <Content Include="Views\Layanan\Edit.cshtml" />
     <Content Include="Views\Layanan\Index.cshtml" />
+    <Content Include="Views\Layanan\CreateLaundry.cshtml" />
+    <Content Include="Views\Home\Fasilitas.cshtml" />
+    <Content Include="Views\Home\Room.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

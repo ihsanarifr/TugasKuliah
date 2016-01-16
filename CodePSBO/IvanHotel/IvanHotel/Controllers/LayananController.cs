@@ -133,7 +133,7 @@ namespace IvanHotel.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult EditLaundry([Bind(Include = "Nama,Satuan,Kualitas,Harga,Deskripsi") LayananVM layanan)
+        public ActionResult EditLaundry([Bind(Include = "Nama,Satuan,Kualitas,Harga,Deskripsi")] LayananVM layanan)
         {
 
             if (ModelState.IsValid)

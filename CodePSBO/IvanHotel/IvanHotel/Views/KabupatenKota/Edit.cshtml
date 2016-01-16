@@ -4,48 +4,48 @@
     ViewBag.Title = "Edit";
     Layout = "~/Views/Shared/Back/_Layout.cshtml";
 }
+<div class="box">
+    <div class="box-header">
+        <b>Editor Kota Kabupaten</b>
+    </div>
+    <div class="box-body">
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
 
-<h2>Edit</h2>
+            <div class="form-horizontal">
+                @Html.ValidationSummary(true)
+                @Html.HiddenFor(model => model.ID)
 
+                <div class="form-group">
+                    @Html.LabelFor(model => model.Nama, new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.TextBoxFor(model => model.Nama, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(model => model.Nama)
+                    </div>
+                </div>
 
-@using (Html.BeginForm())
-{
-    @Html.AntiForgeryToken()
-    
-    <div class="form-horizontal">
-        <h4>KabupatenKota</h4>
-        <hr />
-        @Html.ValidationSummary(true)
-        @Html.HiddenFor(model => model.ID)
+                <div class="form-group">
+                    @Html.LabelFor(model => model.ProvinsiID, "ProvinsiID", new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.DropDownList("ProvinsiID", null, String.Empty, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(model => model.ProvinsiID)
+                    </div>
+                </div>
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.Nama, new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.Nama)
-                @Html.ValidationMessageFor(model => model.Nama)
+                <div class="form-group">
+                    <div class="col-md-offset-2 col-md-10">
+                        <input type="submit" value="Save" class="btn btn-primary" />
+                    </div>
+                </div>
             </div>
-        </div>
+        }
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.ProvinsiID, "ProvinsiID", new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.DropDownList("ProvinsiID", String.Empty)
-                @Html.ValidationMessageFor(model => model.ProvinsiID)
-            </div>
-        </div>
-
-        <div class="form-group">
-            <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Save" class="btn btn-default" />
-            </div>
+        <div>
+            @Html.ActionLink("Back to List", "Index", "", new { @class = "btn btn-default btn-flat" })
         </div>
     </div>
-}
-
-<div>
-    @Html.ActionLink("Back to List", "Index")
 </div>
-
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")
 }

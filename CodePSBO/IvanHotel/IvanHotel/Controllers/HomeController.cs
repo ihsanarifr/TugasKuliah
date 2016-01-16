@@ -12,7 +12,7 @@ namespace IvanHotel.Controllers
         DBReservasiHotelEntities db = new DBReservasiHotelEntities();
         public ActionResult Index()
         {
-            ViewBag.Message = "Modify this template to jump-start your ASP.NET MVC application.";
+            ViewBag.Menu = 1;
             ViewBag.TipeKamar = db.TipeKamar.ToList();
 
             return View();
@@ -20,15 +20,28 @@ namespace IvanHotel.Controllers
 
         public ActionResult About()
         {
-            ViewBag.Message = "Your app description page.";
-
             return View();
         }
 
         public ActionResult Contact()
         {
-            ViewBag.Message = "Your contact page.";
+            ViewBag.Menu = 5;
+            return View();
+        }
 
+        public ActionResult Fasilitas()
+        {
+            ViewBag.Menu = 2;
+            return View();
+        }
+        public ActionResult Restoran()
+        {
+            ViewBag.Menu = 3;
+            return View();
+        }
+        public ActionResult Room()
+        {
+            ViewBag.Menu = 4;
             return View();
         }
     }

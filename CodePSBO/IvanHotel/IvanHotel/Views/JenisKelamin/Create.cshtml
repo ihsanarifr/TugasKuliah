@@ -4,22 +4,19 @@
     ViewBag.Title = "Create";
     Layout = "~/Views/Shared/Back/_Layout.cshtml";
 }
-<div class="box">
-    <div class="box-header">@ViewBag.Controller</div>
+<div class="box box-success">
+    <div class="box-header"><h5>Edit Jenis Kelamin</h5><hr /></div>
     <div class="box-body">
         @using (Html.BeginForm())
         {
             @Html.AntiForgeryToken()
-
             <div class="form-horizontal">
-                <h4>JenisKelamin</h4>
-                <hr />
                 @Html.ValidationSummary(true)
 
                 <div class="form-group">
                     @Html.LabelFor(model => model.Nama, new { @class = "control-label col-md-2" })
                     <div class="col-md-10">
-                        @Html.EditorFor(model => model.Nama)
+                        @Html.TextBoxFor(model => model.Nama, new { @class = "form-control"})
                         @Html.ValidationMessageFor(model => model.Nama)
                     </div>
                 </div>
