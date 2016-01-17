@@ -1,5 +1,4 @@
 ﻿@model IEnumerable<IvanHotel.ViewModels.LayananVM>
-
 @{
     ViewBag.Title = "Layanan";
     Layout = "~/Views/Shared/Back/_Layout.cshtml";
@@ -26,12 +25,6 @@
                     <th>
                         Harga
                     </th>
-                    <th>
-                        Satuan
-                    </th>
-                    <th>
-                        Durasi
-                    </th>
                     <th></th>
                 </tr>
             </thead>
@@ -48,33 +41,21 @@
                         <td>
                             @Html.DisplayFor(modelItem => item.Harga)
                         </td>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.Satuan)
-                        </td>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.Durasi)
-                        </td>
                         <td width="200">
                             <div class="btn-group">
                                 @{string edit = "";
-                                  string detail = "";
-                                  string delete = "";
                                   if (item.TipeLayananID == 2)
                                   {
                                       edit = "EditSpa";
-                                      detail = "DetailSpa";
-                                      delete = "DeleteSpa";
                                   }
                                   else
                                   {
                                       edit = "EditLaundry";
-                                      detail = "DetailLaundry";
-                                      delete = "DeleteLaundry";
                                   }
                                 }
-                                @Html.ActionLink("Edit", edit, new { id = item.ID }, new { @class = "btn btn-warning btn-sm btn-flat" })
-                                @Html.ActionLink("Details", detail, new { id = item.ID }, new { @class = "btn btn-primary btn-sm btn-flat" })
-                                @Html.ActionLink("Delete", delete, new { id = item.ID }, new { @class = "btn btn-danger btn-sm btn-flat" })
+                                @*@Html.ActionLink("Edit", edit, new { id = item.ID }, new { @class = "btn btn-warning btn-sm btn-flat" })*@
+                                @Html.ActionLink("Details", "Detail", new { id = item.ID }, new { @class = "btn btn-primary btn-sm btn-flat" })
+                                @Html.ActionLink("Delete", "Delete", new { id = item.ID }, new { @class = "btn btn-danger btn-sm btn-flat" })
                             </div>
                         </td>
                     </tr>

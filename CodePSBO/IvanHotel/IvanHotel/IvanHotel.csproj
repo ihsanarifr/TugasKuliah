@@ -2452,13 +2452,14 @@
     <Content Include="Views\Booking\Edit.cshtml" />
     <Content Include="Views\Booking\Index.cshtml" />
     <Content Include="Views\Layanan\CreateSpa.cshtml" />
-    <Content Include="Views\Layanan\Delete.cshtml" />
     <Content Include="Views\Layanan\Details.cshtml" />
-    <Content Include="Views\Layanan\Edit.cshtml" />
+    <Content Include="Views\Layanan\EditSpa.cshtml" />
     <Content Include="Views\Layanan\Index.cshtml" />
     <Content Include="Views\Layanan\CreateLaundry.cshtml" />
     <Content Include="Views\Home\Fasilitas.cshtml" />
     <Content Include="Views\Home\Room.cshtml" />
+    <Content Include="Views\Layanan\Delete.cshtml" />
+    <Content Include="Views\Layanan\EditLaundry.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

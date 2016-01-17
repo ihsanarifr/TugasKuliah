@@ -33,14 +33,12 @@ namespace IvanHotel.ViewModels
             this.Kualitas = "";
         }
 
-        public LayananVM(int id, int tipelayananid, string namalayanan, string namatipelayanan, int harga, TimeSpan durasi, string satuan)
+        public LayananVM(int id, int tipelayananid, string namalayanan, string namatipelayanan, int harga)
         {
             ID = id;
             Nama = namalayanan;
             NamaTipeLayanan = namatipelayanan;
             Harga = harga;
-            Durasi = durasi;
-            Satuan = satuan;
         }
     }
 }

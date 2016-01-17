@@ -31,7 +31,7 @@ namespace IvanHotel.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Layanan layanan = db.Layanan.Find(id);
+            LayananVM layanan = layananbm.details((int)id);
             if (layanan == null)
             {
                 return HttpNotFound();

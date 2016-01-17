@@ -28,12 +28,12 @@ namespace IvanHotel.BussinessModels
                            i.TipeLayananID,
                            NamaTipeLayanan = i.TipeLayanan.Nama,
                            Harga = i.Harga,
-                           i.Spa.Durasi,
-                           i.Laundry.Satuan
+                           //i.Spa.Durasi,
+                           //i.Laundry.Satuan
                        };
             foreach (var item in list)
             {
-                layanan.Add(new LayananVM((int)item.ID, (int)item.TipeLayananID, item.NamaLayanan, item.NamaTipeLayanan, (int)item.Harga, (TimeSpan)item.Durasi, item.Satuan));
+                layanan.Add(new LayananVM((int)item.ID, (int)item.TipeLayananID, item.NamaLayanan, item.NamaTipeLayanan, (int)item.Harga/*, (TimeSpan)item.Durasi, item.Satuan*/));
             }
             return layanan;
         }
@@ -44,9 +44,13 @@ namespace IvanHotel.BussinessModels
             Layanan layanan = new Layanan();
 
             int? tipelayananid = db.Layanan.Where(x=>x.ID.Equals(id)).Select(x=>x.TipeLayananID).SingleOrDefault();
+            layanan = db.Layanan.Find(id);
+
             data.Nama = layanan.Nama;
             data.Harga = layanan.Harga;
             data.Deskripsi = layanan.Deskripsi;
+            data.NamaTipeLayanan = layanan.TipeLayanan.Nama;
+            data.TipeLayananID = layanan.TipeLayananID;
 
             if (tipelayananid == 1)
             {

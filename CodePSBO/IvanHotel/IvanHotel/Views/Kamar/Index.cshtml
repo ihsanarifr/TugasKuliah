@@ -32,35 +32,37 @@
                     </th>
                     <th></th>
                 </tr>
-
-                @foreach (var item in Model)
-                {
-                    <tr>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.NomorKamar)
-                        </td>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.Kapasitas)
-                        </td>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.Status)
-                        </td>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.Lantai)
-                        </td>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.TipeKamar.Nama)
-                        </td>
-                        <td width="200">
-                            <div class="btn-group">
-                                @Html.ActionLink("Edit", "Edit", new { id = item.ID }, new { @class = "btn btn-warning btn-sm btn-flat" })
-                                @Html.ActionLink("Details", "Details", new { id = item.ID }, new { @class = "btn btn-primary btn-sm btn-flat" })
-                                @Html.ActionLink("Delete", "Delete", new { id = item.ID }, new { @class = "btn btn-danger btn-sm btn-flat" })
-                            </div>
-                        </td>
-                    </tr>
-                }
-            </thead>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.NomorKamar)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Kapasitas)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Status)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Lantai)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.TipeKamar.Nama)
+                            </td>
+                            <td width="200">
+                                <div class="btn-group">
+                                    @*@Html.ActionLink("Edit", "Edit", new { id = item.ID }, new { @class = "btn btn-warning btn-sm btn-flat" })*@
+                                    @Html.ActionLink("Details", "Details", new { id = item.ID }, new { @class = "btn btn-primary btn-sm btn-flat" })
+                                    @Html.ActionLink("Delete", "Delete", new { id = item.ID }, new { @class = "btn btn-danger btn-sm btn-flat" })
+                                </div>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+                
         </table>
     </div>
 </div>
