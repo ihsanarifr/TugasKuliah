@@ -7,8 +7,6 @@
       <Diagram DiagramId="a978047a688a4f0eaf79834714591517" Name="Diagram1">
         <EntityTypeShape EntityType="DBReservasiHotelModel.sysdiagrams" Width="1.5" PointX="7.75" PointY="1.125" />
         <EntityTypeShape EntityType="DBReservasiHotelModel.Alamat" Width="1.5" PointX="5.25" PointY="2.25" />
-        <EntityTypeShape EntityType="DBReservasiHotelModel.FasilitasKamar" Width="1.5" PointX="7.5" PointY="19.75" />
-        <EntityTypeShape EntityType="DBReservasiHotelModel.Kamar" Width="1.5" PointX="5.25" PointY="19.5" />
         <EntityTypeShape EntityType="DBReservasiHotelModel.Laundry" Width="1.5" PointX="7.5" PointY="23.25" />
         <EntityTypeShape EntityType="DBReservasiHotelModel.Layanan" Width="1.5" PointX="5.25" PointY="15.5" />
         <EntityTypeShape EntityType="DBReservasiHotelModel.Pegawai" Width="1.5" PointX="3" PointY="10.875" />
@@ -26,27 +24,29 @@
         <EntityTypeShape EntityType="DBReservasiHotelModel.TipeLayanan" Width="1.5" PointX="3" PointY="16.125" />
         <EntityTypeShape EntityType="DBReservasiHotelModel.TransaksiKamar" Width="1.5" PointX="7.5" PointY="9.75" />
         <EntityTypeShape EntityType="DBReservasiHotelModel.TransaksiLayanan" Width="1.5" PointX="7.5" PointY="3.875" />
-        <EntityTypeShape EntityType="DBReservasiHotelModel.TransaksiTamu" Width="1.5" PointX="5.25" PointY="6.5" />
         <AssociationConnector Association="DBReservasiHotelModel.FK_Alamat_KabupatenKota" />
         <AssociationConnector Association="DBReservasiHotelModel.FK_Alamat_Kecamatan" />
         <AssociationConnector Association="DBReservasiHotelModel.FK_Alamat_Tamu" />
-        <AssociationConnector Association="DBReservasiHotelModel.FK_FasilitasKamar_Fasilitas" />
-        <AssociationConnector Association="DBReservasiHotelModel.FK_FasilitasKamar_Kamar" />
-        <AssociationConnector Association="DBReservasiHotelModel.FK_Kamar_TipeKamar" />
-        <AssociationConnector Association="DBReservasiHotelModel.FK_TransaksiKamar_Kamar" />
         <AssociationConnector Association="DBReservasiHotelModel.FK_Laundry_Layanan" />
         <AssociationConnector Association="DBReservasiHotelModel.FK_Layanan_TipeLayanan" />
         <AssociationConnector Association="DBReservasiHotelModel.FK_Spa_Layanan" />
         <AssociationConnector Association="DBReservasiHotelModel.FK_TransaksiLayanan_Layanan" />
-        <AssociationConnector Association="DBReservasiHotelModel.FK_TransaksiTamu_Pegawai" />
         <AssociationConnector Association="DBReservasiHotelModel.FK_Kontak_Tamu" />
         <AssociationConnector Association="DBReservasiHotelModel.FK_Tamu_JenisKelamin" />
         <AssociationConnector Association="DBReservasiHotelModel.FK_Tamu_TipeIdentitas" />
-        <AssociationConnector Association="DBReservasiHotelModel.FK_TransaksiTamu_Tamu" />
         <AssociationConnector Association="DBReservasiHotelModel.FK_KabupatenKota_Provinsi" />
         <AssociationConnector Association="DBReservasiHotelModel.FK_Kontak_TipeKontak" />
+        <EntityTypeShape EntityType="DBReservasiHotelModel.TransaksiTamu" Width="1.5" PointX="5.25" PointY="8.125" />
+        <AssociationConnector Association="DBReservasiHotelModel.FK_TransaksiTamu_Pegawai" />
+        <AssociationConnector Association="DBReservasiHotelModel.FK_TransaksiTamu_Tamu" />
         <AssociationConnector Association="DBReservasiHotelModel.FK_TransaksiKamar_TransaksiTamu" />
         <AssociationConnector Association="DBReservasiHotelModel.FK_TransaksiLayanan_TransaksiTamu" />
+        <EntityTypeShape EntityType="DBReservasiHotelModel.FasilitasKamar" Width="1.5" PointX="7.5" PointY="26.375" />
+        <EntityTypeShape EntityType="DBReservasiHotelModel.Kamar" Width="1.5" PointX="5.25" PointY="26.375" />
+        <AssociationConnector Association="DBReservasiHotelModel.FK_FasilitasKamar_Fasilitas" />
+        <AssociationConnector Association="DBReservasiHotelModel.FK_FasilitasKamar_Kamar" />
+        <AssociationConnector Association="DBReservasiHotelModel.FK_Kamar_TipeKamar" />
+        <AssociationConnector Association="DBReservasiHotelModel.FK_TransaksiKamar_Kamar" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

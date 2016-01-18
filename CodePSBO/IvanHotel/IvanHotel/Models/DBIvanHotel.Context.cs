@@ -27,8 +27,6 @@ namespace IvanHotel.Models
     
         public virtual DbSet<sysdiagrams> sysdiagrams { get; set; }
         public virtual DbSet<Alamat> Alamat { get; set; }
-        public virtual DbSet<FasilitasKamar> FasilitasKamar { get; set; }
-        public virtual DbSet<Kamar> Kamar { get; set; }
         public virtual DbSet<Laundry> Laundry { get; set; }
         public virtual DbSet<Layanan> Layanan { get; set; }
         public virtual DbSet<Pegawai> Pegawai { get; set; }
@@ -47,5 +45,7 @@ namespace IvanHotel.Models
         public virtual DbSet<TransaksiKamar> TransaksiKamar { get; set; }
         public virtual DbSet<TransaksiLayanan> TransaksiLayanan { get; set; }
         public virtual DbSet<TransaksiTamu> TransaksiTamu { get; set; }
+        public virtual DbSet<FasilitasKamar> FasilitasKamar { get; set; }
+        public virtual DbSet<Kamar> Kamar { get; set; }
     }
 }

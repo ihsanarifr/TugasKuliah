@@ -26,6 +26,8 @@ namespace IvanHotel.Models
         public Nullable<bool> Status { get; set; }
         public Nullable<int> TipeKamarID { get; set; }
         public Nullable<int> Lantai { get; set; }
+        public Nullable<int> HargaWeekDay { get; set; }
+        public Nullable<int> HargaWeekEnd { get; set; }
     
         public virtual ICollection<FasilitasKamar> FasilitasKamar { get; set; }
         public virtual TipeKamar TipeKamar { get; set; }

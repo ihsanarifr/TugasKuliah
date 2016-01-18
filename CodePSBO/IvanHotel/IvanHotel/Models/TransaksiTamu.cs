@@ -25,6 +25,8 @@ namespace IvanHotel.Models
         public Nullable<int> TamuID { get; set; }
         public Nullable<System.DateTime> TMT { get; set; }
         public string TST { get; set; }
+        public Nullable<bool> IsRegistrasiUlang { get; set; }
+        public Nullable<bool> IsBayar { get; set; }
     
         public virtual Pegawai Pegawai { get; set; }
         public virtual Tamu Tamu { get; set; }

@@ -56,6 +56,8 @@ namespace IvanHotel.Controllers
         {
             if (ModelState.IsValid)
             {
+                kamar.HargaWeekDay = Int32.Parse(Request["hargaweekday"].ToString());
+                kamar.HargaWeekEnd = Int32.Parse(Request["hargaweekday"].ToString());
                 db.Kamar.Add(kamar);
                 db.SaveChanges();
 
@@ -64,8 +66,6 @@ namespace IvanHotel.Controllers
                 for(int i=0;i<fasilitasid.Length;i++){
                     data.KamarID = db.Kamar.Max(item => item.ID);
                     data.FasilitasID = Int32.Parse(fasilitasid[i]);
-                    data.HargaWeekDay = Int32.Parse(Request["hargaweekday"].ToString());
-                    data.HargaWeekEnd = Int32.Parse(Request["hargaweekday"].ToString());
                     db.FasilitasKamar.Add(data);
                     db.SaveChanges();
                 }

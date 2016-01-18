@@ -31,8 +31,6 @@
     <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="KamarID" Type="int" />
     <Property Name="FasilitasID" Type="int" />
-    <Property Name="HargaWeekDay" Type="int" />
-    <Property Name="HargaWeekEnd" Type="int" />
   </EntityType>
   <EntityType Name="Kamar">
     <Key>
@@ -44,6 +42,8 @@
     <Property Name="Status" Type="bit" />
     <Property Name="TipeKamarID" Type="int" />
     <Property Name="Lantai" Type="int" />
+    <Property Name="HargaWeekDay" Type="int" />
+    <Property Name="HargaWeekEnd" Type="int" />
   </EntityType>
   <EntityType Name="Laundry">
     <Key>
@@ -190,6 +190,8 @@
     <Property Name="TamuID" Type="int" />
     <Property Name="TMT" Type="date" />
     <Property Name="TST" Type="nchar" MaxLength="10" />
+    <Property Name="IsRegistrasiUlang" Type="bit" />
+    <Property Name="IsBayar" Type="bit" />
   </EntityType>
   <Association Name="FK_Alamat_KabupatenKota">
     <End Role="KabupatenKota" Type="Self.KabupatenKota" Multiplicity="0..1" />

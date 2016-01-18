@@ -23,6 +23,7 @@ namespace IvanHotel.BussinessModels
             Kontak kontak = new Kontak();
             kontak.Kontak1 = book.Kontak1;
             kontak.TipeKontakID = book.TipeKontakID;
+            kontak.TamuID = book.TamuID;
             db.Kontak.Add(kontak);
             db.SaveChanges();
 
@@ -45,6 +46,8 @@ namespace IvanHotel.BussinessModels
             transaksitamu.TamuID = book.TamuID;
             transaksitamu.TMT = DateTime.Today;
             transaksitamu.TST = "";
+            transaksitamu.IsBayar = false;
+            transaksitamu.IsRegistrasiUlang = false;
             db.TransaksiTamu.Add(transaksitamu);
             db.SaveChanges();
 

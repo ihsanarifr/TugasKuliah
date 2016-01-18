@@ -189,6 +189,7 @@
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="BussinessModels\BookingBM.cs" />
     <Compile Include="BussinessModels\LayananBM.cs" />
+    <Compile Include="BussinessModels\TransaksiBM.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\BookingController.cs" />
     <Compile Include="Controllers\FasilitasController.cs" />
@@ -201,6 +202,7 @@
     <Compile Include="Controllers\TipeIdentitasController.cs" />
     <Compile Include="Controllers\TipeKamarController.cs" />
     <Compile Include="Controllers\TipeKontakController.cs" />
+    <Compile Include="Controllers\TransaksiTamuController.cs" />
     <Compile Include="Filters\InitializeSimpleMembershipAttribute.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -291,6 +293,8 @@
     <Compile Include="ViewModels\BookingVM.cs" />
     <Compile Include="ViewModels\KamarViewModel.cs" />
     <Compile Include="ViewModels\LayananVM.cs" />
+    <Compile Include="ViewModels\TamuVM.cs" />
+    <Compile Include="ViewModels\TransaksiVM.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\Back\AdminLTE.css" />
@@ -2460,6 +2464,11 @@
     <Content Include="Views\Home\Room.cshtml" />
     <Content Include="Views\Layanan\Delete.cshtml" />
     <Content Include="Views\Layanan\EditLaundry.cshtml" />
+    <Content Include="Views\TransaksiTamu\Create.cshtml" />
+    <Content Include="Views\TransaksiTamu\Delete.cshtml" />
+    <Content Include="Views\TransaksiTamu\Details.cshtml" />
+    <Content Include="Views\TransaksiTamu\Edit.cshtml" />
+    <Content Include="Views\TransaksiTamu\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

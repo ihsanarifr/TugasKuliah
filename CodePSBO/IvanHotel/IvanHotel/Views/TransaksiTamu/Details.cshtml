@@ -1,0 +1,70 @@
+﻿@model IvanHotel.ViewModels.TamuVM
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/Back/_Layout.cshtml";
+}
+<div class="box box-success">
+    <div class="box-header"><h5>Detials Tamu</h5><hr /></div>
+    <div class="box-body">
+        <div>
+            <dl class="dl-horizontal">
+                <dt>
+                    @Html.DisplayNameFor(model => model.Nama)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.Nama)
+                </dd>
+
+                <dt>
+                    @Html.DisplayFor(model => model.NamaTipeIdentitas)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.NomorIdentitas)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.JenisKelamin)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.JenisKelamin)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.Alamat)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.Alamat)
+                </dd>
+                <dt>
+                    @Html.DisplayNameFor(model => model.Kabupaten)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.Kabupaten)
+                </dd>
+                <dt>
+                    @Html.DisplayNameFor(model => model.Kecamatan)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.Kecamatan)
+                </dd>
+                <dt>
+                    @Html.DisplayNameFor(model => model.NomorKontak)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.NomorKontak)
+                </dd>
+            </dl>
+        </div>
+        <p>
+            @Html.ActionLink("Edit", "Edit", new { id = Model.TransaksiID}) |
+            @Html.ActionLink("Back to List", "Index")
+        </p>
+    </div>
+</div>
