@@ -31,10 +31,10 @@ namespace IvanHotel.BussinessModels
                             tm.TMT,
                             Registrasi = (tm.IsRegistrasiUlang == true ? "Ya" : "Tidak")
                         };
-
+            int no = 1;
             foreach (var item in query)
             {
-                transaksi.Add(new TransaksiVM(item.ID, item.Nama, item.JenisKelamin, (int)item.NomorIdentitas,item.TMT,item.Registrasi,(int)item.TamuID));
+                transaksi.Add(new TransaksiVM(no++,item.ID, item.Nama, item.JenisKelamin, (int)item.NomorIdentitas,item.TMT,item.Registrasi,(int)item.TamuID));
             }
             return transaksi;
         }
@@ -70,6 +70,7 @@ namespace IvanHotel.BussinessModels
                             TipeKontak = ko.TipeKontak.Nama
                         }).FirstOrDefault();
             
+            tamu.ID = query.ID;
             tamu.Nama = query.Nama;
             tamu.NomorKontak = query.NomorIdentitas.ToString();
             tamu.JenisKelamin = query.JenisKelamin;
@@ -99,9 +100,19 @@ namespace IvanHotel.BussinessModels
                             i.Kamar.HargaWeekEnd
                             //Harga = (i.CheckIn.Value.DayOfWeek.Equals(1)|| i.CheckIn.Value.DayOfWeek.Equals(2) ? i.Kamar.HargaWeekEnd : i.Kamar.HargaWeekDay)
                         };
+            int Harga;
+            int no=1;
             foreach (var item in query)
             {
-                data.Add(new TransaksiVM(item.ID, (int)item.NomorKamar, item.TipeKamar,(DateTime)item.CheckIn,(DateTime)item.CheckOut,(int)item.Harga));
+                if ((int)item.CheckIn.Value.DayOfWeek == 1 || (int)item.CheckIn.Value.DayOfWeek == 2)
+                {
+                    Harga = (int)item.HargaWeekEnd;
+                }
+                else
+                {
+                    Harga = (int)item.HargaWeekDay;
+                }
+                data.Add(new TransaksiVM(no++,item.ID, (int)item.NomorKamar, item.TipeKamar,(DateTime)item.CheckIn,(DateTime)item.CheckOut,Harga));
             }
             return data;
         }
@@ -119,11 +130,26 @@ namespace IvanHotel.BussinessModels
                             i.Layanan.Harga,
                             NamaTipeLayanan = i.Layanan.TipeLayanan.Nama
                         };
+            int no = 1;
             foreach (var item in query)
             {
-                data.Add(new TransaksiVM(item.ID,item.Nama,(int)item.Harga,item.NamaTipeLayanan));
+                data.Add(new TransaksiVM(no++,item.ID,item.Nama,(int)item.Harga,item.NamaTipeLayanan));
             }
             return data;
+        }
+
+        public void TambahTransaksiLayanan(TransaksiVM transaksi)
+        {
+            TransaksiLayanan layanan = new TransaksiLayanan();
+            // tambah ke transaksi layanan
+            string[] layananid = transaksi.LayananID.Split(',');
+            for (int i = 0; i < layananid.Length; i++)
+            {
+                layanan.LayananID = Int32.Parse(layananid[i]);
+                layanan.TransaksiTamuID = transaksi.TransaksiID;
+                db.TransaksiLayanan.Add(layanan);
+                db.SaveChanges();
+            }
         }
     }
 }

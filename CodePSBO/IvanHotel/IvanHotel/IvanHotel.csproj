@@ -2464,7 +2464,7 @@
     <Content Include="Views\Home\Room.cshtml" />
     <Content Include="Views\Layanan\Delete.cshtml" />
     <Content Include="Views\Layanan\EditLaundry.cshtml" />
-    <Content Include="Views\TransaksiTamu\Create.cshtml" />
+    <Content Include="Views\TransaksiTamu\TambahTransaksiLayanan.cshtml" />
     <Content Include="Views\TransaksiTamu\Delete.cshtml" />
     <Content Include="Views\TransaksiTamu\Details.cshtml" />
     <Content Include="Views\TransaksiTamu\Edit.cshtml" />

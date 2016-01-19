@@ -7,6 +7,7 @@ namespace IvanHotel.ViewModels
 {
     public class TamuVM
     {
+        public int ID { get; set; }
         public string Nama { get; set; }
         public int NomorIdentitas { get; set; }
         public string NamaTipeIdentitas {get;set;}
@@ -20,6 +21,7 @@ namespace IvanHotel.ViewModels
 
         public TamuVM()
         {
+            ID = 0;
             Nama = "";
             NomorIdentitas = 0;
             JenisKelamin = "";
@@ -32,8 +34,9 @@ namespace IvanHotel.ViewModels
             TransaksiID = 0;
         }
 
-        public TamuVM(string nama, int nomor,string jk,string alamat,string kec,string kab,string nok,string tipid,string tiko,int transaksiid)
+        public TamuVM(int id,string nama, int nomor,string jk,string alamat,string kec,string kab,string nok,string tipid,string tiko,int transaksiid)
         {
+            ID = id;
             Nama = nama;
             NomorIdentitas = nomor;
             JenisKelamin = jk;

@@ -7,6 +7,7 @@ namespace IvanHotel.ViewModels
 {
     public class TransaksiVM
     {
+        public int no { get; set; }
         public int ID { get; set; }
         public string Nama { get; set; }
         public string JenisKelamin { get; set; }
@@ -21,9 +22,11 @@ namespace IvanHotel.ViewModels
         public DateTime CheckOut { get; set; }
         public int Harga { get; set; }
         public string NamaTipeLayanan { get; set; }
+        public string LayananID { get; set; }
 
         public TransaksiVM()
         {
+            this.no = 0;
             this.ID = 0;
             this.Nama = "";
             this.JenisKelamin = "";
@@ -37,9 +40,10 @@ namespace IvanHotel.ViewModels
             this.CheckIn = DateTime.Now;
             this.CheckOut = DateTime.Now;
             this.Harga = 0;
+            this.LayananID = "";
         }
 
-        public TransaksiVM(int id, string nama, string jk, int noid,DateTime? tmt,string registrasi,int tamuid)
+        public TransaksiVM(int no,int id, string nama, string jk, int noid,DateTime? tmt,string registrasi,int tamuid)
         {
             ID = id;
             Nama = nama;
@@ -50,7 +54,7 @@ namespace IvanHotel.ViewModels
             TamuID = tamuid;
         }
 
-        public TransaksiVM(int transaksiid, int nokar, string tikar,DateTime checkin,DateTime checkout,int harga)
+        public TransaksiVM(int no,int transaksiid, int nokar, string tikar,DateTime checkin,DateTime checkout,int harga)
         {
             TransaksiID = transaksiid;
             NomorKamar = nokar;
@@ -60,7 +64,7 @@ namespace IvanHotel.ViewModels
             Harga = harga;
         }
 
-        public TransaksiVM(int id, string nama, int harga, string namalayanan)
+        public TransaksiVM(int no,int id, string nama, int harga, string namalayanan)
         {
             ID = id;
             Nama = nama;

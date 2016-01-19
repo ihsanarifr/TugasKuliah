@@ -54,92 +54,59 @@ namespace IvanHotel.Controllers
             return View(transaksi.details(id));
         }
 
-        // GET: /TransaksiTamu/Create
-        public ActionResult Create()
-        {
-            ViewBag.PegawaiID = new SelectList(db.Pegawai, "ID", "NIP");
-            ViewBag.TamuID = new SelectList(db.Tamu, "ID", "Nama");
-            return View();
-        }
 
-        // POST: /TransaksiTamu/Create
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include="ID,PegawaiID,TamuID,TMT,TST")] TransaksiTamu transaksitamu)
-        {
-            if (ModelState.IsValid)
-            {
-                db.TransaksiTamu.Add(transaksitamu);
-                db.SaveChanges();
-                return RedirectToAction("Index");
-            }
 
-            ViewBag.PegawaiID = new SelectList(db.Pegawai, "ID", "NIP", transaksitamu.PegawaiID);
-            ViewBag.TamuID = new SelectList(db.Tamu, "ID", "Nama", transaksitamu.TamuID);
-            return View(transaksitamu);
-        }
-
-        // GET: /TransaksiTamu/Edit/5
-        public ActionResult Edit(int? id)
+        public ActionResult TambahTransaksiLayanan(int id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            TransaksiTamu transaksitamu = db.TransaksiTamu.Find(id);
-            if (transaksitamu == null)
+            TransaksiBM data = new TransaksiBM();
+            if (data == null)
             {
                 return HttpNotFound();
             }
-            ViewBag.PegawaiID = new SelectList(db.Pegawai, "ID", "NIP", transaksitamu.PegawaiID);
-            ViewBag.TamuID = new SelectList(db.Tamu, "ID", "Nama", transaksitamu.TamuID);
-            return View(transaksitamu);
+            ViewBag.Layanan = new SelectList(db.Layanan, "ID", "Nama");
+            ViewBag.TransaksiID = id;
+            return View(data.details(id));
         }
 
-        // POST: /TransaksiTamu/Edit/5
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include="ID,PegawaiID,TamuID,TMT,TST")] TransaksiTamu transaksitamu)
+        public ActionResult TambahTransaksiLayanan()
         {
-            if (ModelState.IsValid)
+
+            TransaksiBM data = new TransaksiBM();
+            TransaksiVM view = new TransaksiVM();
+            if (data == null)
             {
-                db.Entry(transaksitamu).State = EntityState.Modified;
-                db.SaveChanges();
-                return RedirectToAction("Index");
+                return HttpNotFound();
             }
-            ViewBag.PegawaiID = new SelectList(db.Pegawai, "ID", "NIP", transaksitamu.PegawaiID);
-            ViewBag.TamuID = new SelectList(db.Tamu, "ID", "Nama", transaksitamu.TamuID);
-            return View(transaksitamu);
+            else
+            {
+                view.LayananID = Request["Layanan"].ToString();
+                view.TransaksiID = Int32.Parse(Request["TransaksiID"].ToString());
+                data.TambahTransaksiLayanan(view);
+
+            }
+            return RedirectToAction("Details", new { id=view.TransaksiID });
         }
 
-        // GET: /TransaksiTamu/Delete/5
-        public ActionResult Delete(int? id)
+        public ActionResult Delete(int id)
         {
+            TransaksiLayanan data = db.TransaksiLayanan.Find(id);
+            int TransaksiID = (int)data.TransaksiTamuID;
+
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            TransaksiTamu transaksitamu = db.TransaksiTamu.Find(id);
-            if (transaksitamu == null)
+            else
             {
-                return HttpNotFound();
+                db.TransaksiLayanan.Remove(data);
             }
-            return View(transaksitamu);
-        }
-
-        // POST: /TransaksiTamu/Delete/5
-        [HttpPost, ActionName("Delete")]
-        [ValidateAntiForgeryToken]
-        public ActionResult DeleteConfirmed(int id)
-        {
-            TransaksiTamu transaksitamu = db.TransaksiTamu.Find(id);
-            db.TransaksiTamu.Remove(transaksitamu);
             db.SaveChanges();
-            return RedirectToAction("Index");
+            return RedirectToAction("Details", new { id = TransaksiID });
         }
 
         protected override void Dispose(bool disposing)
