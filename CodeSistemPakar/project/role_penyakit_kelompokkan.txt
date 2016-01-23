@@ -1,0 +1,55 @@
+if(sirip == 0 && insang == 0 && kulit == 3 && perut == 0 & mata == 0 && organ == 0){
+	sehat
+}else if(sirip == 4 && insang == 5 && (kulit == 3 || kulit == && 1) && perut == 0 & mata == 0 && organ == 0){
+	tsaprolegniasis
+}else if(sirip == 0 && insang == 0 && kulit == 4 && perut == 1 & mata == 0 && organ == 1){
+	tuberkulosis
+}else if(sirip == 3 && insang == 0 && kulit == 5 && perut == 0 & mata == 2 && (organ == 2 || organ == 3)){
+	herves virus
+}else if(sirip == 0 && (insang == 3 || insang == 4) && (kulit == 4 || kulit == 7 || kulit == 8) && perut == 0 & mata == 0 && organ == 0){
+	myxosporeasis
+}else if(sirip == 3 && insang == 3 && (kulit == 4 || kulit == && 5 || kulit == && 7 || kulit == && 8) && perut == 0 & mata == 1 && organ == 0){
+	lerneasis
+}else if((sirip == 1 || sirip == 2 || sirip == 3) && insang == 0 && (kulit == 4 || kulit == && 7) && perut == 1 & mata == 2 && organ == 0){
+	pseudomonas
+}else if(sirip == 3 && insang == 3 && kulit == 3 && perut == 0 & mata == 0 && organ == 0){
+	bintik putih
+}else if(sirip == 2 && insang == 0 && (kulit == 4 || kulit == && 5 || kulit && 7) && perut == 0 & mata == 0 && organ == 0){
+	kutu
+}else if(sirip == 1 || sirip == 2) && insang == 0 && (kulit == 6 || kulit == 7) && perut == 1 & mata == 0 && organ == 3){
+	motil aeromonas
+}
+
+
+sehat			0 0 3 0 0 0
+saprolegniasis		4 5 1 0 0 0
+			4 5 3 0 0 0
+tuberkulosis		0 0 4 1 0 1  
+herves			3 0 5 0 2 2 
+			3 0 8 0 2 2
+			3 0 5 0 2 3 
+			3 0 8 0 2 3
+Myxosporeasis		0 3 4 0 0 0
+			0 3 7 0 0 0
+			0 3 8 0 0 0
+			0 4 4 0 0 0
+			0 4 7 0 0 0
+			0 4 8 0 0 0
+Lerneasis		3 3 4 0 1 0
+			3 3 5 0 1 0
+			3 3 7 0 1 0
+			3 3 8 0 1 0
+Psedomonas		1 0 4 1 2 0
+			2 0 4 1 2 0
+			3 0 4 1 2 0
+			1 0 7 1 2 0
+			2 0 7 1 2 0
+			3 0 7 1 2 0
+Bintik putih		3 3 3 0 0 0
+Kutu			2 0 4 0 0 0
+			2 0 5 0 0 0
+			2 0 7 0 0 0
+Motil aeromonas		1 0 7 1 0 3
+			2 0 7 1 0 3
+			1 0 6 1 0 3
+			2 0 6 1 0 3

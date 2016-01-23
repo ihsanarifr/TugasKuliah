@@ -17,14 +17,14 @@ namespace IvanHotel.Controllers
         // GET: /Provinsi/
         public ActionResult Index()
         {
-            ViewBag.Menu = "provinsi";
+            ViewBag.Menu = 7;
             return View(db.Provinsi.ToList());
         }
 
         // GET: /Provinsi/Details/5
         public ActionResult Details(int? id)
         {
-            ViewBag.Menu = "provinsi";
+            ViewBag.Menu = 7;
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
@@ -40,7 +40,7 @@ namespace IvanHotel.Controllers
         // GET: /Provinsi/Create
         public ActionResult Create()
         {
-            ViewBag.Menu = "provinsi";
+            ViewBag.Menu = 7;
             return View();
         }
 
@@ -64,7 +64,7 @@ namespace IvanHotel.Controllers
         // GET: /Provinsi/Edit/5
         public ActionResult Edit(int? id)
         {
-            ViewBag.Menu = "provinsi";
+            ViewBag.Menu = 7;
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
@@ -96,7 +96,7 @@ namespace IvanHotel.Controllers
         // GET: /Provinsi/Delete/5
         public ActionResult Delete(int? id)
         {
-            ViewBag.Menu = "provinsi";
+            ViewBag.Menu = 7;
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);

@@ -1,5 +1,5 @@
 ﻿<!-- Logo -->
-<a href="index2.html" class="logo">
+<a href="#" class="logo">
     <!-- logo for regular state and mobile devices -->
     <span class="logo-lg"><b>IVAN</b>Hotel</span>
 </a>
@@ -11,25 +11,69 @@
     </a>
     <div class="navbar-custom-menu">
         <ul class="nav navbar-nav">
+            <li>
+                <a class="hidden-xs">
+                    <i class="fa fa-calendar"></i>&nbsp;
+                    <script type='text/javascript'>
+                        var months = ['Januari', 'Februari', 'Maret', 'April', 'Mei', 'Juni', 'Juli', 'Agustus', 'September', 'Oktober', 'November', 'Desember'];
+                        var myDays = ['Minggu', 'Senin', 'Selasa', 'Rabu', 'Kamis', 'Jum&#39;at', 'Sabtu'];
+                        var date = new Date();
+                        var day = date.getDate();
+                        var month = date.getMonth();
+                        var thisDay = date.getDay(),
+                            thisDay = myDays[thisDay];
+                        var yy = date.getYear();
+                        var year = (yy < 1000) ? yy + 1900 : yy;
+                        document.write(thisDay + ', ' + day + ' ' + months[month] + ' ' + year);
+                    </script>
+                </a>
+            </li>
+            <!-- Notifications: style can be found in dropdown.less -->
+            <li>
+                <a class="hidden-xs">
+                    <i class="fa fa-clock-o"></i> <span id="jamweke"></span>
+                    <script type="text/javascript">
+							<!--
+							function startTime() {
+								var today=new Date(),
+									curr_hour=today.getHours(),
+									curr_min=today.getMinutes(),
+									curr_sec=today.getSeconds();
+							 curr_hour=checkTime(curr_hour);
+								curr_min=checkTime(curr_min);
+								curr_sec=checkTime(curr_sec);
+								document.getElementById('jamweke').innerHTML=curr_hour+":"+curr_min+":"+curr_sec;
+							}
+							function checkTime(i) {
+								if (i<10) {
+									i="0" + i;
+								}
+								return i;
+							}
+							setInterval(startTime, 500);
+							//-->
+                    </script>
+                </a>
+            </li>
             <!-- User Account: style can be found in dropdown.less -->
             <li class="dropdown user user-menu">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                    <img src="{base_url()}assets/img/avatar5.png" class="user-image" alt="User Image">
-                    <span class="hidden-xs">{$user->username}</span>
+                    <img src="@Href("~/Images/wifi.png")" class="user-image" alt="User Image">
+                    <span class="hidden-xs">@this.Session["username"]</span>
                 </a>
                 <ul class="dropdown-menu">
                     <!-- User image -->
                     <li class="user-header">
-                        <img src="{base_url()}assets/img/avatar5.png" class="img-circle" alt="User Image">
+                        <img src="@Href("~/Images/wifi.png")" class="img-circle" alt="User Image">
                         <p>
-                            {$user->username}
-                            <small>Terakhir login {date('h:m', $user->last_login)}</small>
+                            @this.Session["TipeAkun"]
+                            <small>Terakhir login @DateTime.Now</small>
                         </p>
                     </li>
                     <!-- Menu Footer-->
                     <li class="user-footer">
                         <div class="pull-right">
-                            <a href="{site_url('auth/logout')}" class="btn btn-default btn-flat">Keluar</a>
+                            <a href="@Url.Action("LogOff", "Account")" class="btn btn-default btn-flat">Keluar</a>
                         </div>
                     </li>
                 </ul>

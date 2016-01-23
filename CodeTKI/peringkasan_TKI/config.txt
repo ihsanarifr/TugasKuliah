@@ -1,0 +1,8 @@
+100
+bentuk2
+1
+
+keterangan : 
+baris 1 adalah banyak dokumen latih
+baris 2 adalah nama folder rule yang akan digunakan
+baris 3 adalah penanda stopword, jika 0 tdk melakukan proses stopword dan 1 melakukan proses stopword

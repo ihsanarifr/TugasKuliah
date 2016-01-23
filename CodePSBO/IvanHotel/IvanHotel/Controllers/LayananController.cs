@@ -20,6 +20,7 @@ namespace IvanHotel.Controllers
         // GET: /Layanan/
         public ActionResult Index()
         {
+            ViewBag.Menu = 2;
             ViewBag.ListLayanan = layananbm.Layanan();
             return View();
         }
@@ -27,6 +28,7 @@ namespace IvanHotel.Controllers
         // GET: /Layanan/Details/5
         public ActionResult Details(int? id)
         {
+            ViewBag.Menu = 2;
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
@@ -42,6 +44,7 @@ namespace IvanHotel.Controllers
         // GET: /Layanan/Create
         public ActionResult CreateSpa()
         {
+            ViewBag.Menu = 2;
             return View();
         }
 
@@ -52,6 +55,7 @@ namespace IvanHotel.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult CreateSpa([Bind(Include="Nama,Durasi,Peralatan,Harga,Deskripsi")] LayananVM layanan)
         {
+            ViewBag.Menu = 2;
             if (ModelState.IsValid)
             {
                 layanan.TipeLayananID = 2;
@@ -63,6 +67,7 @@ namespace IvanHotel.Controllers
         // GET: /Layanan/Create
         public ActionResult CreateLaundry()
         {
+            ViewBag.Menu = 2;
             return View();
         }
 
@@ -73,6 +78,7 @@ namespace IvanHotel.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult CreateLaundry([Bind(Include = "Nama,Satuan,Kualitas,Harga,Deskripsi")] LayananVM layanan)
         {
+            ViewBag.Menu = 2;
             if (ModelState.IsValid)
             {
                 layanan.TipeLayananID = 1;
@@ -85,6 +91,7 @@ namespace IvanHotel.Controllers
         // GET: /Layanan/Edit/5
         public ActionResult EditSpa(int? id)
         {
+            ViewBag.Menu = 2;
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
@@ -104,7 +111,7 @@ namespace IvanHotel.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult EditSpa([Bind(Include = "Nama,Durasi,Peralatan,Harga,Deskripsi")] LayananVM layanan)
         {
-            
+            ViewBag.Menu = 2;
             if (ModelState.IsValid)
             {
                 layananbm.update(layanan);
@@ -135,7 +142,7 @@ namespace IvanHotel.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult EditLaundry([Bind(Include = "Nama,Satuan,Kualitas,Harga,Deskripsi")] LayananVM layanan)
         {
-
+            ViewBag.Menu = 2;
             if (ModelState.IsValid)
             {
                 layananbm.update(layanan);
@@ -147,6 +154,7 @@ namespace IvanHotel.Controllers
         // GET: /Layanan/Delete/5
         public ActionResult Delete(int? id)
         {
+            ViewBag.Menu = 2;
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
@@ -164,6 +172,7 @@ namespace IvanHotel.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
+            ViewBag.Menu = 2;
             LayananVM data = layananbm.details(id);
             layananbm.delete(id,(int)data.TipeLayananID);
             return RedirectToAction("Index");

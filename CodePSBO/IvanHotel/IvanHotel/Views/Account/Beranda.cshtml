@@ -1,0 +1,49 @@
+﻿@{
+    ViewBag.Title = "Beranda";
+    Layout = "~/Views/Shared/Back/_Layout.cshtml";
+}
+<h2>Booked Room</h2>
+@foreach(IvanHotel.ViewModels.KamarViewModel item in @ViewBag.InforKamarNotAvailable)
+    {
+        <div class="col-lg-3 col-xs-6">
+            <div class="small-box bg-green">
+            <div class="inner">
+                <h3>@item.Kapasitas</h3>
+
+                <p>@item.Nama</p>
+            </div>
+            <div class="icon">
+                <i class="ion ion-stats-bars"></i>
+            </div>
+            <a href="#" class="small-box-footer">
+                More info <i class="fa fa-arrow-circle-right"></i>
+            </a>
+            </div>
+        </div>
+    }
+<h2>Available Room</h2>
+@foreach (IvanHotel.ViewModels.KamarViewModel item in @ViewBag.InfoKamar)
+{
+    <div class="col-lg-3 col-xs-6">
+        <div class="small-box bg-purple">
+            <div class="inner">
+                <h3>@item.Kapasitas</h3>
+
+                <p>@item.Nama</p>
+            </div>
+            <div class="icon">
+                <i class="ion ion-stats-bars"></i>
+            </div>
+            <a href="#" class="small-box-footer">
+                More info <i class="fa fa-arrow-circle-right"></i>
+            </a>
+        </div>
+    </div>
+}
+@section Scripts{
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('#table').DataTable();
+        });
+    </script>
+}

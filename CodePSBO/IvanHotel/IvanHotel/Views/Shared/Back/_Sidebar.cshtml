@@ -3,10 +3,10 @@
     <!-- Sidebar user panel -->
     <div class="user-panel">
         <div class="pull-left image">
-            <img src="{base_url()}assets/img/avatar5.png" class="img-circle" alt="User Image">
+            <img src="@Href("~/Images/wifi.png")" class="img-circle" alt="User Image">
         </div>
         <div class="pull-left info">
-            <p>{$user->username}</p>
+            <p>@this.Session["TipeAkun"]</p>
             <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
         </div>
     </div>
@@ -24,53 +24,64 @@
     <ul class="sidebar-menu">
         <li class="header">MAIN NAVIGATION</li>
         <li>
-        <a href="{site_url('dashboard')}">
+        <a href="@Url.Action("Beranda","Account")">
             <i class="fa fa-dashboard"></i> <span>Dashboard</span>
         </a>
         </li>
-        <li>
+        <li @{
+            var active = "class=active";
+            if (ViewBag.Menu == 1 || ViewBag.Menu == 3 || ViewBag.Menu == 2) 
+            {
+                @active;
+            }
+        }>
         <a href="#">
             <i class="fa fa-pie-chart"></i>
             <span>Master Data</span>
             <i class="fa fa-angle-left pull-right"></i>
         </a>
         <ul class="treeview-menu">
-            <li>
+            <li @if(ViewBag.Menu == 1){ @active; }>
             <a href="@Url.Action("Index","Kamar")"><i class="fa fa-circle-o"></i> Kamar</a></li>
-            <li>
-            <a href="@Url.Action("Index", "Layanan")"><i class="fa fa-circle-o"></i> Layanan</a></li>
-            <li>
-            <a href="@Url.Action("Index", "Transaksi")"><i class="fa fa-circle-o"></i> Transaksi</a></li>
+            <li @if (ViewBag.Menu == 2) { @active }>
+                <a href="@Url.Action("Index", "Layanan")"><i class="fa fa-circle-o"></i> Layanan</a>
+            </li>
+            <li @if (ViewBag.Menu == 3) { @active }>
+                <a href="@Url.Action("Index", "TransaksiTamu")"><i class="fa fa-circle-o"></i> Transaksi</a>
+            </li>
         </ul>
         </li>
-        <li>
-        <a href="#">
-            <i class="fa fa-pie-chart"></i>
-            <span>Setting</span>
-            <i class="fa fa-angle-left pull-right"></i>
-        </a>
-        <ul class="treeview-menu">
-            <li>
-            <a href="@Url.Action("Index","JenisKelamin")"><i class="fa fa-circle-o"></i> Jenis Kelamin</a></li>
-            <li>
-                <a href="@Url.Action("Index","Fasilitas")"><i class="fa fa-circle-o"></i> Fasilitas</a>
-            </li>
-            <li>
-                <a href="@Url.Action("Index","KabupatenKota")"><i class="fa fa-circle-o"></i> Kabupaten Kota</a>
-            </li>
-            <li>
-                <a href="@Url.Action("Index","Provinsi")"><i class="fa fa-circle-o"></i> Provinsi</a>
-            </li>
-            <li>
-                <a href="@Url.Action("Index","TipeIdentitas")"><i class="fa fa-circle-o"></i> Tipe Identitas</a>
-            </li>
-            <li>
-                <a href="@Url.Action("Index","TipeKamar")"><i class="fa fa-circle-o"></i> Tipe Kamar</a>
-            </li>
-            <li>
-                <a href="@Url.Action("Index","TipeKontak")"><i class="fa fa-circle-o"></i> Tipe Kontak</a>
-            </li>
-        </ul>
+        
+        <li @if (ViewBag.Menu == 4 || ViewBag.Menu == 5 || ViewBag.Menu == 6 || ViewBag.Menu == 7 || ViewBag.Menu == 8 || ViewBag.Menu == 9 || ViewBag.Menu == 10)
+            { @active }>
+            <a href="#">
+                <i class="fa fa-pie-chart"></i>
+                <span>Setting</span>
+                <i class="fa fa-angle-left pull-right"></i>
+            </a>
+            <ul class="treeview-menu">
+                <li @if (ViewBag.Menu == 4) { @active  }>
+                    <a href="@Url.Action("Index","JenisKelamin")"><i class="fa fa-circle-o"></i> Jenis Kelamin</a>
+                </li>
+                <li @if (ViewBag.Menu == 5) { @active  }>
+                    <a href="@Url.Action("Index","Fasilitas")"><i class="fa fa-circle-o"></i> Fasilitas</a>
+                </li>
+                <li @if (ViewBag.Menu == 6) { @active }>
+                    <a href="@Url.Action("Index","KabupatenKota")"><i class="fa fa-circle-o"></i> Kabupaten Kota</a>
+                </li>
+                <li @if (ViewBag.Menu == 7) { @active }>
+                    <a href="@Url.Action("Index","Provinsi")"><i class="fa fa-circle-o"></i> Provinsi</a>
+                </li>
+                <li @if (ViewBag.Menu == 8) { @active }>
+                    <a href="@Url.Action("Index","TipeIdentitas")"><i class="fa fa-circle-o"></i> Tipe Identitas</a>
+                </li>
+                <li @if (ViewBag.Menu == 9) { @active }>
+                    <a href="@Url.Action("Index","TipeKamar")"><i class="fa fa-circle-o"></i> Tipe Kamar</a>
+                </li>
+                <li @if (ViewBag.Menu == 10) { @active }>
+                    <a href="@Url.Action("Index","TipeKontak")"><i class="fa fa-circle-o"></i> Tipe Kontak</a>
+                </li>
+            </ul>
         </li>
     </ul>
 </section>

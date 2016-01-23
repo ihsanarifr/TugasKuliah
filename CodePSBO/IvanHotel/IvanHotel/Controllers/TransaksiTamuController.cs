@@ -19,12 +19,14 @@ namespace IvanHotel.Controllers
         // GET: /TransaksiTamu/
         public ActionResult Index()
         {
+            ViewBag.Menu = 3;
             TransaksiBM data = new TransaksiBM();
             return View(data.Transaksi());
         }
 
         public ActionResult Verifikasi(int? id)
         {
+            ViewBag.Menu = 3;
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
@@ -44,6 +46,7 @@ namespace IvanHotel.Controllers
         // GET: /TransaksiTamu/Details/5
         public ActionResult Details(int? id)
         {
+            ViewBag.Menu = 3;
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
@@ -58,6 +61,7 @@ namespace IvanHotel.Controllers
 
         public ActionResult TambahTransaksiLayanan(int id)
         {
+            ViewBag.Menu = 3;
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
@@ -75,7 +79,7 @@ namespace IvanHotel.Controllers
         [HttpPost]
         public ActionResult TambahTransaksiLayanan()
         {
-
+            ViewBag.Menu = 3;
             TransaksiBM data = new TransaksiBM();
             TransaksiVM view = new TransaksiVM();
             if (data == null)
@@ -94,6 +98,7 @@ namespace IvanHotel.Controllers
 
         public ActionResult Delete(int id)
         {
+            ViewBag.Menu = 3;
             TransaksiLayanan data = db.TransaksiLayanan.Find(id);
             int TransaksiID = (int)data.TransaksiTamuID;
 

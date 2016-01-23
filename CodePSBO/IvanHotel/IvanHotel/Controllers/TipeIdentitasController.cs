@@ -17,14 +17,14 @@ namespace IvanHotel.Controllers
         // GET: /TipeIdentitas/
         public ActionResult Index()
         {
-            ViewBag.Menu = "tipeidentitas";
+            ViewBag.Menu = 8;
             return View(db.TipeIdentitas.ToList());
         }
 
         // GET: /TipeIdentitas/Details/5
         public ActionResult Details(int? id)
         {
-            ViewBag.Menu = "tipeidentitas";
+            ViewBag.Menu = 8;
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
@@ -40,7 +40,7 @@ namespace IvanHotel.Controllers
         // GET: /TipeIdentitas/Create
         public ActionResult Create()
         {
-            ViewBag.Menu = "tipeidentitas";
+            ViewBag.Menu = 8;
             return View();
         }
 
@@ -64,7 +64,7 @@ namespace IvanHotel.Controllers
         // GET: /TipeIdentitas/Edit/5
         public ActionResult Edit(int? id)
         {
-            ViewBag.Menu = "tipeidentitas";
+            ViewBag.Menu = 8;
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
@@ -96,7 +96,7 @@ namespace IvanHotel.Controllers
         // GET: /TipeIdentitas/Delete/5
         public ActionResult Delete(int? id)
         {
-            ViewBag.Menu = "tipeidentitas";
+            ViewBag.Menu = 8;
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);

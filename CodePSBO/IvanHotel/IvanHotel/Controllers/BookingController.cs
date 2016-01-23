@@ -20,11 +20,14 @@ namespace IvanHotel.Controllers
         public ActionResult Index()
         {
             var tamu = db.Tamu.Include(t => t.JenisKelamin).Include(t => t.TipeIdentitas);
+            BookingBM data = new BookingBM();
             ViewBag.TipeIdentitasID = new SelectList(db.TipeIdentitas, "ID", "Nama");
             ViewBag.JenisKelaminID = new SelectList(db.JenisKelamin, "ID", "Nama");
             //ViewBag.Kecamatan = new SelectList(db.Kecamatan, "ID", "Nama");
             ////ViewBag.KabupatenKota = new SelectList(db.KabupatenKota, "ID", "Nama");
+            //ViewBag.TipeKamar = data.listKamar();
             ViewBag.TipeKamar = new SelectList(db.TipeKamar, "ID", "Nama");
+            ViewBag.InfoKamar = data.listKamar();
             TempData["status"] = "false";
             //TempData["pesan"] = "Data Pemesanan Anda sudah terdaftar. Rincian konfirmasi sudah dikirim melalui nomor Handphone";
             return View(tamu.ToList());
@@ -61,7 +64,7 @@ namespace IvanHotel.Controllers
                 TempData["status"] = "false";
                 TempData["pesan"] = "Data Pemesanan Anda sudah terdaftar. Rincian konfirmasi sudah dikirim melalui nomor Handphone";
                 ViewBag.Message = "";
-                return RedirectToAction("Index");
+                return RedirectToAction("Selesai");
             }
 
             TempData["status"] = "true";
@@ -75,107 +78,9 @@ namespace IvanHotel.Controllers
             return View(tamu);
         }
 
-        // GET: /Booking/Details/5
-        public ActionResult Details(int? id)
+        public ActionResult Selesai()
         {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            Tamu tamu = db.Tamu.Find(id);
-            if (tamu == null)
-            {
-                return HttpNotFound();
-            }
-            return View(tamu);
-        }
-
-        // GET: /Booking/Create
-        public ActionResult Create()
-        {
-            ViewBag.JenisKelaminID = new SelectList(db.JenisKelamin, "ID", "Nama");
-            ViewBag.TipeIdentitasID = new SelectList(db.TipeIdentitas, "ID", "Nama");
             return View();
-        }
-
-        // POST: /Booking/Create
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include="ID,Nama,NomorIdentitas,TipeIdentitasID,JenisKelaminID")] Tamu tamu)
-        {
-            if (ModelState.IsValid)
-            {
-                db.Tamu.Add(tamu);
-                db.SaveChanges();
-                return RedirectToAction("Index");
-            }
-
-            ViewBag.JenisKelaminID = new SelectList(db.JenisKelamin, "ID", "Nama", tamu.JenisKelaminID);
-            ViewBag.TipeIdentitasID = new SelectList(db.TipeIdentitas, "ID", "Nama", tamu.TipeIdentitasID);
-            return View(tamu);
-        }
-
-        // GET: /Booking/Edit/5
-        public ActionResult Edit(int? id)
-        {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            Tamu tamu = db.Tamu.Find(id);
-            if (tamu == null)
-            {
-                return HttpNotFound();
-            }
-            ViewBag.JenisKelaminID = new SelectList(db.JenisKelamin, "ID", "Nama", tamu.JenisKelaminID);
-            ViewBag.TipeIdentitasID = new SelectList(db.TipeIdentitas, "ID", "Nama", tamu.TipeIdentitasID);
-            return View(tamu);
-        }
-
-        // POST: /Booking/Edit/5
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include="ID,Nama,NomorIdentitas,TipeIdentitasID,JenisKelaminID")] Tamu tamu)
-        {
-            if (ModelState.IsValid)
-            {
-                db.Entry(tamu).State = EntityState.Modified;
-                db.SaveChanges();
-                return RedirectToAction("Index");
-            }
-            ViewBag.JenisKelaminID = new SelectList(db.JenisKelamin, "ID", "Nama", tamu.JenisKelaminID);
-            ViewBag.TipeIdentitasID = new SelectList(db.TipeIdentitas, "ID", "Nama", tamu.TipeIdentitasID);
-            return View(tamu);
-        }
-
-        // GET: /Booking/Delete/5
-        public ActionResult Delete(int? id)
-        {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            Tamu tamu = db.Tamu.Find(id);
-            if (tamu == null)
-            {
-                return HttpNotFound();
-            }
-            return View(tamu);
-        }
-
-        // POST: /Booking/Delete/5
-        [HttpPost, ActionName("Delete")]
-        [ValidateAntiForgeryToken]
-        public ActionResult DeleteConfirmed(int id)
-        {
-            Tamu tamu = db.Tamu.Find(id);
-            db.Tamu.Remove(tamu);
-            db.SaveChanges();
-            return RedirectToAction("Index");
         }
 
         protected override void Dispose(bool disposing)

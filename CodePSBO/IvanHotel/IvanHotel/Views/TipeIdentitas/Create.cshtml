@@ -5,7 +5,7 @@
     Layout = "~/Views/Shared/Back/_Layout.cshtml";
 }
 <div class="box box-success">
-    <div class="box-header"><h5>Edit Jenis Kelamin</h5><hr /></div>
+    <div class="box-header"><h5>Edit Tipe Identitas</h5><hr /></div>
     <div class="box-body">
         @using (Html.BeginForm())
         {
@@ -15,14 +15,14 @@
                 <div class="form-group">
                     @Html.LabelFor(model => model.Nama, new { @class = "control-label col-md-2" })
                     <div class="col-md-10">
-                        @Html.EditorFor(model => model.Nama, new { @class="form-control"})
+                        @Html.TextBoxFor(model => model.Nama, new { @class="form-control"})
                         @Html.ValidationMessageFor(model => model.Nama)
                     </div>
                 </div>
 
                 <div class="form-group">
                     <div class="col-md-offset-2 col-md-10">
-                        <input type="submit" value="Create" class="btn btn-default" />
+                        <input type="submit" value="Create" class="btn btn-primary" />
                     </div>
                 </div>
             </div>

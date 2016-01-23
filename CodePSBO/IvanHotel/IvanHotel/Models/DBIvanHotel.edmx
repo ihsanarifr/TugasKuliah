@@ -549,6 +549,8 @@
         <EntityContainer Name="DBReservasiHotelEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="sysdiagrams" EntityType="DBReservasiHotelModel.sysdiagrams" />
           <EntitySet Name="Alamat" EntityType="DBReservasiHotelModel.Alamat" />
+          <EntitySet Name="FasilitasKamar" EntityType="DBReservasiHotelModel.FasilitasKamar" />
+          <EntitySet Name="Kamar" EntityType="DBReservasiHotelModel.Kamar" />
           <EntitySet Name="Laundry" EntityType="DBReservasiHotelModel.Laundry" />
           <EntitySet Name="Layanan" EntityType="DBReservasiHotelModel.Layanan" />
           <EntitySet Name="Pegawai" EntityType="DBReservasiHotelModel.Pegawai" />
@@ -566,6 +568,7 @@
           <EntitySet Name="TipeLayanan" EntityType="DBReservasiHotelModel.TipeLayanan" />
           <EntitySet Name="TransaksiKamar" EntityType="DBReservasiHotelModel.TransaksiKamar" />
           <EntitySet Name="TransaksiLayanan" EntityType="DBReservasiHotelModel.TransaksiLayanan" />
+          <EntitySet Name="TransaksiTamu" EntityType="DBReservasiHotelModel.TransaksiTamu" />
           <AssociationSet Name="FK_Alamat_KabupatenKota" Association="DBReservasiHotelModel.FK_Alamat_KabupatenKota">
             <End Role="KabupatenKota" EntitySet="KabupatenKota" />
             <End Role="Alamat" EntitySet="Alamat" />
@@ -577,6 +580,22 @@
           <AssociationSet Name="FK_Alamat_Tamu" Association="DBReservasiHotelModel.FK_Alamat_Tamu">
             <End Role="Tamu" EntitySet="Tamu" />
             <End Role="Alamat" EntitySet="Alamat" />
+          </AssociationSet>
+          <AssociationSet Name="FK_FasilitasKamar_Fasilitas" Association="DBReservasiHotelModel.FK_FasilitasKamar_Fasilitas">
+            <End Role="Fasilitas" EntitySet="Fasilitas" />
+            <End Role="FasilitasKamar" EntitySet="FasilitasKamar" />
+          </AssociationSet>
+          <AssociationSet Name="FK_FasilitasKamar_Kamar" Association="DBReservasiHotelModel.FK_FasilitasKamar_Kamar">
+            <End Role="Kamar" EntitySet="Kamar" />
+            <End Role="FasilitasKamar" EntitySet="FasilitasKamar" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Kamar_TipeKamar" Association="DBReservasiHotelModel.FK_Kamar_TipeKamar">
+            <End Role="TipeKamar" EntitySet="TipeKamar" />
+            <End Role="Kamar" EntitySet="Kamar" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TransaksiKamar_Kamar" Association="DBReservasiHotelModel.FK_TransaksiKamar_Kamar">
+            <End Role="Kamar" EntitySet="Kamar" />
+            <End Role="TransaksiKamar" EntitySet="TransaksiKamar" />
           </AssociationSet>
           <AssociationSet Name="FK_Laundry_Layanan" Association="DBReservasiHotelModel.FK_Laundry_Layanan">
             <End Role="Layanan" EntitySet="Layanan" />
@@ -594,6 +613,10 @@
             <End Role="Layanan" EntitySet="Layanan" />
             <End Role="TransaksiLayanan" EntitySet="TransaksiLayanan" />
           </AssociationSet>
+          <AssociationSet Name="FK_TransaksiTamu_Pegawai" Association="DBReservasiHotelModel.FK_TransaksiTamu_Pegawai">
+            <End Role="Pegawai" EntitySet="Pegawai" />
+            <End Role="TransaksiTamu" EntitySet="TransaksiTamu" />
+          </AssociationSet>
           <AssociationSet Name="FK_Kontak_Tamu" Association="DBReservasiHotelModel.FK_Kontak_Tamu">
             <End Role="Tamu" EntitySet="Tamu" />
             <End Role="Kontak" EntitySet="Kontak" />
@@ -606,6 +629,10 @@
             <End Role="TipeIdentitas" EntitySet="TipeIdentitas" />
             <End Role="Tamu" EntitySet="Tamu" />
           </AssociationSet>
+          <AssociationSet Name="FK_TransaksiTamu_Tamu" Association="DBReservasiHotelModel.FK_TransaksiTamu_Tamu">
+            <End Role="Tamu" EntitySet="Tamu" />
+            <End Role="TransaksiTamu" EntitySet="TransaksiTamu" />
+          </AssociationSet>
           <AssociationSet Name="FK_KabupatenKota_Provinsi" Association="DBReservasiHotelModel.FK_KabupatenKota_Provinsi">
             <End Role="Provinsi" EntitySet="Provinsi" />
             <End Role="KabupatenKota" EntitySet="KabupatenKota" />
@@ -613,15 +640,6 @@
           <AssociationSet Name="FK_Kontak_TipeKontak" Association="DBReservasiHotelModel.FK_Kontak_TipeKontak">
             <End Role="TipeKontak" EntitySet="TipeKontak" />
             <End Role="Kontak" EntitySet="Kontak" />
-          </AssociationSet>
-          <EntitySet Name="TransaksiTamu" EntityType="DBReservasiHotelModel.TransaksiTamu" />
-          <AssociationSet Name="FK_TransaksiTamu_Pegawai" Association="DBReservasiHotelModel.FK_TransaksiTamu_Pegawai">
-            <End Role="Pegawai" EntitySet="Pegawai" />
-            <End Role="TransaksiTamu" EntitySet="TransaksiTamu" />
-          </AssociationSet>
-          <AssociationSet Name="FK_TransaksiTamu_Tamu" Association="DBReservasiHotelModel.FK_TransaksiTamu_Tamu">
-            <End Role="Tamu" EntitySet="Tamu" />
-            <End Role="TransaksiTamu" EntitySet="TransaksiTamu" />
           </AssociationSet>
           <AssociationSet Name="FK_TransaksiKamar_TransaksiTamu" Association="DBReservasiHotelModel.FK_TransaksiKamar_TransaksiTamu">
             <End Role="TransaksiTamu" EntitySet="TransaksiTamu" />
@@ -631,25 +649,7 @@
             <End Role="TransaksiTamu" EntitySet="TransaksiTamu" />
             <End Role="TransaksiLayanan" EntitySet="TransaksiLayanan" />
           </AssociationSet>
-          <EntitySet Name="FasilitasKamar" EntityType="DBReservasiHotelModel.FasilitasKamar" />
-          <EntitySet Name="Kamar" EntityType="DBReservasiHotelModel.Kamar" />
-          <AssociationSet Name="FK_FasilitasKamar_Fasilitas" Association="DBReservasiHotelModel.FK_FasilitasKamar_Fasilitas">
-            <End Role="Fasilitas" EntitySet="Fasilitas" />
-            <End Role="FasilitasKamar" EntitySet="FasilitasKamar" />
-          </AssociationSet>
-          <AssociationSet Name="FK_FasilitasKamar_Kamar" Association="DBReservasiHotelModel.FK_FasilitasKamar_Kamar">
-            <End Role="Kamar" EntitySet="Kamar" />
-            <End Role="FasilitasKamar" EntitySet="FasilitasKamar" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Kamar_TipeKamar" Association="DBReservasiHotelModel.FK_Kamar_TipeKamar">
-            <End Role="TipeKamar" EntitySet="TipeKamar" />
-            <End Role="Kamar" EntitySet="Kamar" />
-          </AssociationSet>
-          <AssociationSet Name="FK_TransaksiKamar_Kamar" Association="DBReservasiHotelModel.FK_TransaksiKamar_Kamar">
-            <End Role="Kamar" EntitySet="Kamar" />
-            <End Role="TransaksiKamar" EntitySet="TransaksiKamar" />
-          </AssociationSet>
-          </EntityContainer>
+        </EntityContainer>
         <EntityType Name="sysdiagrams">
           <Key>
             <PropertyRef Name="diagram_id" />
@@ -676,6 +676,32 @@
           <NavigationProperty Name="KabupatenKota" Relationship="DBReservasiHotelModel.FK_Alamat_KabupatenKota" FromRole="Alamat" ToRole="KabupatenKota" />
           <NavigationProperty Name="Kecamatan" Relationship="DBReservasiHotelModel.FK_Alamat_Kecamatan" FromRole="Alamat" ToRole="Kecamatan" />
           <NavigationProperty Name="Tamu" Relationship="DBReservasiHotelModel.FK_Alamat_Tamu" FromRole="Alamat" ToRole="Tamu" />
+        </EntityType>
+        <EntityType Name="FasilitasKamar">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="KamarID" Type="Int32" />
+          <Property Name="FasilitasID" Type="Int32" />
+          <NavigationProperty Name="Fasilitas" Relationship="DBReservasiHotelModel.FK_FasilitasKamar_Fasilitas" FromRole="FasilitasKamar" ToRole="Fasilitas" />
+          <NavigationProperty Name="Kamar" Relationship="DBReservasiHotelModel.FK_FasilitasKamar_Kamar" FromRole="FasilitasKamar" ToRole="Kamar" />
+        </EntityType>
+        <EntityType Name="Kamar">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="NomorKamar" Type="Int32" />
+          <Property Name="Kapasitas" Type="Int32" />
+          <Property Name="Status" Type="Boolean" />
+          <Property Name="TipeKamarID" Type="Int32" />
+          <Property Name="Lantai" Type="Int32" />
+          <Property Name="HargaWeekDay" Type="Int32" />
+          <Property Name="HargaWeekEnd" Type="Int32" />
+          <NavigationProperty Name="FasilitasKamar" Relationship="DBReservasiHotelModel.FK_FasilitasKamar_Kamar" FromRole="Kamar" ToRole="FasilitasKamar" />
+          <NavigationProperty Name="TipeKamar" Relationship="DBReservasiHotelModel.FK_Kamar_TipeKamar" FromRole="Kamar" ToRole="TipeKamar" />
+          <NavigationProperty Name="TransaksiKamar" Relationship="DBReservasiHotelModel.FK_TransaksiKamar_Kamar" FromRole="Kamar" ToRole="TransaksiKamar" />
         </EntityType>
         <EntityType Name="Laundry">
           <Key>
@@ -828,8 +854,8 @@
           <Property Name="CheckOut" Type="DateTime" Precision="0" />
           <Property Name="KamarID" Type="Int32" />
           <Property Name="TransaksiTamuID" Type="Int32" />
-          <NavigationProperty Name="TransaksiTamu" Relationship="DBReservasiHotelModel.FK_TransaksiKamar_TransaksiTamu" FromRole="TransaksiKamar" ToRole="TransaksiTamu" />
           <NavigationProperty Name="Kamar" Relationship="DBReservasiHotelModel.FK_TransaksiKamar_Kamar" FromRole="TransaksiKamar" ToRole="Kamar" />
+          <NavigationProperty Name="TransaksiTamu" Relationship="DBReservasiHotelModel.FK_TransaksiKamar_TransaksiTamu" FromRole="TransaksiKamar" ToRole="TransaksiTamu" />
         </EntityType>
         <EntityType Name="TransaksiLayanan">
           <Key>
@@ -840,6 +866,22 @@
           <Property Name="TransaksiTamuID" Type="Int32" />
           <NavigationProperty Name="Layanan" Relationship="DBReservasiHotelModel.FK_TransaksiLayanan_Layanan" FromRole="TransaksiLayanan" ToRole="Layanan" />
           <NavigationProperty Name="TransaksiTamu" Relationship="DBReservasiHotelModel.FK_TransaksiLayanan_TransaksiTamu" FromRole="TransaksiLayanan" ToRole="TransaksiTamu" />
+        </EntityType>
+        <EntityType Name="TransaksiTamu">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="PegawaiID" Type="Int32" />
+          <Property Name="TamuID" Type="Int32" />
+          <Property Name="TMT" Type="DateTime" Precision="0" />
+          <Property Name="TST" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="IsRegistrasiUlang" Type="Boolean" />
+          <Property Name="IsBayar" Type="Boolean" />
+          <NavigationProperty Name="Pegawai" Relationship="DBReservasiHotelModel.FK_TransaksiTamu_Pegawai" FromRole="TransaksiTamu" ToRole="Pegawai" />
+          <NavigationProperty Name="Tamu" Relationship="DBReservasiHotelModel.FK_TransaksiTamu_Tamu" FromRole="TransaksiTamu" ToRole="Tamu" />
+          <NavigationProperty Name="TransaksiKamar" Relationship="DBReservasiHotelModel.FK_TransaksiKamar_TransaksiTamu" FromRole="TransaksiTamu" ToRole="TransaksiKamar" />
+          <NavigationProperty Name="TransaksiLayanan" Relationship="DBReservasiHotelModel.FK_TransaksiLayanan_TransaksiTamu" FromRole="TransaksiTamu" ToRole="TransaksiLayanan" />
         </EntityType>
         <Association Name="FK_Alamat_KabupatenKota">
           <End Type="DBReservasiHotelModel.KabupatenKota" Role="KabupatenKota" Multiplicity="0..1" />
@@ -874,6 +916,54 @@
             </Principal>
             <Dependent Role="Alamat">
               <PropertyRef Name="TamuID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_FasilitasKamar_Fasilitas">
+          <End Type="DBReservasiHotelModel.Fasilitas" Role="Fasilitas" Multiplicity="0..1" />
+          <End Type="DBReservasiHotelModel.FasilitasKamar" Role="FasilitasKamar" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Fasilitas">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="FasilitasKamar">
+              <PropertyRef Name="FasilitasID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_FasilitasKamar_Kamar">
+          <End Type="DBReservasiHotelModel.Kamar" Role="Kamar" Multiplicity="0..1" />
+          <End Type="DBReservasiHotelModel.FasilitasKamar" Role="FasilitasKamar" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Kamar">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="FasilitasKamar">
+              <PropertyRef Name="KamarID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Kamar_TipeKamar">
+          <End Type="DBReservasiHotelModel.TipeKamar" Role="TipeKamar" Multiplicity="0..1" />
+          <End Type="DBReservasiHotelModel.Kamar" Role="Kamar" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TipeKamar">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Kamar">
+              <PropertyRef Name="TipeKamarID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TransaksiKamar_Kamar">
+          <End Type="DBReservasiHotelModel.Kamar" Role="Kamar" Multiplicity="0..1" />
+          <End Type="DBReservasiHotelModel.TransaksiKamar" Role="TransaksiKamar" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Kamar">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="TransaksiKamar">
+              <PropertyRef Name="KamarID" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -925,6 +1015,18 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_TransaksiTamu_Pegawai">
+          <End Type="DBReservasiHotelModel.Pegawai" Role="Pegawai" Multiplicity="0..1" />
+          <End Type="DBReservasiHotelModel.TransaksiTamu" Role="TransaksiTamu" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Pegawai">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="TransaksiTamu">
+              <PropertyRef Name="PegawaiID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_Kontak_Tamu">
           <End Type="DBReservasiHotelModel.Tamu" Role="Tamu" Multiplicity="0..1" />
           <End Type="DBReservasiHotelModel.Kontak" Role="Kontak" Multiplicity="*" />
@@ -961,6 +1063,18 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_TransaksiTamu_Tamu">
+          <End Type="DBReservasiHotelModel.Tamu" Role="Tamu" Multiplicity="0..1" />
+          <End Type="DBReservasiHotelModel.TransaksiTamu" Role="TransaksiTamu" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Tamu">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="TransaksiTamu">
+              <PropertyRef Name="TamuID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_KabupatenKota_Provinsi">
           <End Type="DBReservasiHotelModel.Provinsi" Role="Provinsi" Multiplicity="0..1" />
           <End Type="DBReservasiHotelModel.KabupatenKota" Role="KabupatenKota" Multiplicity="*" />
@@ -985,46 +1099,6 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityType Name="TransaksiTamu">
-          <Key>
-            <PropertyRef Name="ID" />
-          </Key>
-          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="PegawaiID" Type="Int32" />
-          <Property Name="TamuID" Type="Int32" />
-          <Property Name="TMT" Type="DateTime" Precision="0" />
-          <Property Name="TST" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
-          <Property Name="IsRegistrasiUlang" Type="Boolean" />
-          <Property Name="IsBayar" Type="Boolean" />
-          <NavigationProperty Name="Pegawai" Relationship="DBReservasiHotelModel.FK_TransaksiTamu_Pegawai" FromRole="TransaksiTamu" ToRole="Pegawai" />
-          <NavigationProperty Name="Tamu" Relationship="DBReservasiHotelModel.FK_TransaksiTamu_Tamu" FromRole="TransaksiTamu" ToRole="Tamu" />
-          <NavigationProperty Name="TransaksiKamar" Relationship="DBReservasiHotelModel.FK_TransaksiKamar_TransaksiTamu" FromRole="TransaksiTamu" ToRole="TransaksiKamar" />
-          <NavigationProperty Name="TransaksiLayanan" Relationship="DBReservasiHotelModel.FK_TransaksiLayanan_TransaksiTamu" FromRole="TransaksiTamu" ToRole="TransaksiLayanan" />
-        </EntityType>
-        <Association Name="FK_TransaksiTamu_Pegawai">
-          <End Type="DBReservasiHotelModel.Pegawai" Role="Pegawai" Multiplicity="0..1" />
-          <End Type="DBReservasiHotelModel.TransaksiTamu" Role="TransaksiTamu" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Pegawai">
-              <PropertyRef Name="ID" />
-            </Principal>
-            <Dependent Role="TransaksiTamu">
-              <PropertyRef Name="PegawaiID" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_TransaksiTamu_Tamu">
-          <End Type="DBReservasiHotelModel.Tamu" Role="Tamu" Multiplicity="0..1" />
-          <End Type="DBReservasiHotelModel.TransaksiTamu" Role="TransaksiTamu" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Tamu">
-              <PropertyRef Name="ID" />
-            </Principal>
-            <Dependent Role="TransaksiTamu">
-              <PropertyRef Name="TamuID" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FK_TransaksiKamar_TransaksiTamu">
           <End Type="DBReservasiHotelModel.TransaksiTamu" Role="TransaksiTamu" Multiplicity="0..1" />
           <End Type="DBReservasiHotelModel.TransaksiKamar" Role="TransaksiKamar" Multiplicity="*" />
@@ -1046,80 +1120,6 @@
             </Principal>
             <Dependent Role="TransaksiLayanan">
               <PropertyRef Name="TransaksiTamuID" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <EntityType Name="FasilitasKamar">
-          <Key>
-            <PropertyRef Name="ID" />
-          </Key>
-          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="KamarID" Type="Int32" />
-          <Property Name="FasilitasID" Type="Int32" />
-          <NavigationProperty Name="Fasilitas" Relationship="DBReservasiHotelModel.FK_FasilitasKamar_Fasilitas" FromRole="FasilitasKamar" ToRole="Fasilitas" />
-          <NavigationProperty Name="Kamar" Relationship="DBReservasiHotelModel.FK_FasilitasKamar_Kamar" FromRole="FasilitasKamar" ToRole="Kamar" />
-        </EntityType>
-        <EntityType Name="Kamar">
-          <Key>
-            <PropertyRef Name="ID" />
-          </Key>
-          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="NomorKamar" Type="Int32" />
-          <Property Name="Kapasitas" Type="Int32" />
-          <Property Name="Status" Type="Boolean" />
-          <Property Name="TipeKamarID" Type="Int32" />
-          <Property Name="Lantai" Type="Int32" />
-          <Property Name="HargaWeekDay" Type="Int32" />
-          <Property Name="HargaWeekEnd" Type="Int32" />
-          <NavigationProperty Name="FasilitasKamar" Relationship="DBReservasiHotelModel.FK_FasilitasKamar_Kamar" FromRole="Kamar" ToRole="FasilitasKamar" />
-          <NavigationProperty Name="TipeKamar" Relationship="DBReservasiHotelModel.FK_Kamar_TipeKamar" FromRole="Kamar" ToRole="TipeKamar" />
-          <NavigationProperty Name="TransaksiKamar" Relationship="DBReservasiHotelModel.FK_TransaksiKamar_Kamar" FromRole="Kamar" ToRole="TransaksiKamar" />
-        </EntityType>
-        <Association Name="FK_FasilitasKamar_Fasilitas">
-          <End Type="DBReservasiHotelModel.Fasilitas" Role="Fasilitas" Multiplicity="0..1" />
-          <End Type="DBReservasiHotelModel.FasilitasKamar" Role="FasilitasKamar" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Fasilitas">
-              <PropertyRef Name="ID" />
-            </Principal>
-            <Dependent Role="FasilitasKamar">
-              <PropertyRef Name="FasilitasID" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_FasilitasKamar_Kamar">
-          <End Type="DBReservasiHotelModel.Kamar" Role="Kamar" Multiplicity="0..1" />
-          <End Type="DBReservasiHotelModel.FasilitasKamar" Role="FasilitasKamar" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Kamar">
-              <PropertyRef Name="ID" />
-            </Principal>
-            <Dependent Role="FasilitasKamar">
-              <PropertyRef Name="KamarID" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_Kamar_TipeKamar">
-          <End Type="DBReservasiHotelModel.TipeKamar" Role="TipeKamar" Multiplicity="0..1" />
-          <End Type="DBReservasiHotelModel.Kamar" Role="Kamar" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="TipeKamar">
-              <PropertyRef Name="ID" />
-            </Principal>
-            <Dependent Role="Kamar">
-              <PropertyRef Name="TipeKamarID" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_TransaksiKamar_Kamar">
-          <End Type="DBReservasiHotelModel.Kamar" Role="Kamar" Multiplicity="0..1" />
-          <End Type="DBReservasiHotelModel.TransaksiKamar" Role="TransaksiKamar" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Kamar">
-              <PropertyRef Name="ID" />
-            </Principal>
-            <Dependent Role="TransaksiKamar">
-              <PropertyRef Name="KamarID" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -1151,6 +1151,29 @@
                 <ScalarProperty Name="RW" ColumnName="RW" />
                 <ScalarProperty Name="RT" ColumnName="RT" />
                 <ScalarProperty Name="Alamat1" ColumnName="Alamat" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="FasilitasKamar">
+            <EntityTypeMapping TypeName="DBReservasiHotelModel.FasilitasKamar">
+              <MappingFragment StoreEntitySet="FasilitasKamar">
+                <ScalarProperty Name="FasilitasID" ColumnName="FasilitasID" />
+                <ScalarProperty Name="KamarID" ColumnName="KamarID" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Kamar">
+            <EntityTypeMapping TypeName="DBReservasiHotelModel.Kamar">
+              <MappingFragment StoreEntitySet="Kamar">
+                <ScalarProperty Name="HargaWeekEnd" ColumnName="HargaWeekEnd" />
+                <ScalarProperty Name="HargaWeekDay" ColumnName="HargaWeekDay" />
+                <ScalarProperty Name="Lantai" ColumnName="Lantai" />
+                <ScalarProperty Name="TipeKamarID" ColumnName="TipeKamarID" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="Kapasitas" ColumnName="Kapasitas" />
+                <ScalarProperty Name="NomorKamar" ColumnName="NomorKamar" />
                 <ScalarProperty Name="ID" ColumnName="ID" />
               </MappingFragment>
             </EntityTypeMapping>
@@ -1317,29 +1340,6 @@
                 <ScalarProperty Name="TMT" ColumnName="TMT" />
                 <ScalarProperty Name="TamuID" ColumnName="TamuID" />
                 <ScalarProperty Name="PegawaiID" ColumnName="PegawaiID" />
-                <ScalarProperty Name="ID" ColumnName="ID" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="FasilitasKamar">
-            <EntityTypeMapping TypeName="DBReservasiHotelModel.FasilitasKamar">
-              <MappingFragment StoreEntitySet="FasilitasKamar">
-                <ScalarProperty Name="FasilitasID" ColumnName="FasilitasID" />
-                <ScalarProperty Name="KamarID" ColumnName="KamarID" />
-                <ScalarProperty Name="ID" ColumnName="ID" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="Kamar">
-            <EntityTypeMapping TypeName="DBReservasiHotelModel.Kamar">
-              <MappingFragment StoreEntitySet="Kamar">
-                <ScalarProperty Name="HargaWeekEnd" ColumnName="HargaWeekEnd" />
-                <ScalarProperty Name="HargaWeekDay" ColumnName="HargaWeekDay" />
-                <ScalarProperty Name="Lantai" ColumnName="Lantai" />
-                <ScalarProperty Name="TipeKamarID" ColumnName="TipeKamarID" />
-                <ScalarProperty Name="Status" ColumnName="Status" />
-                <ScalarProperty Name="Kapasitas" ColumnName="Kapasitas" />
-                <ScalarProperty Name="NomorKamar" ColumnName="NomorKamar" />
                 <ScalarProperty Name="ID" ColumnName="ID" />
               </MappingFragment>
             </EntityTypeMapping>

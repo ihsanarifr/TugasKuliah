@@ -55,12 +55,12 @@
             <dd>
                 @foreach (var item in ViewBag.ListFasilitas)
                 {
-                    <input type="checkbox" checked/> @item <br />
+                    <input type="checkbox" checked disabled/> @item <br />
                 }
             </dd>
         </dl>
         <p>
-            @Html.ActionLink("Edit", "Edit", new { id = Model.ID }, new { @class = "btn btn-warning btn-flat"}) |
+            @Html.ActionLink("Edit", "Edit", new { id = Model.ID }, new { @class = "btn btn-warning btn-flat"})
             @Html.ActionLink("Back to List", "Index", "", new { @class="btn btn-default btn-flat"})
         </p>
     </div>

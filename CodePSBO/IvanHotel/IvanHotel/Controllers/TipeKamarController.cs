@@ -17,14 +17,14 @@ namespace IvanHotel.Controllers
         // GET: /TipeKamar/
         public ActionResult Index()
         {
-            ViewBag.Menu = "tipekamar";
+            ViewBag.Menu = 9;
             return View(db.TipeKamar.ToList());
         }
 
         // GET: /TipeKamar/Details/5
         public ActionResult Details(int? id)
         {
-            ViewBag.Menu = "tipekamar";
+            ViewBag.Menu = 9;
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
@@ -40,7 +40,7 @@ namespace IvanHotel.Controllers
         // GET: /TipeKamar/Create
         public ActionResult Create()
         {
-            ViewBag.Menu = "tipekamar";
+            ViewBag.Menu = 9;
             return View();
         }
 
@@ -64,7 +64,7 @@ namespace IvanHotel.Controllers
         // GET: /TipeKamar/Edit/5
         public ActionResult Edit(int? id)
         {
-            ViewBag.Menu = "tipekamar";
+            ViewBag.Menu = 9;
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
@@ -96,7 +96,7 @@ namespace IvanHotel.Controllers
         // GET: /TipeKamar/Delete/5
         public ActionResult Delete(int? id)
         {
-            ViewBag.Menu = "tipekamar";
+            ViewBag.Menu = 9;
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
@@ -114,7 +114,7 @@ namespace IvanHotel.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            ViewBag.Menu = "tipekamar";
+            ViewBag.Menu = 9;
             TipeKamar tipekamar = db.TipeKamar.Find(id);
             db.TipeKamar.Remove(tipekamar);
             db.SaveChanges();

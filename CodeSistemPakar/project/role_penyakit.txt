@@ -1,0 +1,22 @@
+if(kulit_gelap== 1 || kulit_luka = 1 || kulit_lendir == 1){
+	if(insang_luka == 1 || kulit_pucat == 1 && sirip_luka  == 1 && kulit_berlendir == 1){
+		if(mata_luka ==1){
+			// penyakit lerneasis
+		}else if(mata_menonjol==1 && organ_luka == 1){
+			// penyakit herves virus	
+		}
+	}else if(insang_luka == 1){
+		// penyakit myxosporeasis
+	}else if(sirip_luka == 1 && sirip_merah == 1 && mata_menonjol == 1) {
+		// penyakit pseudomonas
+	}else if(perut_kembung == 1){
+		if(organ_bintik == 1){
+			// penyakit tuberkulosis
+		}else{
+			// penyakit pseudomonas
+		}
+	}
+}
+if(kulit_cerah == 1 && sirip_halus == 1 && insang_halus == 1 || kulit_halus == 1){
+	// penyakit saprologniasis
+}

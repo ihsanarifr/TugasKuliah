@@ -17,7 +17,7 @@
         {
             <div class="booking">
                 <h3>Booking</h3>
-                <div class="col-md-12 booking-form">
+                <div class="col-md-8 booking-form">
                     @using (Html.BeginForm())
                     {
                         @Html.AntiForgeryToken()
@@ -30,12 +30,6 @@
                         @Html.DropDownList("JenisKelaminID", null, String.Empty, new { @class = "arrival" })
                         <h5>PHONE</h5>
                         <input type="text" name="phone">
-                        @*<h5>KECAMATAN</h5>
-                            @Html.DropDownList("Kecamatan", null, String.Empty, new { @class="arrival"})
-                            <h5>Kabupaten/Kota</h5>
-                            @Html.DropDownList("KabupatenKota", null, String.Empty, new { @class="arrival"})*@
-                        @*<h5>Kode Pos</h5>
-                            <input type="text" value="">*@
                         <h5>ALAMAT</h5>
                         <textarea name="alamat"></textarea>
                         <br />
@@ -58,6 +52,15 @@
                         </div>
                         <input type="submit" value="Submit">
                         <input type="reset" value="Reset">
+                    }
+                </div>
+                <div class="col-md-4 booking-news">
+                    @foreach (IvanHotel.ViewModels.KamarViewModel item in @ViewBag.InfoKamar)
+                    {
+                        <div class="alert alert-warning" role="alert">
+                            <h4><a href="#">@item.Nama</a></h4>
+                            <span>Kamar Tersisa : @item.Kapasitas</span>
+                        </div>                    
                     }
                 </div>
                 <div class="clearfix"> </div>

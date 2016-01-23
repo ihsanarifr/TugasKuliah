@@ -19,6 +19,7 @@ namespace IvanHotel.Controllers
         // GET: /Kamar/
         public ActionResult Index()
         {
+            ViewBag.Menu = 1;
             var kamar = db.Kamar.Include(k => k.TipeKamar);
             return View(kamar.ToList());
         }
@@ -26,6 +27,7 @@ namespace IvanHotel.Controllers
         // GET: /Kamar/Details/5
         public ActionResult Details(int? id)
         {
+            ViewBag.Menu = 1;
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
@@ -42,6 +44,7 @@ namespace IvanHotel.Controllers
         // GET: /Kamar/Create
         public ActionResult Create()
         {
+            ViewBag.Menu = 1;
             ViewBag.TipeKamarID = new SelectList(db.TipeKamar, "ID", "Nama");
             ViewBag.Fasilitas = db.Fasilitas.ToList();
             return View();
@@ -54,6 +57,7 @@ namespace IvanHotel.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create([Bind(Include="ID,NomorKamar,Kapasitas,Status,TipeKamarID,Lantai")] Kamar kamar)
         {
+            ViewBag.Menu = 1;
             if (ModelState.IsValid)
             {
                 kamar.HargaWeekDay = Int32.Parse(Request["hargaweekday"].ToString());
@@ -79,6 +83,7 @@ namespace IvanHotel.Controllers
         // GET: /Kamar/Edit/5
         public ActionResult Edit(int? id)
         {
+            ViewBag.Menu = 1;
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
@@ -99,6 +104,7 @@ namespace IvanHotel.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Edit([Bind(Include="ID,NomorKamar,Kapasitas,Status,TipeKamarID,Lantai")] Kamar kamar)
         {
+            ViewBag.Menu = 1;
             if (ModelState.IsValid)
             {
                 db.Entry(kamar).State = EntityState.Modified;
@@ -113,6 +119,7 @@ namespace IvanHotel.Controllers
         // GET: /Kamar/Delete/5
         public ActionResult Delete(int? id)
         {
+            ViewBag.Menu = 1;
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
@@ -130,6 +137,7 @@ namespace IvanHotel.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
+            ViewBag.Menu = 1;
             Kamar kamar = db.Kamar.Find(id);
 
             int count = db.FasilitasKamar.Where(x => x.KamarID == id).Count();

@@ -17,6 +17,40 @@ namespace IvanHotel.BussinessModels
             db = new DBReservasiHotelEntities();
         }
 
+        public List<KamarViewModel> listKamar()
+        {
+            List<KamarViewModel> lkamar = new List<KamarViewModel>();
+            var query = from i in db.TipeKamar
+                        select new
+                        {
+                            i.ID,
+                            i.Nama,
+                            JumlahKosong = (from k in db.Kamar where k.TipeKamarID == i.ID && k.Status== true select k.ID).Count()
+                        };
+            foreach (var item in query)
+            {
+                lkamar.Add(new KamarViewModel(item.ID, item.Nama, item.JumlahKosong));
+            }
+            return lkamar;
+        }
+
+        public List<KamarViewModel> InforKamarNotAvailable()
+        {
+            List<KamarViewModel> lkamar = new List<KamarViewModel>();
+            var query = from i in db.TipeKamar
+                        select new
+                        {
+                            i.ID,
+                            i.Nama,
+                            JumlahKosong = (from k in db.Kamar where k.TipeKamarID == i.ID && k.Status == false select k.ID).Count()
+                        };
+            foreach (var item in query)
+            {
+                lkamar.Add(new KamarViewModel(item.ID, item.Nama, item.JumlahKosong));
+            }
+            return lkamar;
+        }
+
         public void Create(BookingVM book)
         {
             // tambah tabel kontak

@@ -10,10 +10,12 @@ using Microsoft.Web.WebPages.OAuth;
 using WebMatrix.WebData;
 using IvanHotel.Filters;
 using IvanHotel.Models;
+using IvanHotel.ViewModels;
+using IvanHotel.BussinessModels;
 
 namespace IvanHotel.Controllers
 {
-    [Authorize]
+    //[Authorize]
     [InitializeSimpleMembership]
     public class AccountController : Controller
     {
@@ -35,9 +37,15 @@ namespace IvanHotel.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Login(LoginModel model, string returnUrl)
         {
-            if (ModelState.IsValid && WebSecurity.Login(model.UserName, model.Password, persistCookie: model.RememberMe))
+            // && WebSecurity.Login(model.UserName, model.Password, persistCookie: model.RememberMe)
+            if (ModelState.IsValid && model.UserName ==  "admin" && model.Password == "admin")
             {
-                return RedirectToLocal(returnUrl);
+                this.Session["TipeAkun"] = "Administrator";
+                this.Session["StatusLogin"] = null;
+                this.Session["username"] = model.UserName;
+                        
+                //return RedirectToLocal(returnUrl);
+                return RedirectToAction("Beranda");
             }
 
             // If we got this far, something failed, redisplay form
@@ -45,11 +53,18 @@ namespace IvanHotel.Controllers
             return View(model);
         }
 
+        public ActionResult Beranda()
+        {
+            BookingBM data = new BookingBM();
+            ViewBag.Menu = 0;
+            ViewBag.InfoKamar = data.listKamar();
+            ViewBag.InforKamarNotAvailable = data.InforKamarNotAvailable();
+            return View();
+        }
         //
         // POST: /Account/LogOff
-
-        [HttpPost]
-        [ValidateAntiForgeryToken]
+        //[HttpPost]
+        //[ValidateAntiForgeryToken]
         public ActionResult LogOff()
         {
             WebSecurity.Logout();

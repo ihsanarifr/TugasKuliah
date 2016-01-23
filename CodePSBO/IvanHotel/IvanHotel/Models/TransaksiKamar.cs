@@ -20,7 +20,7 @@ namespace IvanHotel.Models
         public Nullable<int> KamarID { get; set; }
         public Nullable<int> TransaksiTamuID { get; set; }
     
-        public virtual TransaksiTamu TransaksiTamu { get; set; }
         public virtual Kamar Kamar { get; set; }
+        public virtual TransaksiTamu TransaksiTamu { get; set; }
     }
 }

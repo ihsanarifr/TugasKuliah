@@ -45,6 +45,20 @@
                             </td>
                             <td>
                                 @Html.DisplayFor(modelItem => item.Status)
+                                @*@{var available = "Available";
+                                var booked = "booked";
+                                if (@Model.Select(m => m.Status).FirstOrDefault().Value)
+                                {
+                                    @available;
+                                    @Model.Select(m => m.Status).
+                                }
+                                else
+                                {
+                                    @*booked;
+                                    @Model.Select(m => m.Status)
+                                }
+
+                                }*@
                             </td>
                             <td>
                                 @Html.DisplayFor(modelItem => item.Lantai)

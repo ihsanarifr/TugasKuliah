@@ -17,7 +17,7 @@ namespace IvanHotel.Controllers
         // GET: /KabupatenKota/
         public ActionResult Index()
         {
-            ViewBag.Menu = "kabupatenkota";
+            ViewBag.Menu = 6;
             var kabupatenkota = db.KabupatenKota.Include(k => k.Provinsi);
             return View(kabupatenkota.ToList());
         }
@@ -25,7 +25,7 @@ namespace IvanHotel.Controllers
         // GET: /KabupatenKota/Details/5
         public ActionResult Details(int? id)
         {
-            ViewBag.Menu = "kabupatenkota";
+            ViewBag.Menu = 4;
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
@@ -41,7 +41,7 @@ namespace IvanHotel.Controllers
         // GET: /KabupatenKota/Create
         public ActionResult Create()
         {
-            ViewBag.Menu = "kabupatenkota";
+            ViewBag.Menu = 4;
             ViewBag.ProvinsiID = new SelectList(db.Provinsi, "ID", "Nama");
             return View();
         }
@@ -67,7 +67,7 @@ namespace IvanHotel.Controllers
         // GET: /KabupatenKota/Edit/5
         public ActionResult Edit(int? id)
         {
-            ViewBag.Menu = "kabupatenkota";
+            ViewBag.Menu = 4;
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
@@ -88,7 +88,7 @@ namespace IvanHotel.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Edit([Bind(Include="ID,Nama,ProvinsiID")] KabupatenKota kabupatenkota)
         {
-            ViewBag.Menu = "kabupatenkota";
+            ViewBag.Menu = 4;
             if (ModelState.IsValid)
             {
                 db.Entry(kabupatenkota).State = EntityState.Modified;
@@ -102,7 +102,7 @@ namespace IvanHotel.Controllers
         // GET: /KabupatenKota/Delete/5
         public ActionResult Delete(int? id)
         {
-            ViewBag.Menu = "kabupatenkota";
+            ViewBag.Menu = 4;
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);

@@ -9,6 +9,7 @@ namespace IvanHotel.ViewModels
     {
         public int ID { get; set; }
         public Nullable<int> NomorKamar { get; set; }
+        public string Nama { get; set; }
         public Nullable<int> Kapasitas { get; set; }
         public Nullable<bool> Status { get; set; }
         public Nullable<int> TipeKamarID { get; set; }
@@ -27,6 +28,13 @@ namespace IvanHotel.ViewModels
             Status = true;
             TipeKamarID = 0;
             Lantai = 0;
+        }
+
+        public KamarViewModel(int ID, string nama, int jumlah)
+        {
+            this.ID = ID;
+            this.Nama = nama;
+            this.Kapasitas = jumlah;
         }
     }
 }

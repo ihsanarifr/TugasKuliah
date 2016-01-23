@@ -27,6 +27,29 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="FasilitasKamar">
+      <EntityTypeMapping TypeName="DBReservasiHotelModel.FasilitasKamar">
+        <MappingFragment StoreEntitySet="FasilitasKamar">
+          <ScalarProperty Name="FasilitasID" ColumnName="FasilitasID" />
+          <ScalarProperty Name="KamarID" ColumnName="KamarID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Kamar">
+      <EntityTypeMapping TypeName="DBReservasiHotelModel.Kamar">
+        <MappingFragment StoreEntitySet="Kamar">
+          <ScalarProperty Name="HargaWeekEnd" ColumnName="HargaWeekEnd" />
+          <ScalarProperty Name="HargaWeekDay" ColumnName="HargaWeekDay" />
+          <ScalarProperty Name="Lantai" ColumnName="Lantai" />
+          <ScalarProperty Name="TipeKamarID" ColumnName="TipeKamarID" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="Kapasitas" ColumnName="Kapasitas" />
+          <ScalarProperty Name="NomorKamar" ColumnName="NomorKamar" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
     <EntitySetMapping Name="Laundry">
       <EntityTypeMapping TypeName="DBReservasiHotelModel.Laundry">
         <MappingFragment StoreEntitySet="Laundry">
@@ -189,29 +212,6 @@
           <ScalarProperty Name="TMT" ColumnName="TMT" />
           <ScalarProperty Name="TamuID" ColumnName="TamuID" />
           <ScalarProperty Name="PegawaiID" ColumnName="PegawaiID" />
-          <ScalarProperty Name="ID" ColumnName="ID" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="FasilitasKamar">
-      <EntityTypeMapping TypeName="DBReservasiHotelModel.FasilitasKamar">
-        <MappingFragment StoreEntitySet="FasilitasKamar">
-          <ScalarProperty Name="FasilitasID" ColumnName="FasilitasID" />
-          <ScalarProperty Name="KamarID" ColumnName="KamarID" />
-          <ScalarProperty Name="ID" ColumnName="ID" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="Kamar">
-      <EntityTypeMapping TypeName="DBReservasiHotelModel.Kamar">
-        <MappingFragment StoreEntitySet="Kamar">
-          <ScalarProperty Name="HargaWeekEnd" ColumnName="HargaWeekEnd" />
-          <ScalarProperty Name="HargaWeekDay" ColumnName="HargaWeekDay" />
-          <ScalarProperty Name="Lantai" ColumnName="Lantai" />
-          <ScalarProperty Name="TipeKamarID" ColumnName="TipeKamarID" />
-          <ScalarProperty Name="Status" ColumnName="Status" />
-          <ScalarProperty Name="Kapasitas" ColumnName="Kapasitas" />
-          <ScalarProperty Name="NomorKamar" ColumnName="NomorKamar" />
           <ScalarProperty Name="ID" ColumnName="ID" />
         </MappingFragment>
       </EntityTypeMapping>

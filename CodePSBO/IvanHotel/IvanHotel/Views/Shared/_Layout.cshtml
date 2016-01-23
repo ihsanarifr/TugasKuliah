@@ -20,11 +20,11 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                 <div class="m-clear"></div>
                 <div class="top-menu">
                     <ul>
-                        <li @{var active = "class='active'";
+                        <li @{var active = "class=active";
                             if(ViewBag.Menu == 1){
                                 @active;
                             }
-                            }><a href="index.html">HOME</a></li>
+                            }><a href="@Url.Action("Index","Home")">HOME</a></li>
                         <li @if (ViewBag.Menu == 2) { @active ; }><a class="scroll" href="@Url.Action("Fasilitas","Home")">FASILITAS</a></li>
                         @*<li><a class="scroll" href="@Url.Action("Restoran","Home")">RESTORAN</a></li>*@
                         <li @if (ViewBag.Menu == 4) { @active  ; }><a class="scroll" href="@Url.Action("Room","Home")">ROOM</a></li>

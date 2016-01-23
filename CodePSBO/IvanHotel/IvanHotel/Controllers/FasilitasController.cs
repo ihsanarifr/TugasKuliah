@@ -17,14 +17,14 @@ namespace IvanHotel.Controllers
         // GET: /Fasilitas/
         public ActionResult Index()
         {
-            ViewBag.Menu = "fasilitas";
+            ViewBag.Menu = 5;
             return View(db.Fasilitas.ToList());
         }
 
         // GET: /Fasilitas/Details/5
         public ActionResult Details(int? id)
         {
-            ViewBag.Menu = "fasilitas";
+            ViewBag.Menu = 5;
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
@@ -40,7 +40,8 @@ namespace IvanHotel.Controllers
         // GET: /Fasilitas/Create
         public ActionResult Create()
         {
-            ViewBag.Menu = "fasilitas";
+
+            ViewBag.Menu = 5;
             return View();
         }
 
@@ -51,7 +52,7 @@ namespace IvanHotel.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create([Bind(Include="ID,Nama")] Fasilitas fasilitas)
         {
-            ViewBag.Menu = "fasilitas";
+            ViewBag.Menu = 5;
             if (ModelState.IsValid)
             {
                 db.Fasilitas.Add(fasilitas);
@@ -65,7 +66,7 @@ namespace IvanHotel.Controllers
         // GET: /Fasilitas/Edit/5
         public ActionResult Edit(int? id)
         {
-            ViewBag.Menu = "fasilitas";
+            ViewBag.Menu = 5;
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
@@ -97,7 +98,7 @@ namespace IvanHotel.Controllers
         // GET: /Fasilitas/Delete/5
         public ActionResult Delete(int? id)
         {
-            ViewBag.Menu = "fasilitas";
+            ViewBag.Menu = 5;
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);

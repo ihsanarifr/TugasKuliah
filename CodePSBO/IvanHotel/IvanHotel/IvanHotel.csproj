@@ -208,6 +208,7 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\AccountModels.cs" />
+    <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Alamat.cs">
       <DependentUpon>DBIvanHotel.tt</DependentUpon>
     </Compile>
@@ -2450,10 +2451,7 @@
     <Content Include="Views\Kamar\Details.cshtml" />
     <Content Include="Views\Kamar\Edit.cshtml" />
     <Content Include="Views\Kamar\Index.cshtml" />
-    <Content Include="Views\Booking\Create.cshtml" />
-    <Content Include="Views\Booking\Delete.cshtml" />
-    <Content Include="Views\Booking\Details.cshtml" />
-    <Content Include="Views\Booking\Edit.cshtml" />
+    <Content Include="Views\Booking\Selesai.cshtml" />
     <Content Include="Views\Booking\Index.cshtml" />
     <Content Include="Views\Layanan\CreateSpa.cshtml" />
     <Content Include="Views\Layanan\Details.cshtml" />
@@ -2469,6 +2467,7 @@
     <Content Include="Views\TransaksiTamu\Details.cshtml" />
     <Content Include="Views\TransaksiTamu\Edit.cshtml" />
     <Content Include="Views\TransaksiTamu\Index.cshtml" />
+    <Content Include="Views\Account\Beranda.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

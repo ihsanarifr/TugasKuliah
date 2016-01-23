@@ -1,0 +1,27 @@
+﻿@model IEnumerable<IvanHotel.Models.Tamu>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="contact-bg2">
+    <div class="container">
+        @if (@TempData["status"] == "true")
+        {
+            <div class="alert alert-danger alert-error">
+                <a href="#" class="close" data-dismiss="alert">&times;</a>
+                <strong>Gagal!</strong>&nbsp; @TempData["pesan"]
+            </div>
+        }
+       
+        <div class="booking">
+            <h3>Permintaan Kamar telah disimpan</h3>
+            <div class="col-md-12 booking-form">
+                <div class="alert alert-success">
+                    <a href="#" class="close" data-dismiss="alert">&times;</a>
+                    <strong>Terimakasih</strong> Telah memesan kamar di hotel kami. Informasi terkait reservasi yang sudah dipesan akan dikirim melalui email atau SMS secara langsung.
+                </div>  
+            <div class="clearfix"> </div>
+        </div>
+    </div>
+</div>
