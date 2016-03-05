@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<java version="1.8.0_65" class="java.beans.XMLDecoder">
+ <object class="metasim.util.settings.ProjectSettings" id="ProjectSettings0">
+  <void property="outputItems">
+   <void method="add">
+    <object class="metasim.util.settings.ProjectSettings$OutputItem" id="ProjectSettings$OutputItem0">
+     <void property="log">
+      <string>Thu Mar 03 21:49:16 WIB 2016
+
+Simulating files:
+[escherichia_coli.fasta]
+
+Simulator Settings:
+Preset Name: Sanger
+Number Of Reads / Mate Pairs=5000
+Error Model=Sanger
+
+Sanger Error Model Read Length Parameters=
+Distribution: Normal
+Mean: 1000.0
+2nd parameter: 100.0
+
+Sanger Error Model Configuration=
+Mate Pair Probability: 1.0
+Error Rate at First Position: 0.01
+Error Rate at Last Position: 0.02
+Proportion of Deletion Errors: 0.2
+Proportion of Insertion Errors: 0.2
+Proportion of Substitution Errors: 0.6000000000000001
+
+Sanger Error Model DNA Clone Parameters=
+Distribution: Normal
+Mean: 5000.0
+2nd parameter: 500.0
+
+Combine All Files=false
+Uniform Sequence Weights=false
+Number Of Threads=1
+Write FastA=true
+Compress Output Files=true
+
+
++++ File: escherichia_coli.fasta +++
+
+     10000 Reads: `Escherichia coli O157:H7 str. Sakai DNA&apos;
+
+Generated 10000 Reads
+Average Read Length is 998.95 Base Pairs
+Processed 9989357 Base Pairs
+Generated 9989470 Base Pairs
+Insertions: 29822
+Deletions: 29709
+Substitutions: 89931
+Read data saved as `escherichia_coli-Sanger.3cf44d82.fna.gz&apos;.
+Done.
+</string>
+     </void>
+     <void property="name">
+      <string>Thu Mar 03 21:49:16 WIB 2016</string>
+     </void>
+     <void property="readFiles">
+      <void method="add">
+       <string>escherichia_coli-Sanger.3cf44d82.fna.gz</string>
+      </void>
+     </void>
+    </object>
+   </void>
+  </void>
+  <void property="projectName">
+   <string>Unnamed Project 1</string>
+  </void>
+  <void id="ArrayList0" property="simSettings">
+   <void id="SimSettings0" index="0">
+    <void property="errorModel">
+     <object class="java.lang.Enum" method="valueOf">
+      <class>metasim.util.settings.SimSettings$ErrorModels</class>
+      <string>FOUR54</string>
+     </object>
+    </void>
+    <void property="presetName">
+     <string>454</string>
+    </void>
+    <void id="SimSettings$EmpiricalSettings0" property="empiricalSettings"/>
+    <void id="SimSettings$ExactSettings0" property="exactSettings"/>
+    <void id="SimSettings$Four54Settings0" property="four54Settings"/>
+    <void id="SimSettings$SangerSettings0" property="sangerSettings"/>
+   </void>
+   <void method="add">
+    <object class="metasim.util.settings.SimSettings">
+     <void property="empiricalSettings">
+      <object idref="SimSettings$EmpiricalSettings0"/>
+     </void>
+     <void property="errorModel">
+      <object class="java.lang.Enum" method="valueOf">
+       <class>metasim.util.settings.SimSettings$ErrorModels</class>
+       <string>EMPIRICAL</string>
+      </object>
+     </void>
+     <void property="exactSettings">
+      <object idref="SimSettings$ExactSettings0"/>
+     </void>
+     <void property="four54Settings">
+      <object idref="SimSettings$Four54Settings0"/>
+     </void>
+     <void property="presetName">
+      <string>Empirical</string>
+     </void>
+     <void property="sangerSettings">
+      <object idref="SimSettings$SangerSettings0"/>
+     </void>
+    </object>
+   </void>
+   <void method="add">
+    <object class="metasim.util.settings.SimSettings">
+     <void property="empiricalSettings">
+      <object idref="SimSettings$EmpiricalSettings0"/>
+     </void>
+     <void property="errorModel">
+      <object class="java.lang.Enum" method="valueOf">
+       <class>metasim.util.settings.SimSettings$ErrorModels</class>
+       <string>SANGER</string>
+      </object>
+     </void>
+     <void property="exactSettings">
+      <object idref="SimSettings$ExactSettings0"/>
+     </void>
+     <void property="four54Settings">
+      <object idref="SimSettings$Four54Settings0"/>
+     </void>
+     <void property="presetName">
+      <string>Sanger</string>
+     </void>
+     <void property="sangerSettings">
+      <object idref="SimSettings$SangerSettings0"/>
+     </void>
+    </object>
+   </void>
+   <void method="add">
+    <object class="metasim.util.settings.SimSettings">
+     <void property="empiricalSettings">
+      <object idref="SimSettings$EmpiricalSettings0"/>
+     </void>
+     <void property="exactSettings">
+      <object idref="SimSettings$ExactSettings0"/>
+     </void>
+     <void property="four54Settings">
+      <object idref="SimSettings$Four54Settings0"/>
+     </void>
+     <void property="presetName">
+      <string>Exact</string>
+     </void>
+     <void property="sangerSettings">
+      <object idref="SimSettings$SangerSettings0"/>
+     </void>
+    </object>
+   </void>
+  </void>
+  <void property="sourceFiles">
+   <void method="add">
+    <object class="metasim.util.settings.ProjectSettings$SimFile">
+     <void property="name">
+      <string>escherichia_coli.fasta</string>
+     </void>
+    </object>
+   </void>
+  </void>
+ </object>
+</java>
