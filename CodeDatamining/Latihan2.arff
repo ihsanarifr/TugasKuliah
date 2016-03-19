@@ -1,0 +1,38 @@
+@RELATION korban
+@ATTRIBUTE Class {1st,2nd,3rd,Crew}
+@ATTRIBUTE Sex {Male,Female}
+@ATTRIBUTE Age NUMERIC
+@ATTRIBUTE Survived {Yes,No}
+@Data
+1st,Male,8,Yes
+2nd,Male,5,Yes
+3rd,Male,12,No
+Crew,Male,14,No
+1st,Female,6,Yes
+2nd,Female,2,Yes
+3rd,Female,3,Yes
+Crew,Female,14,Yes
+1st,Male,23,No
+2nd,Male,30,No
+3rd,Male,32,No
+Crew,Male,32,No
+1st,Female,20,No
+2nd,Female,25,No
+3rd,Female,50,No
+Crew,Female,26,No
+1st,Male,10,Yes
+2nd,Male,12,Yes
+3rd,Male,9,Yes
+Crew,Male,15,Yes
+1st,Female,12,Yes
+2nd,Female,12,Yes
+3rd,Female,13,Yes
+Crew,Female,15,Yes
+1st,Male,60,Yes
+2nd,Male,54,Yes
+3rd,Male,55,No
+Crew,Male,40,Yes
+1st,Female,38,Yes
+2nd,Female,36,Yes
+3rd,Female,35,Yes
+Crew,Female,30,Yes

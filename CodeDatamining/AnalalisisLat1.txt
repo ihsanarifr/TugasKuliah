@@ -1,0 +1,14 @@
+- semua atribut bersifat nominal
+- atribut class:
++menunjukkan class tempat si penumpang duduk
++data tersebar merata masing masing kelas terdapat 8 orang
+- atribut sex:
++menunjukkan jenis kelamin penumpang
++Jumlah data pria dan wanita seimbang, masing-masing berjumlah 16.
+- atribut age:
++menunjukkan umur penumpang yang dikategorikan 2 kelas yaitu dewasa dan anak-anak
++Jumlah data dewasa dan dan anak seimbang, masing-masing berjumlah 16.
+- atribut survived:
++menunjukkan si penumpang selamat atau tidak
++jumlah penumpang yang selamat sebanyak 21 penumpang
++jumlah penumpang yang tidak selamat sebanyak 11 penumpang  
