@@ -1,0 +1,32 @@
+Persistent storage => database, xml files, spreadsheet
+mapping object to/from storage
+
+Permasalahan dengan database :
+- Database mempunyai baris di dalam table tapi tidak seperti object
+- object mempunyai asosiasi dan koleksi database yang berelasi antar tabel
+- objek biasanya unik
+
+ORM (object-relational mapping)
+tujuan :
+- menyimpan object ke sebuah baris di dalam tabel database
+- membuat object menggunakan data dari tabel
+- menyimpan dan membuat asosiasi antar objek
+
+keuntungan :
+- ORM digunakan banyak aplikasi
+- bisa menghandle pengubahan database
+
+find(key) in object => mencari menggunakan primary key
+query(string) => menemukan object berdasarkan query return macth value
+
+Eager : membuat semua asosiasi objek
+Lazzy : membuat asosiasi objek hanya ketika menunjukkan saja
+
+4 Pengembangan ORM :
+1. No ORM : JDBC
+2. DAO using JDBC
+3. Framework : Hibernate, Mybatis, MVC4 C#
+4. Standard : JPA,JDO
+
+
+

@@ -22,7 +22,7 @@ function varargout = gejala(varargin)
 
 % Edit the above text to modify the response to help gejala
 
-% Last Modified by GUIDE v2.5 21-Jan-2016 16:31:00
+% Last Modified by GUIDE v2.5 25-Jan-2016 10:02:02
 
 % Begin initialization code - DO NOT EDIT
 gui_Singleton = 1;
@@ -117,7 +117,7 @@ function mInsang_CreateFcn(hObject, eventdata, handles)
 if ispc && isequal(get(hObject,'BackgroundColor'), get(0,'defaultUicontrolBackgroundColor'))
     set(hObject,'BackgroundColor','white');
 end
-
+set(hObject,'String',{'Tidak Ada';'Merah';'Benjolan';'Luka';'Pucat';'Benang-benang halus'});
 
 % --- Executes on selection change in popupmenu6.
 function popupmenu6_Callback(hObject, eventdata, handles)
@@ -163,6 +163,7 @@ function mKulit_CreateFcn(hObject, eventdata, handles)
 if ispc && isequal(get(hObject,'BackgroundColor'), get(0,'defaultUicontrolBackgroundColor'))
     set(hObject,'BackgroundColor','white');
 end
+set(hObject,'String',{'Tidak Ada';'benang halus';'bintik putih';'warna cerah';'warna gelap';'warna pucat';'melepuh';'luka';'lendir berlebihan'});
 
 
 % --- Executes on selection change in mOrgan.
@@ -186,7 +187,7 @@ function mOrgan_CreateFcn(hObject, eventdata, handles)
 if ispc && isequal(get(hObject,'BackgroundColor'), get(0,'defaultUicontrolBackgroundColor'))
     set(hObject,'BackgroundColor','white');
 end
-
+set(hObject,'String',{'Tidak Ada';'Bintik-bintik';'Rusak';'Luka'});
 
 % --- Executes on button press in rKembung.
 function rKembung_Callback(hObject, eventdata, handles)
@@ -229,8 +230,53 @@ function btnDiagnosis_Callback(hObject, eventdata, handles)
 % hObject    handle to btnDiagnosis (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
-items = get(handles.mSirip,'String');
-index_selected = get(handles.mSirip,'Value');
-item_selected = items{index_selected};
-msgbox(num2str(index_selected),'Success');
 
+%items = get(handles.mSirip,'String');
+%item_selected = items{index_selected};
+
+index_sirip = get(handles.mSirip,'Value');
+index_insang = get(handles.mInsang,'Value');
+index_kulit = get(handles.mKulit,'Value');
+index_organ = get(handles.mOrgan,'Value');
+
+if (get(handles.rKembung,'Value') == 0)
+    if(get(handles.rTidakKembung,'Value') == 0)
+        index_perut = 1;
+    else
+        index_perut = 0;
+    end
+else
+    index_perut = 1;
+end
+
+if(get(handles.rMenonjol,'Value') == 0 & get(handles.rLuka,'Value') == 0 & get(handles.rTidakAda,'Value') == 0)
+	index_mata = 0;
+elseif (get(handles.rMenonjol,'Value') == 0 & get(handles.rLuka,'Value') == 0 & get(handles.rTidakAda,'Value') == 1)
+	index_mata = 0;
+elseif (get(handles.rMenonjol,'Value') == 0 & get(handles.rLuka,'Value') == 1 & get(handles.rTidakAda,'Value') == 0)
+	index_mata = 1;
+elseif (get(handles.rMenonjol,'Value') == 1 & get(handles.rLuka,'Value') == 0 & get(handles.rTidakAda,'Value') == 0)
+	index_mata = 2;
+else
+	index_mata = 0;
+end
+
+% if (get(handles.rLuka,'Value') == 0)
+%     if(get(handles.rMenonjol,'Value') == 0)
+%         index_mata = 1;
+%     else
+%         index_mata = 2;
+%     end
+% else
+%     index_mata = 1;
+% end
+
+fid = fopen('info-gejala.txt','wt');
+fprintf(fid, sprintf('%d;%d;%d;%d;%d;%d',index_sirip-1,index_insang-1,index_kulit-1,index_perut,index_mata,index_organ-1));
+fclose(fid);
+
+close(gejala);
+hasil();
+
+%msgbox(sprintf('%d;%d;%d;%d;%d;%d',index_sirip-1,index_insang-1,index_kulit-1,index_perut,index_mata,index_organ-1),'Success');
+%msgbox(num2str(item_selected),'Success');

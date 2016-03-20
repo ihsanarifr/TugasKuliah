@@ -1,0 +1,10 @@
+Para ilmuwan dalam penelitiannya biasanya tidak menganggap dirinya memiliki kepercayaan diri dan intelektual yang tinggi. Sehingga mereka mau dikatakan agak bodoh. Ini yang membuktikan para ilmuwan tidak mengakui kebenaran akan hasil penelitiannya. Padahal tidak semua ilmuwan tidak intelektual. (Medawar 1979)
+
+Studi Ilmu komputer sering dianggap studi yang mempelajari informasi mengenai komputer saja. Padahal anggapan itu sangatlah sempit karena ilmu komputer itu bukan hanya mengetahui struktur komputer dan proses informasi saja tetapi ilmu komputer bisa memberikan pemodelan dari hasil pengamatan dalam berbagai bidang keilmuan. Contohnya sistem saraf, sistem kekebalan tubuh, dan proses genetik bisa dijadikan model dalam keilmuan komputer.(Tichy 1998)
+
+Kalangan ilmuwan menyatakan ada sebuah aplikasi Smartphone berbayar yang gagal mengukur tekanan darah sehingga membuat pasien berbahaya terutama pada pasien hipertensi.
+
+Dr Timothy Plante dari Johns Hopkins University, Baltimore melakukan studi bahwa hasil dari 4 dari 5 pasien hipertensi mendapat pengukuran normal tetapi pada aplikasi ini pasien dinyatakan dalam bahaya. Aplikasi yang diuji adalah Instant Blood Pressure buatan Auralife yang berfungsi untuk mengukur keakuratan tekanan darah.
+
+Sumber:
+http://health.detik.com/read/2016/03/03/110747/3156456/763/studi-aplikasi-pengukur-tekanan-darah-di-smartphone-terbukti-tidak-akurat
