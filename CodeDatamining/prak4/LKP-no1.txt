@@ -1,0 +1,8 @@
+Atribut-atribut yang ada pada data longley
+1. GNP.deflator : numeric
+2. GNP : numeric
+3. Unemployed : numeric
+4. Armed.Forces : numeric
+5. Population : numeric
+6. Year : integer
+7. Employed : numeric

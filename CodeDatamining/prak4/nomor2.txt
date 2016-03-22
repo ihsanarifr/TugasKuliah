@@ -1,0 +1,9 @@
+Tahapan Eksplorasi data:
+1. pemahaman terhadap domain aplikasi, relevansi terhadap pengetahuan yang ada 
+2. Menciptakan himpunan data target
+3. Pemrosesan pendahuluan dan pembersihan data
+4. proyeksi dan pengurangan data
+5. pemilihan tugas data mining
+6. pemilihan algoritma data mining
+7. penerjemahan pola dari hasil data mining
+8. konsolidasi pengetahuan yang ditemukan

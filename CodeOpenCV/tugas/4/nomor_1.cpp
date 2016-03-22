@@ -53,15 +53,15 @@ int main( int argc, char** argv )
   /// menggambar untuk tiap channel
   for( int i = 1; i < histSize; i++ )
   {
-      line( histImage, Point( bin_w*(i-1), hist_h - cvRound(b_hist.at<float>(i-1)) ) ,
-                       Point( bin_w*(i), hist_h - cvRound(b_hist.at<float>(i)) ),
-                       Scalar( 255, 0, 0), 2, 8, 0  );
-      line( histImage, Point( bin_w*(i-1), hist_h - cvRound(g_hist.at<float>(i-1)) ) ,
-                       Point( bin_w*(i), hist_h - cvRound(g_hist.at<float>(i)) ),
-                       Scalar( 0, 255, 0), 2, 8, 0  );
-      line( histImage, Point( bin_w*(i-1), hist_h - cvRound(r_hist.at<float>(i-1)) ) ,
-                       Point( bin_w*(i), hist_h - cvRound(r_hist.at<float>(i)) ),
-                       Scalar( 0, 0, 255), 2, 8, 0  );
+    line( histImage, Point( bin_w*(i-1), hist_h - cvRound(b_hist.at<float>(i-1)) ) ,
+     Point( bin_w*(i), hist_h - cvRound(b_hist.at<float>(i)) ),
+     Scalar( 255, 0, 0), 2, 8, 0  );
+    line( histImage, Point( bin_w*(i-1), hist_h - cvRound(g_hist.at<float>(i-1)) ) ,
+     Point( bin_w*(i), hist_h - cvRound(g_hist.at<float>(i)) ),
+     Scalar( 0, 255, 0), 2, 8, 0  );
+    line( histImage, Point( bin_w*(i-1), hist_h - cvRound(r_hist.at<float>(i-1)) ) ,
+     Point( bin_w*(i), hist_h - cvRound(r_hist.at<float>(i)) ),
+     Scalar( 0, 0, 255), 2, 8, 0  );
   }
 
   /// Display
