@@ -1,0 +1,19 @@
+> dat_iris <- iris
+> View(dat_iris)
+> dat_iris$Species <- NULL
+> View(dat_iris)
+> kmeans.res <- kmeans(dat_iris,3)
+> kmeans.res
+> kmeans.res$cluster
+> kmeans.res$centers
+> table(iris$Species,kmeans.res$cluster)
+> plot(dat_iris[c("Petal.Length", "Petal.Width")], col = 1:3, pch=8, cex=2)
+> plot(dat_iris[c("Petal.Length", "Petal.Width")], col = kmeans.res$cluster)
+> points(kmeans.res$centers[,c("Petal.Length", "Petal.width")], col=1:3, pch=8, cex=2)
+> idx <- sample(1:dim(iris)[1],40)
+> View(idx)
+> sam_iris<-iris[idx,]
+> View(sam_iris)
+> sam_iris$Species<-NULL
+> hc<-hclust(dist(sam_iris),method="com")
+> plot(hc,hang=-1,labels= iris$Species[idx])

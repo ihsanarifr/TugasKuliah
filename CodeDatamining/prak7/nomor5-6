@@ -1,0 +1,4 @@
+Melihat dari Banner yang sudah dibuat diatas perbedaan yang terdapat pada banner tersebut adalah pengelompokan datanya jika data yang ditampilkan oleh banner of agnes memiliki pengelompokkan 1,3,2,12,14 tetapi berbeda dengan banner of diana yaiu mengelompokkan 1,3,2,4,8,12,14. Melihat dari itu maka pengelompokkan diana melihat bahwa pada data 4, 8 termasuk kelompok tersebut.
+
+Melihat dari Dendogram yang sudah dibuat perbedaan terletak pada pengelompokkan dengan tinggi 3, jika pada dendogram agnes pada ketinggian 3 pengelompokkan 4, 8 tidak satu kelopok tetapi pada dendogram diana pada ketinggian 3 data 4 dan 8 sudah satu kelompok. Sehingga dapat kita simpulkan bahwa perbedaan dari algoritma agnes dan diana dilihat dari banner dan dendogram tersebut yaitu terletak saat pengelompokkan  data 4 dan 8.
+
