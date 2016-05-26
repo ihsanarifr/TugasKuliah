@@ -1,0 +1,32 @@
+Anti Pattern and Refactoring
+==============================================
+
+Anti Pattern = mengulangi masalah yang biasanya tidak efektif dan risiko menjadi sangat kontraproduktif
+
+1. The Blob = Objek blob memiliki sebagian besar proses sehingga objek lain hanya berfungsi sebagai menyimpan data
+   Gejalanya :
+   - kelas tunggal dengan banyak atribut atau operasi
+   - beberapa atribut yang dikemas menjadi satu kelas
+   - kelas kontroller dengan keterkaitan kelas yang sederhana
+   - tidak adanya design pattern
+   Dampaknya :
+   - Sulit dimodifikasi
+   - terlalu rumit untuk digunakan kembali (reuse)
+   - besar untuk load memory, menggunakan banyak sumber daya yang berlebihan pada operasi sederhana
+   Penyebab :
+   - kurangnya oop
+   - kuranya arsitektur
+   - keterbatasan
+   - mentok prosedural dan tidak mau berambil alih ke oop
+   Refactorisasi : memindahkan operasi/fungsi ke objek yang seharusnya.
+
+2. Continuous Obsolescene = kesulitan versi aplikasi yang cepat
+3. Lava Flow: A Story = kurangnya informasi komentar dalam suatu operasi/fungsi
+4. Cut and Paste Programming = copy paste
+5. Project Management Antipattern
+6. Smoke and Mirrors : percaya bisa selesai tetapi tidak sesuai ekspektasi
+
+Software Architecture Anti Pattern
+1. Vendor Lock-In
+2. Reinvent the Wheel
+3. Swiss Army Knife

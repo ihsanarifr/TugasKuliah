@@ -1,0 +1,20 @@
+abstract class ReportGenerator {
+    public virtual Report CreateReport() {
+        // do some calculations
+        // ...
+        return new Report(...);
+    }
+}
+
+class ConcreteReportGenerator : ReportGenerator {
+    public override Report CreateReport() {
+        // tabulate data
+        // ...
+        return base.CreateReport();
+    }
+}
+
+
+
+
+

@@ -1,0 +1,15 @@
+Design Pattern
+==============
+Design pattern adalah penggambaran bagaimana objek dan class saling berkomunikasi yang diseusaikan dengan pemecahan masalah secara umum
+
+4 elemen utama design pattern :
+1 nama pattern : gambaran problem
+2 problem : waktu penggunaan
+3 solusi : elemen hasil design, hubungan, responsibilities
+4 konsekwensi : keuntungan dan kerugian, space, time, fleksibilitas
+
+Klasifikasi design pattern :
+1 creational : factory method(class), abstract factory(object), prototype, singleton
+2 structural : adapter(class), object(composite,decorator,facade,proxy)
+3 behavioral : interpreter template method(class),object(iterator,mediator,memento,observer,state,strategy,visitor)
+

@@ -42,6 +42,12 @@ cl = ColorLabeler()
 red = 0
 green = 0
 blue = 0
+lingkaran = 0
+segitiga = 0
+persegi = 0
+persegi_panjang = 0
+pentagon = 0
+
 # loop over the contours
 for c in cnts:
 	# compute the center of the contour
@@ -59,7 +65,18 @@ for c in cnts:
 		blue += 1
 	elif color == 'green':
 		green += 1
-
+		
+	if shape == 'circle':
+		lingkaran += 1
+	elif shape == 'triangle':
+		segitiga += 1
+	elif shape == 'square':
+		persegi += 1
+	elif shape == 'rectangle':
+		persegi_panjang += 1
+	elif shape == 'pentagon':
+		pentagon += 1
+		
 	# multiply the contour (x, y)-coordinates by the resize ratio,
 	# then draw the contours and the name of the shape and labeled
 	# color on the image
@@ -77,3 +94,8 @@ for c in cnts:
 print red
 print green
 print blue
+print lingkaran
+print segitiga
+print persegi
+print persegi_panjang
+print pentagon
