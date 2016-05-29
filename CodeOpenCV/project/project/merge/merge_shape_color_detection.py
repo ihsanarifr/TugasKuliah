@@ -19,7 +19,8 @@ ratio = image.shape[0] / float(resized.shape[0])
 
 # lalu emage tersebut diubah menjadi grayscale, blur dan menggunakan treshold
 # Lihat pada saat melakukan blur disini menggunakan gaussianBlur dengan matrix 5,5
-# Lihat pada
+# tambahan menggunakan colorlab
+# tambahan hasil gray di threshold
 blurred = cv2.GaussianBlur(resized, (5, 5), 0)
 gray = cv2.cvtColor(blurred, cv2.COLOR_BGR2GRAY)
 lab = cv2.cvtColor(blurred, cv2.COLOR_BGR2LAB)
@@ -47,7 +48,7 @@ segitiga = 0
 persegi = 0
 persegi_panjang = 0
 pentagon = 0
-
+nama = ""
 # loop over the contours
 for c in cnts:
 	# compute the center of the contour
@@ -55,47 +56,58 @@ for c in cnts:
 	cX = int((M["m10"] / M["m00"]) * ratio)
 	cY = int((M["m01"] / M["m00"]) * ratio)
 
-	# detect the shape of the contour and label the color
+	# mendeteksi bentuk dan warna dalam gambar menggunakan fungsi library
 	shape = sd.detect(c)
 	color = cl.label(lab, c)
-
+	
+	# Menghitung jumlah dari tiap warna yang muncul
 	if color == 'red':
 		red += 1
 	elif color == 'blue':
 		blue += 1
 	elif color == 'green':
 		green += 1
-		
+	# Menghitung jumlah dari tiap bentuk yang muncul
 	if shape == 'circle':
 		lingkaran += 1
+		nama = 'lingkaran'
 	elif shape == 'triangle':
 		segitiga += 1
+		nama = 'segitiga'
 	elif shape == 'square':
 		persegi += 1
+		nama = 'persegi'
 	elif shape == 'rectangle':
 		persegi_panjang += 1
+		nama = 'persegi panjang'
 	elif shape == 'pentagon':
 		pentagon += 1
+		nama = 'segilima'
 		
-	# multiply the contour (x, y)-coordinates by the resize ratio,
-	# then draw the contours and the name of the shape and labeled
-	# color on the image
+	# mengkalikan kontul koordinat (x, y)-coordinates dari ukuran ratio
+	# menuliskan nama warna dan bentuk ke dekat bentuk yang terdeteksi
 	c = c.astype("float")
 	c *= ratio
 	c = c.astype("int")
-	text = "{} {}".format(color, shape)
+	text = "{} {}".format(color, nama)
 	cv2.drawContours(image, [c], -1, (0, 255, 0), 2)
 	cv2.putText(image, text, (cX, cY),
 		cv2.FONT_HERSHEY_SIMPLEX, 0.5, (255, 255, 255), 2)
 
-	# show the output image
+	# menampilkan gambar ke layar
 	cv2.imshow("Image", image)
 	cv2.waitKey(0)
-print red
-print green
-print blue
-print lingkaran
-print segitiga
-print persegi
-print persegi_panjang
-print pentagon
+
+print "======================================="
+print " Deteksi Bentuk dan Warna "
+print "======================================="
+print "Jumlah Bentuk berwarna Merah : ",red
+print "Jumlah Bentuk berwarna Hijau : ",green
+print "Jumlah Bentuk berwarna Biru  : ",blue
+print "---------------------------------------"
+print "Jumlah Bentuk lingkaran       : ",lingkaran
+print "Jumlah Bentuk Segitiga        : ",segitiga
+print "Jumlah Bentuk Persegi         : ",persegi
+print "Jumlah Bentuk Persegi Panjang : ",persegi_panjang
+print "Jumlah Bentuk Segilima        : ",pentagon
+print "======================================="
