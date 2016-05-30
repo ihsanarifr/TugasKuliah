@@ -1,0 +1,9 @@
+#UGENE suffix array index
+#file "/home/ihsanarifr/Documents/TugasKuliah/CodeAlgoritmaBioinformatika/materi/praktikum8/sra-data/lambda_virus.ref", sequence's length = 48502, w = 31
+#sequence length, window size, bitChar's length, seqPartSize, count of sequences
+#reference name
+#offsets of sequences in the reference
+#seqStart, seqLength, saStart, saLength
+48502, 31, 2, 1, 1
+gi|9626243|ref|NC_001416.1| Enterobacteria phage lambda, complete genome_and_others
+48502

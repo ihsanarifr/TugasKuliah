@@ -1,0 +1,15 @@
+# depslib dependency file v1.0
+1464263878 source:e:\tryfruit\fruit.cpp
+	"Fruit.h"
+
+1464264856 e:\tryfruit\fruit.h
+	<string>
+
+1464265118 source:e:\tryfruit\multipleobjecttracking.cpp
+	<sstream>
+	<string>
+	<iostream>
+	<opencv\highgui.h>
+	<opencv\cv.h>
+	"Fruit.h"
+

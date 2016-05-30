@@ -1,0 +1,5 @@
+a) credit_amount, property_magnitude,credit_history
+c) Data yang kosong (missing value) tersebut akan diganti dengan nilai jika data numerik  diisi dengan rata-rata (mean) dan jika data nominal akan diisi dengan nilai yang sering muncul (modus)
+
+
+Normalisasi

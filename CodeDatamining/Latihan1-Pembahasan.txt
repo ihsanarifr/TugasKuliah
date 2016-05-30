@@ -1,0 +1,24 @@
+Semua atribut bersifat nominal
+
+Atribut Class :
+- menunjukkan tempat duduk penumpang
+- Kelas ini sudah ditentukan memiliki empat kelas yaitu {1st,2nd,3rd,Crew}
+- Dilihat dari hasil data yang sudah ada dari tiap kelas memiliki keanggotaan yang sama yaitu masing-masing memiliki 8 anggota
+- Dan hasil dari data tersebut memperlihatkan bahwa data tersebut masih seimbang dari semua kelas
+
+Atribut Sex :
+- menunjukkan jenis kelamin
+- Sex ini sudah ditentukan memiliki 2 jenis yaitu {Male,Female}
+- Dilihat dari hasil data Male dan Female  bahwa data dari tiap kelas memiliki keanggotaan yang sama yaitu masing-masing 16 anggota
+- Dan hasil dari data tersebut membuktikan data tersebut masih seimbang datanya dari semua kelas kalau dilihat dari sex
+ 
+Atribut Age :
+- menunjukkan umur penumpang
+- Age bersifat numerik dan bisa diisi sesuai dengan umur si penumpang, biasanya bilangan bulat
+- Pada atribute age memiliki banyak perbedan dan penyebaran data dilihat dari data yang ada umur 17 lebih tinggi dibanding dari yang lainnya.
+- Data tersebut menurun sehingga dapat dibuktikan semakin tinggi umur semakin kecil juga frekuensi korbanya.
+
+Atribut Survived :
+- menunjukkan penumpang selamat atau tidaknya
+- Survived sudah ditentukan dan memiliki 2 yaitu {Yes, No}
+- Data survived yang selamat lebih banyak dibandingkan dengan data yang tidak selamat, dan kemungkinan besar data yang selamat lebih banyak.

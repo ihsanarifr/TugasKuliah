@@ -1,0 +1,69 @@
+@relation 'labor-neg-data-weka.filters.unsupervised.attribute.Remove-V-R2-3,5,11-14,17'
+
+@attribute wage-increase-first-year numeric
+@attribute wage-increase-second-year numeric
+@attribute cost-of-living-adjustment {none,tcf,tc}
+@attribute statutory-holidays numeric
+@attribute vacation {below_average,average,generous}
+@attribute longterm-disability-assistance {yes,no}
+@attribute contribution-to-dental-plan {none,half,full}
+@attribute class {bad,good}
+
+@data
+5,?,?,11,average,?,?,good
+4.5,5.8,?,11,below_average,?,full,good
+?,?,?,11,generous,yes,half,good
+3.7,4,tc,?,?,?,?,good
+4.5,4.5,?,12,average,?,half,good
+2,2.5,?,12,average,?,?,good
+4,5,tc,12,generous,yes,none,good
+6.9,4.8,?,12,below_average,?,?,good
+3,7,?,11,below_average,yes,half,good
+5.7,?,none,11,generous,yes,full,good
+3.5,4,none,13,generous,?,?,good
+6.4,6.4,?,15,?,?,full,good
+3.5,4,none,10,below_average,no,half,bad
+3.5,4,tcf,13,generous,?,full,good
+3,?,none,11,generous,?,?,good
+4.5,4,none,11,average,?,full,good
+2.8,?,?,12,below_average,?,?,good
+2.1,?,tc,9,below_average,yes,half,bad
+2,?,none,11,average,no,none,bad
+4,5,tcf,15,generous,?,?,good
+4.3,4.4,?,12,generous,?,full,good
+2.5,3,?,11,below_average,?,?,bad
+3.5,4,tcf,?,?,?,?,good
+4.5,4,?,10,generous,?,half,good
+6,?,?,9,generous,?,?,good
+2,2,none,10,below_average,?,half,bad
+4.5,4.5,tcf,10,below_average,yes,none,good
+3,3,none,12,generous,?,?,good
+5,4,none,11,below_average,yes,full,good
+2,2.5,?,10,average,?,?,bad
+4.5,4.5,none,11,average,?,half,good
+3,2,tc,10,below_average,yes,half,bad
+2.5,2.5,?,10,average,?,?,bad
+4,5,none,10,below_average,no,none,bad
+2,2.5,tc,10,below_average,no,half,bad
+2,2,none,11,average,yes,none,bad
+2,?,tc,11,generous,no,none,bad
+2.8,?,none,9,below_average,yes,half,bad
+2,2.5,?,10,average,?,?,bad
+4.5,4,none,12,average,yes,full,good
+4,?,none,11,average,no,none,bad
+2,3,none,12,generous,yes,none,bad
+2.5,2.5,tc,12,average,?,?,bad
+2.5,3,tcf,11,below_average,?,?,bad
+4,4,none,10,below_average,no,none,bad
+4.5,4,?,10,below_average,no,half,bad
+4.5,4,none,11,average,?,full,good
+4.6,4.6,tcf,?,?,yes,half,good
+5,4.5,none,11,below_average,yes,?,good
+5.7,4.5,none,11,average,yes,full,good
+7,5.3,?,11,?,yes,full,good
+2,3,tcf,?,?,yes,half,good
+3.5,4,tcf,13,generous,?,?,good
+4,3.5,none,11,average,yes,full,good
+5,4.4,none,11,generous,yes,?,good
+5,5,?,12,average,?,half,good
+6,6,?,9,generous,yes,full,good
