@@ -22,7 +22,7 @@ function varargout = informasi(varargin)
 
 % Edit the above text to modify the response to help informasi
 
-% Last Modified by GUIDE v2.5 21-Jan-2016 15:31:05
+% Last Modified by GUIDE v2.5 26-Jan-2016 10:20:05
 
 % Begin initialization code - DO NOT EDIT
 gui_Singleton = 1;
@@ -60,6 +60,7 @@ guidata(hObject, handles);
 
 % UIWAIT makes informasi wait for user response (see UIRESUME)
 % uiwait(handles.figure1);
+set(handles.cekgejala,'enable','off')
 
 % --- Outputs from this function are returned to the command line.
 function varargout = informasi_OutputFcn(hObject, eventdata, handles) 
@@ -494,7 +495,7 @@ function btnDiagnosis_Callback(hObject, eventdata, handles)
 
 % nangkep variabel dulu
 berat_badan = str2num(get(handles.txtBerat,'String'));
-nafsu = str2num(get(handles.txtNafsu,'String'));
+nafsu = 2; %str2num(get(handles.txtNafsu,'String'));
 tumbuh = str2num(get(handles.txtTumbuh,'String'));
 
 suhu = str2num(get(handles.txtSuhu,'String'));
@@ -511,16 +512,17 @@ else
     hasil = evalfis([suhu,ph,oksigen,kecerahan,amoniak],x);
     % msgbox(num2str(hasil),'Success');
     
-    if hasil>=0.1 && hasil<0.4
+    if hasil>=0.1 & hasil<0.4
         %eval(['pic' num2str(i) '= rgb2gray(citra' num2str(i) ')']);
         set(findobj(gcf, 'Tag', 'hasilfuzzy'), 'String', ['Kualitas Air Bagus Dengan nilai :' num2str(hasil)]);
     else
-        set(findobj(gcf, 'Tag', 'hasilfuzzy'), 'String', ['Kualitas Air Kurang Bagus Dengan nilai :' num2str(hasil)]);
+%         set(findobj(gcf, 'Tag', 'hasilfuzzy'), 'String', ['Kualitas Air Kurang Bagus Dengan nilai :' num2str(hasil)]);
+        set(findobj(gcf, 'Tag', 'hasilfuzzy'), 'String', 'Kualitas Air Kurang Bagus');
         % kirim ke file
-        fid = fopen('contoh.txt','wt');
+        fid = fopen('info-fuzzy.txt','wt');
         fprintf(fid, '%s;%s;%s;%s;%s;%s;%s;%s;%s', num2str(berat_badan),num2str(nafsu),num2str(tumbuh),num2str(suhu),num2str(ph),num2str(oksigen),num2str(kecerahan),num2str(amoniak),num2str(hasil));
         fclose(fid);
-        gejala();
+        set(handles.cekgejala,'enable','on')
     end
 end
 
@@ -576,3 +578,12 @@ function popupmenu2_CreateFcn(hObject, eventdata, handles)
 if ispc && isequal(get(hObject,'BackgroundColor'), get(0,'defaultUicontrolBackgroundColor'))
     set(hObject,'BackgroundColor','white');
 end
+
+
+% --- Executes on button press in cekgejala.
+function cekgejala_Callback(hObject, eventdata, handles)
+% hObject    handle to cekgejala (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    structure with handles and user data (see GUIDATA)
+close(informasi);
+gejala();

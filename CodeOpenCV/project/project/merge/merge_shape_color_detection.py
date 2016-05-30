@@ -100,6 +100,7 @@ for c in cnts:
 
 print "======================================="
 print " Deteksi Bentuk dan Warna "
+print " Beta Version "
 print "======================================="
 print "Jumlah Bentuk berwarna Merah : ",red
 print "Jumlah Bentuk berwarna Hijau : ",green
