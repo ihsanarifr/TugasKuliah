@@ -1,0 +1,7 @@
+Image enhancement
+- point processing
+  - thresholding -> segmentasi
+  - contrast
+  - negative
+- convplution
+- histogram
